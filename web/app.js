@@ -8,7 +8,6 @@ async function start() {
   if (!response.ok) throw new Error('Map data could not be loaded.');
   const {sites, links, metadata} = await response.json();
   $('version').textContent = `v${metadata.version}`;
-  $('method').textContent = `Distances are straight-line kilometres (Haversine), not travel distances. DBE ${metadata.dbe_scope} comparisons${metadata.dbe_scope_status === 'provisional' ? ' are provisional' : ''}; FHR links follow workbook assignments where CBO names match.`;
   const map = L.map('map').setView([-28.5,26],6);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
     maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -38,7 +37,6 @@ async function start() {
       L.circleMarker([s.latitude,s.longitude],{radius:s.kind==='CBO'?10:5,color:'#fff',weight:1.5,fillColor:colors[s.kind],fillOpacity:.9})
         .bindPopup(popup).bindTooltip(textNode('span',s.name)).addTo(markers);
     }
-    $('summary').textContent=`${located.length} locations shown. ${visible.length-located.length} in these layers need coordinates. ${metadata.unresolved_fhr_assignments} FHR school links need CBO name review across the dataset.`;
     $('distances').replaceChildren();
     if(selected){
       const cbo=lookup.get(selected);
@@ -67,5 +65,6 @@ async function start() {
   $('cbo').onchange=()=>draw();
   document.querySelectorAll('[data-layer]').forEach(n=>n.onchange=()=>draw());
   cboOptions();draw(true);
+  $('summary').hidden = true;
 }
 start().catch(error=>{$('summary').textContent=`Unable to load the map: ${error.message}`;});

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2 — 2026-10-11
+
+- Removed location/review counts and methodology descriptions from the map sidebar.
+- Retained loading and error feedback, with methodology documented in the README.
+
 ## 0.1.1 — 2026-10-11
 
 - Added eight approved FHR-to-CBO name mappings in a separate configuration file.
