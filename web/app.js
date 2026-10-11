@@ -2,9 +2,10 @@
 const colors = {CBO:'#823fc7', DBE:'#2563eb', FHR:'#0d9488'};
 const $ = id => document.getElementById(id);
 const textNode = (tag, text) => {const node=document.createElement(tag);node.textContent=text;return node;};
+const assetVersion = new URL(document.currentScript.src).searchParams.get('v');
 
 async function start() {
-  const response = await fetch('data/map.json');
+  const response = await fetch(`data/map.json?v=${encodeURIComponent(assetVersion || '')}`);
   if (!response.ok) throw new Error('Map data could not be loaded.');
   const {sites, links, metadata} = await response.json();
   $('version').textContent = `v${metadata.version}`;

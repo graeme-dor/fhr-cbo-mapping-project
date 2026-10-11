@@ -2,6 +2,7 @@
 import csv
 import hashlib
 import json
+import re
 from collections import Counter
 from pathlib import Path
 import openpyxl
@@ -56,6 +57,13 @@ def main():
     # Only fields needed for the shareable map enter the website.
     public_sites = [{k: s[k] for k in ("id", "kind", "name", "province", "latitude", "longitude", "coordinate_status")} for s in sites]
     save("web/data/map.json", dict(metadata=metadata, sites=public_sites, links=links))
+    # A new release must not reuse cached scripts/styles from a previous page.
+    index = ROOT / "web/index.html"
+    html = index.read_text()
+    for asset in ("app.js", "styles.css"):
+        html = re.sub(re.escape(asset) + r'(?:\?v=[^"\s]*)?(?=")',
+                      asset + "?v=" + metadata["version"], html)
+    index.write_text(html)
     with (ROOT / "web/data/distances.csv").open("w", newline="") as handle:
         writer = csv.writer(handle)
         writer.writerow(["CBO", "School", "School layer", "Basis", "Straight-line km"])

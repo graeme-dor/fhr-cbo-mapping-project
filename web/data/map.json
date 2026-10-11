@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "version": "0.1.2",
+    "version": "0.1.3",
     "workbook_sha256": "01f4776c8aee8d4647b2079713f90b7a54abf0c1364e78b939aabe8ab2bde621",
     "distance_method": "haversine",
     "dbe_scope": "province",

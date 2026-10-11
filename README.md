@@ -1,6 +1,6 @@
 # FHR CBO and school mapping
 
-A static interactive map, with a separate Python data pipeline. The Excel workbook is an immutable input. Version: **0.1.2**.
+A static interactive map, with a separate Python data pipeline. The Excel workbook is an immutable input. Version: **0.1.3**.
 
 ## Project layout
 

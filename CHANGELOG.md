@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.3 — 2026-10-11
+
+- Fixed cached JavaScript referencing the removed methodology element.
+- Versioned script, stylesheet and map data requests; the build updates asset URLs for each release.
+
 ## 0.1.2 — 2026-10-11
 
 - Removed location/review counts and methodology descriptions from the map sidebar.
