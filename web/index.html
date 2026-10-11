@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FHR | CBO and school map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header><div><small>FOUNDATION FOR HUMAN RIGHTS</small><h1>CBO and school map</h1></div><span id="version"></span></header>
+  <main>
+    <aside>
+      <h2>Explore connections</h2>
+      <p>Select a CBO to compare school distances.</p>
+      <label for="province">Province</label><select id="province"><option value="">All provinces</option></select>
+      <label for="cbo">CBO</label><select id="cbo"><option value="">Select a CBO</option></select>
+      <fieldset><legend>Map layers</legend>
+        <label><input type="checkbox" data-layer="CBO" checked><i class="dot purple"></i>CBO partners</label>
+        <label><input type="checkbox" data-layer="DBE" checked><i class="dot blue"></i>DBE target schools</label>
+        <label><input type="checkbox" data-layer="FHR" checked><i class="dot teal"></i>FHR schools</label>
+      </fieldset>
+      <p id="summary" role="status">Loading map data…</p>
+      <p id="method"></p>
+      <a href="data/distances.csv" download>Download all distances (CSV)</a>
+      <h2 id="distance-title">School distances</h2>
+      <div id="distances"><p>Choose a CBO to view distances.</p></div>
+    </aside>
+    <section id="map" aria-label="Map of CBOs and schools"></section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,5001 @@
+{
+  "metadata": {
+    "version": "0.1.0",
+    "workbook_sha256": "01f4776c8aee8d4647b2079713f90b7a54abf0c1364e78b939aabe8ab2bde621",
+    "distance_method": "haversine",
+    "dbe_scope": "province",
+    "dbe_scope_status": "confirmed",
+    "counts": {
+      "CBO": 25,
+      "DBE": 85,
+      "FHR": 74
+    },
+    "missing_coordinates": 2,
+    "unresolved_fhr_assignments": 24
+  },
+  "sites": [
+    {
+      "id": "cbo-798ff5b070f9a652",
+      "kind": "CBO",
+      "name": "Doxa Family Care NPC",
+      "province": "Eastern Cape",
+      "latitude": -33.86664182750577,
+      "longitude": 25.560671754337122,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-a9554c5a9bf505f8",
+      "kind": "CBO",
+      "name": "My Dignity Restored Shelter for the Abused Women and Children",
+      "province": "Free State",
+      "latitude": -29.25064,
+      "longitude": 26.684814,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-1d50793239d8389c",
+      "kind": "CBO",
+      "name": "Eldorado Park Family Crisis Centre",
+      "province": "Gauteng",
+      "latitude": -26.28896945897409,
+      "longitude": 27.89657353643242,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-acc6979213214372",
+      "kind": "CBO",
+      "name": "Vanderbijlpark Trauma Counselling Empowerment Centre",
+      "province": "Gauteng",
+      "latitude": -26.68407596657216,
+      "longitude": 27.790724334053753,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-1c556fb80ee574ad",
+      "kind": "CBO",
+      "name": "Get Informed Youth Development Centre",
+      "province": "Gauteng",
+      "latitude": -26.044125084332656,
+      "longitude": 28.181723359613425,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-06b5e2894a139af4",
+      "kind": "CBO",
+      "name": "Rekopane Drop-In Centre",
+      "province": "Gauteng",
+      "latitude": -26.103751570499938,
+      "longitude": 27.775484455360342,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-04526c408d12ad11",
+      "kind": "CBO",
+      "name": "OUT-LGBT Well-being",
+      "province": "Gauteng",
+      "latitude": -25.761514377430476,
+      "longitude": 28.253961013073422,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-18de944d6b44c5a0",
+      "kind": "CBO",
+      "name": "Community HealthCare Solutions",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.489154861192773,
+      "longitude": 30.23075964581707,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-75463b73f0c70986",
+      "kind": "CBO",
+      "name": "Lungelo Youth Development",
+      "province": "KwaZulu-Natal",
+      "latitude": -28.765309178496523,
+      "longitude": 32.136855925337144,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-2d261f5257ff11ef",
+      "kind": "CBO",
+      "name": "Kwa Zulu-Natal Network On Violence Against Women",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.861372935170255,
+      "longitude": 31.039431709651083,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-554fd5be0feab57c",
+      "kind": "CBO",
+      "name": "Woza Moya Community Development Project NPC",
+      "province": "KwaZulu-Natal",
+      "latitude": -30.10022550428455,
+      "longitude": 30.05613507210521,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-df1a524c50d35754",
+      "kind": "CBO",
+      "name": "Families South Africa Pietermaritzburg",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.598137054250802,
+      "longitude": 30.37934591843496,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-72c842092d0916b7",
+      "kind": "CBO",
+      "name": "Limpopo Mental Health Society",
+      "province": "Limpopo",
+      "latitude": -23.83190178366738,
+      "longitude": 30.15792061233378,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-ec9eec5e447617fc",
+      "kind": "CBO",
+      "name": "Broadway Legacy Foundation",
+      "province": "Limpopo",
+      "latitude": -25.16907400998319,
+      "longitude": 29.400552650656323,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-4692c27fe91f975a",
+      "kind": "CBO",
+      "name": "Northam Victim Empowerment",
+      "province": "Limpopo",
+      "latitude": -24.96004270662662,
+      "longitude": 27.263947476476705,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-48db61d24390d52a",
+      "kind": "CBO",
+      "name": "Opret Advice Office",
+      "province": "Limpopo",
+      "latitude": -24.18398299045967,
+      "longitude": 29.002181468652896,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-35ddef9ed821ae34",
+      "kind": "CBO",
+      "name": "Mamadi Advice Centre",
+      "province": "Limpopo",
+      "latitude": -22.855126137814917,
+      "longitude": 28.911194738085726,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-b9fe4ae7a99d7183",
+      "kind": "CBO",
+      "name": "Resoketswe Lebjane Foundation",
+      "province": "Mpumalanga",
+      "latitude": -24.76378326956091,
+      "longitude": 31.085377064554823,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-cdf4b89c301895e0",
+      "kind": "CBO",
+      "name": "Grip Trust",
+      "province": "Mpumalanga",
+      "latitude": -25.470508172880542,
+      "longitude": 30.973498941246977,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-ced09b6dae0ee404",
+      "kind": "CBO",
+      "name": "Badplaas Shelter",
+      "province": "Mpumalanga",
+      "latitude": -25.954941903345933,
+      "longitude": 30.57133831651395,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-5f768010ca9d85f1",
+      "kind": "CBO",
+      "name": "Isiphephelo Multipurpose Centre",
+      "province": "Mpumalanga",
+      "latitude": -26.55226942089739,
+      "longitude": 29.075111804023777,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-7c387e47d85a549f",
+      "kind": "CBO",
+      "name": "Emthunzini Victim Empowerment Centre",
+      "province": "Mpumalanga",
+      "latitude": -27.17261248476873,
+      "longitude": 30.404291116350695,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-2aa087307afd0f69",
+      "kind": "CBO",
+      "name": "Letlhabile Network Against Domestic Violence, Child Abuse & HIV AIDS",
+      "province": "North West",
+      "latitude": -25.46068136136955,
+      "longitude": 27.8316911667962,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-889be02c4322f4f6",
+      "kind": "CBO",
+      "name": "Ethembeni (Place of Hope) Community Centre",
+      "province": "Northern Cape",
+      "latitude": -30.646905620123285,
+      "longitude": 24.012859894734135,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "cbo-f7658de45a5431ef",
+      "kind": "CBO",
+      "name": "Callas Foundation",
+      "province": "Western Cape",
+      "latitude": -33.95638564824076,
+      "longitude": 18.534929371467733,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-56e2064fc8acfc30",
+      "kind": "DBE",
+      "name": "Esther Payne Smith Secondary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.568761259850785,
+      "longitude": 30.389758017979545,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-8bec085d0a39679b",
+      "kind": "DBE",
+      "name": "Woodlands Secondary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.565451568348426,
+      "longitude": 30.398891215283967,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-428ff70b11b011d2",
+      "kind": "DBE",
+      "name": "Edendale Technical High School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.63784204492753,
+      "longitude": 30.287659129635212,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-a82350802282df10",
+      "kind": "DBE",
+      "name": "Arthur Blaxall Special School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.586023827916705,
+      "longitude": 30.4045430610895,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-a1266a4302469b80",
+      "kind": "DBE",
+      "name": "Entokozweni Training Centre",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.60159602049966,
+      "longitude": 30.286207028350187,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-954ddcedd989fbf0",
+      "kind": "DBE",
+      "name": "NEWTON SPECIAL SCHOOL (Newton Pre-professional School)",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.603234146873085,
+      "longitude": 30.398910025078543,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-8628b6172957bea4",
+      "kind": "DBE",
+      "name": "Eastwood Secondary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.583821514350323,
+      "longitude": 30.4273665880199,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-1899926b06c8fb3c",
+      "kind": "DBE",
+      "name": "Esigodini Public Primary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.647934212405595,
+      "longitude": 30.274729665092774,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-e3e53e7648bda45c",
+      "kind": "DBE",
+      "name": "Ndeleshane Primary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.666057699558785,
+      "longitude": 30.208182843884224,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-7462f72c3f89c9e7",
+      "kind": "DBE",
+      "name": "Philani Primary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.67034127853438,
+      "longitude": 30.351901250643586,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-70235248068839d8",
+      "kind": "DBE",
+      "name": "J E Ndlovu High School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.74151663011021,
+      "longitude": 30.962400338684517,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-752a95cbad2dd814",
+      "kind": "DBE",
+      "name": "Khalipha Special School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.755044780846788,
+      "longitude": 30.956587884242282,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-3b92bc224ca7a9c7",
+      "kind": "DBE",
+      "name": "Khanyanjalo Primary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.703300084827802,
+      "longitude": 30.92248074091515,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-8937aaea4855ea05",
+      "kind": "DBE",
+      "name": "Khulugqame Public Primary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.760325350346438,
+      "longitude": 30.92242189384639,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-548978da7ed01e2a",
+      "kind": "DBE",
+      "name": "Mariannridge Primary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.866164701088532,
+      "longitude": 30.822812112023133,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-c47d188fa7f79fbc",
+      "kind": "DBE",
+      "name": "Nkosinathi Secondary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.674087441396328,
+      "longitude": 30.920739336636547,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-71145ea57a7c7040",
+      "kind": "DBE",
+      "name": "Tongaat School For Lsen",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.544455255376167,
+      "longitude": 31.12470855816635,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-afe41682f15f950d",
+      "kind": "DBE",
+      "name": "UMTAPHO HIGH SCHOOL (Umtapho Senior Secondary School)",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.769280355195882,
+      "longitude": 30.950320663381813,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-114ad9c2bd11b93b",
+      "kind": "DBE",
+      "name": "Umzamo Primary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.707049185754173,
+      "longitude": 30.754811948519563,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-0d09fd4431887fb1",
+      "kind": "DBE",
+      "name": "Zaminhlanhla Senior Primary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.813588983234045,
+      "longitude": 30.615928086476824,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-5217a70171b0dbf5",
+      "kind": "DBE",
+      "name": "Ukuthula Primary School",
+      "province": "Limpopo",
+      "latitude": -23.54874851202075,
+      "longitude": 30.711403613093225,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-b55fda08df6035f6",
+      "kind": "DBE",
+      "name": "B.N. Ntsanwisi Primary School",
+      "province": "Limpopo",
+      "latitude": -23.9068080235473,
+      "longitude": 31.05488383896871,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-2142d1932163a7e1",
+      "kind": "DBE",
+      "name": "Ramokgwakgwa Special Needs Education School",
+      "province": "Limpopo",
+      "latitude": null,
+      "longitude": null,
+      "coordinate_status": "needs_review"
+    },
+    {
+      "id": "dbe-3f2f991ca9a0e099",
+      "kind": "DBE",
+      "name": "Mavalani Secondary School",
+      "province": "Limpopo",
+      "latitude": -23.207786951368615,
+      "longitude": 30.704785969061057,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-ec0655968cd91dd7",
+      "kind": "DBE",
+      "name": "Magoletsa Secondary School",
+      "province": "Limpopo",
+      "latitude": -23.641348646479777,
+      "longitude": 30.245870138625126,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-06b122d885b46e87",
+      "kind": "DBE",
+      "name": "Letaba Special Needs Education School",
+      "province": "Limpopo",
+      "latitude": -23.87184972910617,
+      "longitude": 30.26806989368848,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-c3c189d1b93a9fc1",
+      "kind": "DBE",
+      "name": "Yingisani Special Needs Education School",
+      "province": "Limpopo",
+      "latitude": -23.87171225203807,
+      "longitude": 30.260256810278975,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-340ae73274527f4d",
+      "kind": "DBE",
+      "name": "Mark Shope Secondary School",
+      "province": "Limpopo",
+      "latitude": -23.73046755234598,
+      "longitude": 30.41261322831739,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-5fbf0d5f95426213",
+      "kind": "DBE",
+      "name": "Mohumi Secondary School",
+      "province": "Limpopo",
+      "latitude": -23.63787232964795,
+      "longitude": 29.96486556903328,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-1157332b30a1955b",
+      "kind": "DBE",
+      "name": "Mmaphai Primary School",
+      "province": "Limpopo",
+      "latitude": -23.99980948385724,
+      "longitude": 30.273221221673282,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-4d0f44bead7bc47a",
+      "kind": "DBE",
+      "name": "Tshilidzini Special Needs Education School",
+      "province": "Limpopo",
+      "latitude": -22.997967458449388,
+      "longitude": 30.42552878605044,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-97059d80955b5492",
+      "kind": "DBE",
+      "name": "George Sonto Secondary School",
+      "province": "Limpopo",
+      "latitude": -23.050063122338333,
+      "longitude": 30.637218047779704,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-9eb6be8c401fa294",
+      "kind": "DBE",
+      "name": "Fulufhelo Special Needs Education School",
+      "province": "Limpopo",
+      "latitude": -22.96458101689455,
+      "longitude": 30.481946377395545,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-e61295b0c24d55e4",
+      "kind": "DBE",
+      "name": "Masea Primary School",
+      "province": "Limpopo",
+      "latitude": -22.470225637978142,
+      "longitude": 30.59404645329034,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-0801f1107901fd9e",
+      "kind": "DBE",
+      "name": "Raluswielo Secondary School",
+      "province": "Limpopo",
+      "latitude": -22.944780371760807,
+      "longitude": 30.474978633415386,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-e71973195409b610",
+      "kind": "DBE",
+      "name": "Munzhedzi Primary School",
+      "province": "Limpopo",
+      "latitude": -23.21480479582951,
+      "longitude": 29.993849978262745,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-a056673e2fccf440",
+      "kind": "DBE",
+      "name": "Rivoni Special Needs Education School",
+      "province": "Limpopo",
+      "latitude": -23.166928763361994,
+      "longitude": 30.063097014972065,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-1d7bd8308d8ac21b",
+      "kind": "DBE",
+      "name": "Hluvuka Secondary School",
+      "province": "Limpopo",
+      "latitude": -23.205511818603267,
+      "longitude": 30.23145874572862,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-5e8d5f50c1bea7b8",
+      "kind": "DBE",
+      "name": "Tshikuwi Primary School",
+      "province": "Limpopo",
+      "latitude": -22.899178260791814,
+      "longitude": 29.9404592124685,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-44b47a64b76eae00",
+      "kind": "DBE",
+      "name": "Musina Secondary School",
+      "province": "Limpopo",
+      "latitude": -22.33029281204435,
+      "longitude": 30.026456024120613,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-43dda4a42732cab8",
+      "kind": "DBE",
+      "name": "Bashele Primary School",
+      "province": "Mpumalanga",
+      "latitude": -26.500067868196602,
+      "longitude": 29.973069271163578,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-f0c111bcafe34162",
+      "kind": "DBE",
+      "name": "Baadjiesbult Combined School",
+      "province": "Mpumalanga",
+      "latitude": -26.134287796982253,
+      "longitude": 30.25076265902197,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-5344128cc081c0e7",
+      "kind": "DBE",
+      "name": "Khonzakahle Primary School",
+      "province": "Mpumalanga",
+      "latitude": null,
+      "longitude": null,
+      "coordinate_status": "needs_review"
+    },
+    {
+      "id": "dbe-5ab2807bbc742d3a",
+      "kind": "DBE",
+      "name": "Basizeni Special School",
+      "province": "Mpumalanga",
+      "latitude": -26.530200892666734,
+      "longitude": 29.078794220952474,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-511339ef53f499c1",
+      "kind": "DBE",
+      "name": "Jim Van Tonder",
+      "province": "Mpumalanga",
+      "latitude": -26.437057101567184,
+      "longitude": 29.45087493254638,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-969b56429e92878a",
+      "kind": "DBE",
+      "name": "Vaalrivier Special School",
+      "province": "Mpumalanga",
+      "latitude": -26.931441285600073,
+      "longitude": 29.225727931331164,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-558153e9cf9ce481",
+      "kind": "DBE",
+      "name": "Msinyane Secondary School",
+      "province": "Mpumalanga",
+      "latitude": -26.840978057113677,
+      "longitude": 30.531796681919992,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-3b67f28fa81c89cc",
+      "kind": "DBE",
+      "name": "Engabezweni Secondary School",
+      "province": "Mpumalanga",
+      "latitude": -25.95886378771913,
+      "longitude": 30.580612454901647,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-8331b80a2f5f5b2c",
+      "kind": "DBE",
+      "name": "Ama-dlelo Aluhlaza Secondary School",
+      "province": "Mpumalanga",
+      "latitude": -27.031609632550904,
+      "longitude": 30.78403825348111,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-89c0c06432381952",
+      "kind": "DBE",
+      "name": "Seme Secondary School",
+      "province": "Mpumalanga",
+      "latitude": -27.09144877054294,
+      "longitude": 30.008368982930484,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-a06bca7b80521cec",
+      "kind": "DBE",
+      "name": "Sikhulile Secondary",
+      "province": "Mpumalanga",
+      "latitude": -25.69487033016968,
+      "longitude": 30.245702114786305,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-190a9b854dd48915",
+      "kind": "DBE",
+      "name": "Kopanang Secondary School",
+      "province": "Mpumalanga",
+      "latitude": -25.86769141290724,
+      "longitude": 29.174182816349134,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-f57a4116f5f65da5",
+      "kind": "DBE",
+      "name": "Masenekane Special School",
+      "province": "Mpumalanga",
+      "latitude": -25.141380727958158,
+      "longitude": 28.863809810342893,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-d2f27d75462e8582",
+      "kind": "DBE",
+      "name": "Thanduxolo Special School",
+      "province": "Mpumalanga",
+      "latitude": -25.836124947410447,
+      "longitude": 29.20073590814653,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-be3237ad195405c3",
+      "kind": "DBE",
+      "name": "Wolvenkop Special School",
+      "province": "Mpumalanga",
+      "latitude": -25.542243740498005,
+      "longitude": 29.017016324958682,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-295879a5091a19af",
+      "kind": "DBE",
+      "name": "Phaphamani Secondary School",
+      "province": "Mpumalanga",
+      "latitude": -26.10537681021827,
+      "longitude": 28.690555300000003,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-918af74e798ba4b3",
+      "kind": "DBE",
+      "name": "Nokaneng Seabi Secondary School",
+      "province": "Mpumalanga",
+      "latitude": -25.00965107520675,
+      "longitude": 28.68597044603711,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-e5dedcd81b0154f7",
+      "kind": "DBE",
+      "name": "Khulunolwazi Primary School",
+      "province": "Mpumalanga",
+      "latitude": -25.81100206009731,
+      "longitude": 29.516002625622296,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-f96b5a9a4f419a86",
+      "kind": "DBE",
+      "name": "Makhosonke Primary School",
+      "province": "Mpumalanga",
+      "latitude": -25.997950763860075,
+      "longitude": 30.81718485767285,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-ea941b4c044b6955",
+      "kind": "DBE",
+      "name": "Qedudlame Primary School",
+      "province": "Mpumalanga",
+      "latitude": -25.344080132147585,
+      "longitude": 28.834727884862623,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-85b1837a6404cafe",
+      "kind": "DBE",
+      "name": "Boitshepo Secondary School",
+      "province": "Gauteng",
+      "latitude": -25.371031353339813,
+      "longitude": 28.287486388241554,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-30029600ac0a2748",
+      "kind": "DBE",
+      "name": "Adam Masebe Secondary School",
+      "province": "Gauteng",
+      "latitude": -25.401211083128477,
+      "longitude": 28.23154865080587,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-0a547551c6e4d95c",
+      "kind": "DBE",
+      "name": "Semphato Secondary School",
+      "province": "Gauteng",
+      "latitude": -25.455717091006917,
+      "longitude": 28.088897679527104,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-aba5db1367c8985c",
+      "kind": "DBE",
+      "name": "Rhulani Secondary School",
+      "province": "Gauteng",
+      "latitude": -25.516502604945625,
+      "longitude": 28.10940918678017,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-6b7b4e54592892bd",
+      "kind": "DBE",
+      "name": "St Francis Primary School",
+      "province": "Gauteng",
+      "latitude": -25.48744459307031,
+      "longitude": 28.124327417913683,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-f32c19760355977f",
+      "kind": "DBE",
+      "name": "Molefe Mooke Primary School",
+      "province": "Gauteng",
+      "latitude": -25.3827761504757,
+      "longitude": 28.19310100608832,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-aef1954aebc216d4",
+      "kind": "DBE",
+      "name": "Sekampaneng Primary School",
+      "province": "Gauteng",
+      "latitude": -25.397442659258534,
+      "longitude": 28.233997644538096,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-7615f02e4116dc75",
+      "kind": "DBE",
+      "name": "Dilopye Primary School",
+      "province": "Gauteng",
+      "latitude": -25.382290294468675,
+      "longitude": 28.193608859725476,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-220feb4e977fd68c",
+      "kind": "DBE",
+      "name": "Boepathutse Lsen School",
+      "province": "Gauteng",
+      "latitude": -25.510700107142117,
+      "longitude": 28.104030729225723,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-784a0632d61729d4",
+      "kind": "DBE",
+      "name": "Tsosoloso School",
+      "province": "Gauteng",
+      "latitude": -25.99784984986531,
+      "longitude": 28.180137199337825,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-5f8935f9641032f5",
+      "kind": "DBE",
+      "name": "Eketsang Secondary School",
+      "province": "Gauteng",
+      "latitude": -26.35749015567956,
+      "longitude": 28.166100472183814,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-1e667a860b5c340b",
+      "kind": "DBE",
+      "name": "Lethulwazi Comprehensive School",
+      "province": "Gauteng",
+      "latitude": -26.340448823116148,
+      "longitude": 28.19999332793572,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-afd01aa42b125234",
+      "kind": "DBE",
+      "name": "Edenpark Secondary School",
+      "province": "Gauteng",
+      "latitude": -26.376318072896417,
+      "longitude": 28.129920863385525,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-04973e622126a7fe",
+      "kind": "DBE",
+      "name": "O.R Tambo Secondary School",
+      "province": "Gauteng",
+      "latitude": -26.386702612137537,
+      "longitude": 28.188198016977545,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-ba9461ec52f89314",
+      "kind": "DBE",
+      "name": "Ekurhuleni School For The Deaf",
+      "province": "Gauteng",
+      "latitude": -26.344456927389043,
+      "longitude": 28.16313949397656,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-5618279170d9a578",
+      "kind": "DBE",
+      "name": "Samson Special School",
+      "province": "Gauteng",
+      "latitude": -26.319822838064393,
+      "longitude": 28.147654092003595,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-68a1e5b8a490c277",
+      "kind": "DBE",
+      "name": "Dukathole Special School",
+      "province": "Gauteng",
+      "latitude": -26.321993426203925,
+      "longitude": 28.154121386403084,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-2651991bb30c07b5",
+      "kind": "DBE",
+      "name": "Khayelihle Primary School",
+      "province": "Gauteng",
+      "latitude": -26.35859240842784,
+      "longitude": 28.188401390469807,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-ada45c6418328aa8",
+      "kind": "DBE",
+      "name": "Leeuwport Primary School",
+      "province": "Gauteng",
+      "latitude": -26.20934895568919,
+      "longitude": 28.153626702265925,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-252de0271eeb6c69",
+      "kind": "DBE",
+      "name": "Ekurhuleni Primary School",
+      "province": "Gauteng",
+      "latitude": -26.22439670584903,
+      "longitude": 28.19018683259826,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-99faf691a5329316",
+      "kind": "DBE",
+      "name": "Klipspruit Wes Secondary School",
+      "province": "Gauteng",
+      "latitude": -26.290762984171664,
+      "longitude": 27.87490284318163,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-2ce5b0a53170604f",
+      "kind": "DBE",
+      "name": "Missourilaan Secondary School",
+      "province": "Gauteng",
+      "latitude": -26.28475717799374,
+      "longitude": 27.899147406248357,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-e1ba9145f6a4514e",
+      "kind": "DBE",
+      "name": "Eldorado Park Secondary School",
+      "province": "Gauteng",
+      "latitude": -26.29260132847802,
+      "longitude": 27.900891387949233,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-84b746441a46b245",
+      "kind": "DBE",
+      "name": "Eldorado Park Primary School",
+      "province": "Gauteng",
+      "latitude": -26.294894105011593,
+      "longitude": 27.897687430214383,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "dbe-3a304bcf8b12c1b2",
+      "kind": "DBE",
+      "name": "Heerengracht Primary School",
+      "province": "Gauteng",
+      "latitude": -26.290274972249396,
+      "longitude": 27.915781323723806,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-a523ab43968ed69f",
+      "kind": "FHR",
+      "name": "Emfundweni Primary School",
+      "province": "Eastern Cape",
+      "latitude": -33.8587946268997,
+      "longitude": 25.5524060653592,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-9035b1e77cb56c43",
+      "kind": "FHR",
+      "name": "Garrett Primary School",
+      "province": "Eastern Cape",
+      "latitude": -33.8670506390532,
+      "longitude": 25.5585307603936,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-4ad1a3eab6a4c572",
+      "kind": "FHR",
+      "name": "Ndzondelelo High School",
+      "province": "Eastern Cape",
+      "latitude": -33.8623373803959,
+      "longitude": 25.5561533949174,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-9be90e53eaaccbb7",
+      "kind": "FHR",
+      "name": "Mmulakgoro Intermediate School",
+      "province": "Free State",
+      "latitude": -29.248803969689,
+      "longitude": 26.6822541111642,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-0e1cbc528f3460ea",
+      "kind": "FHR",
+      "name": "Lefikeng Secondary School",
+      "province": "Free State",
+      "latitude": -29.2675232593835,
+      "longitude": 26.684356647116,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-6a32e06f2f028ba8",
+      "kind": "FHR",
+      "name": "Kgorathuto Secondary School",
+      "province": "Free State",
+      "latitude": -29.2785355155704,
+      "longitude": 26.7349359024997,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-6612cfb291d15bcb",
+      "kind": "FHR",
+      "name": "Heerengracht Primary School",
+      "province": "Gauteng",
+      "latitude": -26.2904692430046,
+      "longitude": 27.9158041651045,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-1d7499a07ed83e6c",
+      "kind": "FHR",
+      "name": "Eldomaine High School",
+      "province": "Gauteng",
+      "latitude": -26.2951457946629,
+      "longitude": 27.9073388250588,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-d1b186b2ea844427",
+      "kind": "FHR",
+      "name": "Eldorado Park Secondary School",
+      "province": "Gauteng",
+      "latitude": -26.2926551863725,
+      "longitude": 27.900877320071,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-85700e2b98a1a6ca",
+      "kind": "FHR",
+      "name": "Dr Molefi Oliphant High School of Specialization",
+      "province": "Gauteng",
+      "latitude": -26.6824985571959,
+      "longitude": 27.7858894436305,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-bf730515bee4dc1b",
+      "kind": "FHR",
+      "name": "Ikokobetseng Primary School",
+      "province": "Gauteng",
+      "latitude": -26.6876194353933,
+      "longitude": 27.7895721887348,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-3add27acd4676012",
+      "kind": "FHR",
+      "name": "Sapphire Secondary School",
+      "province": "Gauteng",
+      "latitude": -26.6882326769871,
+      "longitude": 27.7843674975429,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-a83207c5ee7d31e8",
+      "kind": "FHR",
+      "name": "Phomolong Secondary School",
+      "province": "Gauteng",
+      "latitude": -26.0499862758789,
+      "longitude": 28.1829799288365,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-23bf58afb7461733",
+      "kind": "FHR",
+      "name": "Ikusasa Comprehensive High School",
+      "province": "Gauteng",
+      "latitude": -26.0088376936018,
+      "longitude": 28.2402092349437,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-88e2e7828f8e95c2",
+      "kind": "FHR",
+      "name": "Shukumani Primary School",
+      "province": "Gauteng",
+      "latitude": -26.0116798086546,
+      "longitude": 28.2451394848843,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-cb3a3bd9c468a39d",
+      "kind": "FHR",
+      "name": "Pro-Practicum Vocational School",
+      "province": "Gauteng",
+      "latitude": -26.1027070489754,
+      "longitude": 27.7482875133024,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-cb69cd282b13f6a3",
+      "kind": "FHR",
+      "name": "West Rand Mine Primary School",
+      "province": "Gauteng",
+      "latitude": -26.1158455686865,
+      "longitude": 27.7457787544594,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-f9ed64fc9dd48ca2",
+      "kind": "FHR",
+      "name": "Jan de Klerk High School",
+      "province": "Gauteng",
+      "latitude": -26.0980378264313,
+      "longitude": 27.7657960189064,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-c181caa07b147b5c",
+      "kind": "FHR",
+      "name": "Dr WF Nkomo High School",
+      "province": "Gauteng",
+      "latitude": -25.7777149586359,
+      "longitude": 28.0737745324783,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-acc58f6e9f2a708b",
+      "kind": "FHR",
+      "name": "Olievenhoutbosch Secondary School",
+      "province": "Gauteng",
+      "latitude": -25.9199320529559,
+      "longitude": 28.086759426964,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-eb6f14b911d98df2",
+      "kind": "FHR",
+      "name": "Hofmeyr High School",
+      "province": "Gauteng",
+      "latitude": -25.7690908435896,
+      "longitude": 28.0730435348412,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-05fa1501bbe0de50",
+      "kind": "FHR",
+      "name": "Injoloba Secondary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.490551858597,
+      "longitude": 30.2302547948935,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-cfa2186bfedec195",
+      "kind": "FHR",
+      "name": "Nogqaza Primary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.4920219269783,
+      "longitude": 30.2296200620073,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-1eb1b13069b30c95",
+      "kind": "FHR",
+      "name": "Howick Secondary",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.5063662209034,
+      "longitude": 30.2260757670431,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-a56f6f666a1dfe96",
+      "kind": "FHR",
+      "name": "Emankwathini Primary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -28.653678544165,
+      "longitude": 32.2094412643217,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-4538ce30727fb5f1",
+      "kind": "FHR",
+      "name": "Ntongande High School",
+      "province": "KwaZulu-Natal",
+      "latitude": -28.7160143786275,
+      "longitude": 32.1658090239563,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-83cd1b2b3c4a7506",
+      "kind": "FHR",
+      "name": "Nqumizwe High School",
+      "province": "KwaZulu-Natal",
+      "latitude": -28.837404736081,
+      "longitude": 31.1456855617307,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-10abf05f95dbbe9c",
+      "kind": "FHR",
+      "name": "Dumehlezi High School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.7210304971997,
+      "longitude": 30.944449715019,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-bfd8748c460de0e2",
+      "kind": "FHR",
+      "name": "Ekwazini High School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.9491584955231,
+      "longitude": 30.8875998062769,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-9df4b89b5372919f",
+      "kind": "FHR",
+      "name": "Ntuzuma Junior Primary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.7244116180783,
+      "longitude": 30.9421130138518,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-c9430610b33bf360",
+      "kind": "FHR",
+      "name": "Mavanagane High School",
+      "province": "KwaZulu-Natal",
+      "latitude": -30.0744745367765,
+      "longitude": 30.0368136229894,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-46b0be35391e92f3",
+      "kind": "FHR",
+      "name": "Sinevuso High School",
+      "province": "KwaZulu-Natal",
+      "latitude": -30.09740690613,
+      "longitude": 30.0614978656071,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-9baf223bf98c5250",
+      "kind": "FHR",
+      "name": "Mpofini Primary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -30.0381507604705,
+      "longitude": 30.1248365806068,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-7afcb6cae6b7e15d",
+      "kind": "FHR",
+      "name": "Mbambangalo High School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.5760138077427,
+      "longitude": 30.5625697003519,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-a7918e03a08b2605",
+      "kind": "FHR",
+      "name": "Laduma High School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.6014780237077,
+      "longitude": 30.315653472311,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-e4e77599a537ace3",
+      "kind": "FHR",
+      "name": "Esigodini Primary School",
+      "province": "KwaZulu-Natal",
+      "latitude": -29.6480536246847,
+      "longitude": 30.2744198614402,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-90c93f70e9b762d0",
+      "kind": "FHR",
+      "name": "Hudson Ntswanwisi High School",
+      "province": "Limpopo",
+      "latitude": -23.8848229285115,
+      "longitude": 30.2901816901627,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-a519d2766ba9bf72",
+      "kind": "FHR",
+      "name": "Pherehla-Maake Secondary",
+      "province": "Limpopo",
+      "latitude": -24.0217093415717,
+      "longitude": 30.2763229457147,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-fcf56fe2f80a0848",
+      "kind": "FHR",
+      "name": "Phusela High School",
+      "province": "Limpopo",
+      "latitude": -23.9751216047384,
+      "longitude": 30.2651004852463,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-367c19b7a77279ce",
+      "kind": "FHR",
+      "name": "Aquaville Combined Primary School",
+      "province": "Limpopo",
+      "latitude": -25.172218,
+      "longitude": 29.3453611,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-2b73a93eda0f9bd4",
+      "kind": "FHR",
+      "name": "Moosrivier Combined Primary School",
+      "province": "Limpopo",
+      "latitude": -25.0386812763011,
+      "longitude": 29.3669238930306,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-a746c9609952479a",
+      "kind": "FHR",
+      "name": "Rakediwane High School",
+      "province": "Limpopo",
+      "latitude": -25.1346490140787,
+      "longitude": 29.3906173248377,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-5f454825e097a664",
+      "kind": "FHR",
+      "name": "Chromine Primary School",
+      "province": "Limpopo",
+      "latitude": -24.1367011615659,
+      "longitude": 28.9729892211254,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-b3fd1cc1a9f4938d",
+      "kind": "FHR",
+      "name": "Northam Comprehensive High School",
+      "province": "Limpopo",
+      "latitude": -24.950784364391,
+      "longitude": 27.2734391647654,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-c48b121cb8def28a",
+      "kind": "FHR",
+      "name": "Krause Primary School",
+      "province": "Limpopo",
+      "latitude": -24.9699742517873,
+      "longitude": 27.2707948329761,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-da8581ac8286df11",
+      "kind": "FHR",
+      "name": "Ntata Secondary School",
+      "province": "Limpopo",
+      "latitude": -24.7855279376533,
+      "longitude": 27.289618215991,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-c0ec61ed4971c383",
+      "kind": "FHR",
+      "name": "Ithuteng Primary School",
+      "province": "Limpopo",
+      "latitude": -24.1404577005252,
+      "longitude": 28.980495196661,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-c44f649eccb9ea40",
+      "kind": "FHR",
+      "name": "Gwenane Secondary School",
+      "province": "Limpopo",
+      "latitude": -24.1764962951031,
+      "longitude": 28.9853359509241,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-f8e447655c4dee1b",
+      "kind": "FHR",
+      "name": "Thokampe High School",
+      "province": "Limpopo",
+      "latitude": -22.8462152823245,
+      "longitude": 28.9081838960664,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-1b52cfef49fe008c",
+      "kind": "FHR",
+      "name": "Masete Primary School",
+      "province": "Limpopo",
+      "latitude": -22.8499951728703,
+      "longitude": 28.913133935424,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-0d210af7c1808a2b",
+      "kind": "FHR",
+      "name": "Mantshabe Primary School",
+      "province": "Limpopo",
+      "latitude": -22.8613067117722,
+      "longitude": 28.8851162133017,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-a0f8bed8d2f84c3b",
+      "kind": "FHR",
+      "name": "Hlamalani Primary School",
+      "province": "Mpumalanga",
+      "latitude": -24.756523,
+      "longitude": 31.082396,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-2ffc8dc9f6cd9c75",
+      "kind": "FHR",
+      "name": "Esselman Primary School",
+      "province": "Mpumalanga",
+      "latitude": -24.7710817057992,
+      "longitude": 31.0829025025134,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-678ab45396424430",
+      "kind": "FHR",
+      "name": "Mkhweyantaba High School",
+      "province": "Mpumalanga",
+      "latitude": -24.7660592486094,
+      "longitude": 31.0720005927152,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-ed41cdeb4699c7bc",
+      "kind": "FHR",
+      "name": "Sibongile Combined School",
+      "province": "Mpumalanga",
+      "latitude": -25.5300678311518,
+      "longitude": 31.3115569815073,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-3ac6fa89cc1ae502",
+      "kind": "FHR",
+      "name": "Masitakhe High School",
+      "province": "Mpumalanga",
+      "latitude": -25.5050216394646,
+      "longitude": 31.3517885052229,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-856eb835c8da39b3",
+      "kind": "FHR",
+      "name": "Vulindlela High School",
+      "province": "Mpumalanga",
+      "latitude": -25.3496807564735,
+      "longitude": 31.1314971901798,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-5cb3c48d83092141",
+      "kind": "FHR",
+      "name": "Sunduza Primary School",
+      "province": "Mpumalanga",
+      "latitude": -25.9488477541159,
+      "longitude": 30.5889869809651,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-f800f8c1fc615d48",
+      "kind": "FHR",
+      "name": "Izithandani Primary School",
+      "province": "Mpumalanga",
+      "latitude": -25.9620725980449,
+      "longitude": 30.5700444594072,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-9071b36eaaa643ee",
+      "kind": "FHR",
+      "name": "Engabezweni Secondary School",
+      "province": "Mpumalanga",
+      "latitude": -25.9587692404821,
+      "longitude": 30.5805628021297,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-ed170cca3a3554ae",
+      "kind": "FHR",
+      "name": "Kusasalethu Secondary School",
+      "province": "Mpumalanga",
+      "latitude": -26.5419353626407,
+      "longitude": 29.0799342355905,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-873b67409e536ad9",
+      "kind": "FHR",
+      "name": "Isibanisesizwe Combined School",
+      "province": "Mpumalanga",
+      "latitude": -26.5524088594789,
+      "longitude": 29.0750965106598,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-06e10d6c963995e8",
+      "kind": "FHR",
+      "name": "Vukizithathe Primary School",
+      "province": "Mpumalanga",
+      "latitude": -26.5677868882125,
+      "longitude": 29.0829235212764,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-4c963e93858ddcfc",
+      "kind": "FHR",
+      "name": "Njabulo Combined School",
+      "province": "Mpumalanga",
+      "latitude": -25.9093306635339,
+      "longitude": 31.7912035020782,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-971b2f23cb5c6526",
+      "kind": "FHR",
+      "name": "Nkukhunda Primary School",
+      "province": "Mpumalanga",
+      "latitude": -27.1467153779357,
+      "longitude": 30.3949633831221,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-c3aa810b1d4a6df3",
+      "kind": "FHR",
+      "name": "Relebogile Primary School",
+      "province": "North West",
+      "latitude": -25.3220299275596,
+      "longitude": 28.0440794736693,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-0abb4d574e4b2c45",
+      "kind": "FHR",
+      "name": "Molelwaneng Primary School",
+      "province": "North West",
+      "latitude": -25.4812605659249,
+      "longitude": 27.8392158813773,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-6107ef33de37b80f",
+      "kind": "FHR",
+      "name": "Eletsa Secondary School",
+      "province": "North West",
+      "latitude": -25.4894878190003,
+      "longitude": 27.8393902158265,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-ca9e0644a1167868",
+      "kind": "FHR",
+      "name": "Veritas Secondary School",
+      "province": "Northern Cape",
+      "latitude": -26.2325955747653,
+      "longitude": 27.8997597045722,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-421b83c30d5c39ff",
+      "kind": "FHR",
+      "name": "Kareeville Primere Skool",
+      "province": "Northern Cape",
+      "latitude": -30.6476078368279,
+      "longitude": 24.0337649667587,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-5be621e342edfb64",
+      "kind": "FHR",
+      "name": "Alpha Primary School",
+      "province": "Northern Cape",
+      "latitude": -26.311212967446,
+      "longitude": 27.8329225363171,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-bfc651691f195ad1",
+      "kind": "FHR",
+      "name": "Bridgeville Primary School",
+      "province": "Western Cape",
+      "latitude": -33.9555723118486,
+      "longitude": 18.5331291410918,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-d351b1b84f4c25f8",
+      "kind": "FHR",
+      "name": "Cypress Primary School",
+      "province": "Western Cape",
+      "latitude": -33.9535914662074,
+      "longitude": 18.5234213014024,
+      "coordinate_status": "available"
+    },
+    {
+      "id": "fhr-7fa5282e8f49dfba",
+      "kind": "FHR",
+      "name": "Bokmakierie Primary School",
+      "province": "Western Cape",
+      "latitude": -33.9515950126573,
+      "longitude": 18.508009285991,
+      "coordinate_status": "available"
+    }
+  ],
+  "links": [
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-56e2064fc8acfc30",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 17.748
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-56e2064fc8acfc30",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 191.72
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-56e2064fc8acfc30",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 70.676
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-56e2064fc8acfc30",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 67.29
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-56e2064fc8acfc30",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 3.418
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-8bec085d0a39679b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 18.347
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-8bec085d0a39679b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 190.766
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-8bec085d0a39679b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 70.067
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-8bec085d0a39679b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 68.037
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-8bec085d0a39679b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 4.097
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-428ff70b11b011d2",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 17.425
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-428ff70b11b011d2",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 204.028
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-428ff70b11b011d2",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 76.714
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-428ff70b11b011d2",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 56.052
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-428ff70b11b011d2",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 9.902
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-a82350802282df10",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 19.967
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-a82350802282df10",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 191.346
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-a82350802282df10",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 68.528
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-a82350802282df10",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 66.32
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-a82350802282df10",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 2.784
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-a1266a4302469b80",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 13.605
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-a1266a4302469b80",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 202.296
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-a1266a4302469b80",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 78.255
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-a1266a4302469b80",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 59.72
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-a1266a4302469b80",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 9.013
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-954ddcedd989fbf0",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 20.628
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-954ddcedd989fbf0",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 192.733
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-954ddcedd989fbf0",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 68.183
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-954ddcedd989fbf0",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 64.396
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-954ddcedd989fbf0",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 1.975
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-8628b6172957bea4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 21.739
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-8628b6172957bea4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 189.285
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-8628b6172957bea4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 66.677
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-8628b6172957bea4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 67.67
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-8628b6172957bea4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 4.909
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-1899926b06c8fb3c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 18.16
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-1899926b06c8fb3c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 205.658
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-1899926b06c8fb3c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 77.542
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-1899926b06c8fb3c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 54.53
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-1899926b06c8fb3c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 11.529
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-e3e53e7648bda45c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 19.792
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-e3e53e7648bda45c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 212.285
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-e3e53e7648bda45c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 83.124
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-e3e53e7648bda45c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 50.454
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-e3e53e7648bda45c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 18.186
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-7462f72c3f89c9e7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 23.305
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-7462f72c3f89c9e7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 200.332
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-7462f72c3f89c9e7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 69.68
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-7462f72c3f89c9e7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 55.66
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-7462f72c3f89c9e7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 8.456
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-70235248068839d8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 76.09
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-70235248068839d8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 157.367
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-70235248068839d8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 15.26
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-70235248068839d8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 96.017
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-70235248068839d8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 58.545
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-752a95cbad2dd814",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 76.135
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-752a95cbad2dd814",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 158.809
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-752a95cbad2dd814",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 14.272
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-752a95cbad2dd814",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 94.884
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-752a95cbad2dd814",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 58.433
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-3b92bc224ca7a9c7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 70.993
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-3b92bc224ca7a9c7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 157.361
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-3b92bc224ca7a9c7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 20.889
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-3b92bc224ca7a9c7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 94.455
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-3b92bc224ca7a9c7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 53.773
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-8937aaea4855ea05",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 73.341
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-8937aaea4855ea05",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 161.614
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-8937aaea4855ea05",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 15.928
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-8937aaea4855ea05",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 91.637
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-8937aaea4855ea05",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 55.478
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-548978da7ed01e2a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 70.915
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-548978da7ed01e2a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 176.676
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-548978da7ed01e2a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 20.895
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-548978da7ed01e2a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 78.294
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-548978da7ed01e2a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 52.17
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-c47d188fa7f79fbc",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 69.819
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-c47d188fa7f79fbc",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 155.368
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-c47d188fa7f79fbc",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 23.768
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-c47d188fa7f79fbc",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 95.881
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-c47d188fa7f79fbc",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 53.002
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-71145ea57a7c7040",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 86.719
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-71145ea57a7c7040",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 131.019
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-71145ea57a7c7040",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 36.189
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-71145ea57a7c7040",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 120.189
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-71145ea57a7c7040",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 72.331
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-afe41682f15f950d",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 76.206
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-afe41682f15f950d",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 160.34
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-afe41682f15f950d",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 13.371
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-afe41682f15f950d",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 93.693
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-afe41682f15f950d",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 58.348
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-114ad9c2bd11b93b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 56.163
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-114ad9c2bd11b93b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 170.14
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-114ad9c2bd11b93b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 32.387
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-114ad9c2bd11b93b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 80.292
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-114ad9c2bd11b93b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 38.25
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "dbe-0d09fd4431887fb1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 51.834
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "dbe-0d09fd4431887fb1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 187.994
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "dbe-0d09fd4431887fb1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 41.193
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "dbe-0d09fd4431887fb1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 62.644
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "dbe-0d09fd4431887fb1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 33.107
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-5217a70171b0dbf5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 64.557
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-5217a70171b0dbf5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 223.812
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-5217a70171b0dbf5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 383.096
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-5217a70171b0dbf5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 187.608
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-5217a70171b0dbf5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 199.494
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-b55fda08df6035f6",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 91.587
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-b55fda08df6035f6",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 218.405
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-b55fda08df6035f6",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 401.234
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-b55fda08df6035f6",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 210.708
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-b55fda08df6035f6",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 248.08
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-2142d1932163a7e1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": null
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-2142d1932163a7e1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": null
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-2142d1932163a7e1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": null
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-2142d1932163a7e1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": null
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-2142d1932163a7e1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": null
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-3f2f991ca9a0e099",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 89.022
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-3f2f991ca9a0e099",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 255.068
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-3f2f991ca9a0e099",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 399.939
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-3f2f991ca9a0e099",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 204.536
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-3f2f991ca9a0e099",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 187.682
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-ec0655968cd91dd7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 23.002
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-ec0655968cd91dd7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 190.22
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-ec0655968cd91dd7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 335.878
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-ec0655968cd91dd7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 140.082
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-ec0655968cd91dd7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 161.976
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-06b122d885b46e87",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 12.051
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-06b122d885b46e87",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 168.845
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-06b122d885b46e87",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 327.342
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-06b122d885b46e87",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 133.165
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-06b122d885b46e87",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 178.787
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-c3c189d1b93a9fc1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 11.31
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-c3c189d1b93a9fc1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 168.448
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-c3c189d1b93a9fc1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 326.612
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-c3c189d1b93a9fc1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 132.403
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-c3c189d1b93a9fc1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 178.16
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-340ae73274527f4d",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 28.264
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-340ae73274527f4d",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 189.955
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-340ae73274527f4d",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 347.034
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-340ae73274527f4d",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 151.934
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-340ae73274527f4d",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 181.623
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-5fbf0d5f95426213",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 29.183
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-5fbf0d5f95426213",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 179.594
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-5fbf0d5f95426213",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 310.694
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-5fbf0d5f95426213",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 115.168
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-5fbf0d5f95426213",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 138.434
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-1157332b30a1955b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 22.044
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-1157332b30a1955b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 157.131
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-1157332b30a1955b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 322.701
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-1157332b30a1955b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 130.637
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-1157332b30a1955b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 188.444
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-4d0f44bead7bc47a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 96.666
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-4d0f44bead7bc47a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 262.881
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-4d0f44bead7bc47a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 388.273
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-4d0f44bead7bc47a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 196.03
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-4d0f44bead7bc47a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 155.895
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-97059d80955b5492",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 99.744
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-97059d80955b5492",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 266.964
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-97059d80955b5492",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 403.102
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-97059d80955b5492",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 208.914
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-97059d80955b5492",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 178.053
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-9eb6be8c401fa294",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 101.953
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-9eb6be8c401fa294",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 268.589
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-9eb6be8c401fa294",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 395.134
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-9eb6be8c401fa294",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 202.799
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-9eb6be8c401fa294",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 161.341
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-e61295b0c24d55e4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 157.84
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-e61295b0c24d55e4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 323.72
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-e61295b0c24d55e4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 437.665
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-e61295b0c24d55e4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 250.458
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-e61295b0c24d55e4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 177.9
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-0801f1107901fd9e",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 103.815
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-0801f1107901fd9e",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 270.317
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-0801f1107901fd9e",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 395.811
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-0801f1107901fd9e",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 203.762
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-0801f1107901fd9e",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 160.49
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-e71973195409b610",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 70.628
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-e71973195409b610",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 225.482
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-e71973195409b610",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 338.295
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-e71973195409b610",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 147.676
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-e71973195409b610",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 117.785
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-a056673e2fccf440",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 74.571
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-a056673e2fccf440",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 232.552
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-a056673e2fccf440",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 347.149
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-a056673e2fccf440",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 156.402
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-a056673e2fccf440",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 122.886
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-1d7bd8308d8ac21b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 70.054
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-1d7bd8308d8ac21b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 234.038
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-1d7bd8308d8ac21b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 358.886
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-1d7bd8308d8ac21b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 165.842
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-1d7bd8308d8ac21b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 140.611
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-5e8d5f50c1bea7b8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 106.063
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-5e8d5f50c1bea7b8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 258.287
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-5e8d5f50c1bea7b8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 355.669
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-5e8d5f50c1bea7b8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 171.925
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-5e8d5f50c1bea7b8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 105.56
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "dbe-44b47a64b76eae00",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 167.512
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "dbe-44b47a64b76eae00",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 322.02
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "dbe-44b47a64b76eae00",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 405.786
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "dbe-44b47a64b76eae00",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 231.158
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "dbe-44b47a64b76eae00",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 128.509
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-43dda4a42732cab8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 222.952
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-43dda4a42732cab8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 152.003
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-43dda4a42732cab8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 85.061
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-43dda4a42732cab8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 89.526
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-43dda4a42732cab8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 86.158
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-f0c111bcafe34162",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 173.913
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-f0c111bcafe34162",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 103.356
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-f0c111bcafe34162",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 37.728
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-f0c111bcafe34162",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 126.033
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-f0c111bcafe34162",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 116.46
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-5344128cc081c0e7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": null
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-5344128cc081c0e7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": null
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-5344128cc081c0e7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": null
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-5344128cc081c0e7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": null
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-5344128cc081c0e7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": null
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-5ab2807bbc742d3a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 281.124
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-5ab2807bbc742d3a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 223.022
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-5ab2807bbc742d3a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 162.018
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-5ab2807bbc742d3a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 2.481
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-5ab2807bbc742d3a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 149.645
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-511339ef53f499c1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 247.951
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-511339ef53f499c1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 186.346
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-511339ef53f499c1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 123.982
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-511339ef53f499c1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 39.528
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-511339ef53f499c1",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 125.072
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-969b56429e92878a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 304.501
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-969b56429e92878a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 238.312
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-969b56429e92878a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 172.445
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-969b56429e92878a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 44.736
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-969b56429e92878a",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 119.753
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-558153e9cf9ce481",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 237.528
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-558153e9cf9ce481",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 158.638
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-558153e9cf9ce481",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 98.602
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-558153e9cf9ce481",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 148.226
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-558153e9cf9ce481",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 38.98
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-3b67f28fa81c89cc",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 142.236
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-3b67f28fa81c89cc",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 67.067
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-3b67f28fa81c89cc",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 1.025
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-3b67f28fa81c89cc",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 163.992
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-3b67f28fa81c89cc",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 136.097
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-8331b80a2f5f5b2c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 253.966
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-8331b80a2f5f5b2c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 174.612
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-8331b80a2f5f5b2c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 121.577
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-8331b80a2f5f5b2c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 177.8
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-8331b80a2f5f5b2c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 40.728
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-89c0c06432381952",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 280.335
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-89c0c06432381952",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 204.315
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-89c0c06432381952",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 138.23
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-89c0c06432381952",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 110.321
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-89c0c06432381952",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 40.206
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-a06bca7b80521cec",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 133.613
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-a06bca7b80521cec",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 77.139
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-a06bca7b80521cec",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 43.573
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-a06bca7b80521cec",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 150.821
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-a06bca7b80521cec",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 165.075
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-190a9b854dd48915",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 227.969
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-190a9b854dd48915",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 185.657
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-190a9b854dd48915",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 140.075
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-190a9b854dd48915",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 76.761
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-190a9b854dd48915",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 189.821
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-f57a4116f5f65da5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 227.868
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-f57a4116f5f65da5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 215.208
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-f57a4116f5f65da5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 193.72
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-f57a4116f5f65da5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 158.302
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-f57a4116f5f65da5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 273.22
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-d2f27d75462e8582",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 223.856
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-d2f27d75462e8582",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 182.282
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-d2f27d75462e8582",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 137.736
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-d2f27d75462e8582",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 80.612
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-d2f27d75462e8582",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 190.86
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-be3237ad195405c3",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 225.457
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-be3237ad195405c3",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 196.508
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-be3237ad195405c3",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 162.294
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-be3237ad195405c3",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 112.46
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-be3237ad195405c3",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 227.966
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-295879a5091a19af",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 282.984
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-295879a5091a19af",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 239.22
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-295879a5091a19af",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 188.661
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-295879a5091a19af",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 62.754
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-295879a5091a19af",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 207.59
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-918af74e798ba4b3",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 243.563
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-918af74e798ba4b3",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 235.712
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-918af74e798ba4b3",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 216.476
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-918af74e798ba4b3",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 175.901
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-918af74e798ba4b3",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 295.44
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-e5dedcd81b0154f7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 196.097
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-e5dedcd81b0154f7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 150.932
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-e5dedcd81b0154f7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 106.783
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-e5dedcd81b0154f7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 93.431
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-e5dedcd81b0154f7",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 175.321
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-f96b5a9a4f419a86",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 139.853
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-f96b5a9a4f419a86",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 60.703
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-f96b5a9a4f419a86",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 25.036
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-f96b5a9a4f419a86",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 184.305
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-f96b5a9a4f419a86",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 136.917
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "dbe-ea941b4c044b6955",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 235.714
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "dbe-ea941b4c044b6955",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 215.276
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "dbe-ea941b4c044b6955",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 186.855
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "dbe-ea941b4c044b6955",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 136.478
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "dbe-ea941b4c044b6955",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 256.582
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-85b1837a6404cafe",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 109.312
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-85b1837a6404cafe",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 154.21
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-85b1837a6404cafe",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 75.591
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-85b1837a6404cafe",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 96.271
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-85b1837a6404cafe",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 43.55
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-30029600ac0a2748",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 104.251
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-30029600ac0a2748",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 149.292
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-30029600ac0a2748",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 71.663
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-30029600ac0a2748",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 90.492
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-30029600ac0a2748",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 40.127
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-0a547551c6e4d95c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 94.63
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-0a547551c6e4d95c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 139.796
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-0a547551c6e4d95c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 66.085
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-0a547551c6e4d95c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 78.595
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-0a547551c6e4d95c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 37.817
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-aba5db1367c8985c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 88.493
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-aba5db1367c8985c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 133.671
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-aba5db1367c8985c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 59.114
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-aba5db1367c8985c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 73.357
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-aba5db1367c8985c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 30.858
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-6b7b4e54592892bd",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 91.992
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-6b7b4e54592892bd",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 137.167
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-6b7b4e54592892bd",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 62.166
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-6b7b4e54592892bd",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 76.916
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-6b7b4e54592892bd",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 33.131
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-f32c19760355977f",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 105.043
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-f32c19760355977f",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 150.179
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-f32c19760355977f",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 73.548
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-f32c19760355977f",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 90.425
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-f32c19760355977f",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 42.554
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-aef1954aebc216d4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 104.726
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-aef1954aebc216d4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 149.764
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-aef1954aebc216d4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 72.098
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-aef1954aebc216d4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 90.978
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-aef1954aebc216d4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 40.532
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-7615f02e4116dc75",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 105.11
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-7615f02e4116dc75",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 150.245
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-7615f02e4116dc75",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 73.602
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-7615f02e4116dc75",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 90.496
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-7615f02e4116dc75",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 42.6
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-220feb4e977fd68c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 88.993
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-220feb4e977fd68c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 134.172
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-220feb4e977fd68c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 59.822
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-220feb4e977fd68c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 73.691
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-220feb4e977fd68c",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 31.682
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-784a0632d61729d4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 43.001
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-784a0632d61729d4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 85.605
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-784a0632d61729d4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 5.148
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-784a0632d61729d4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 42.104
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-784a0632d61729d4",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 27.297
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-5f8935f9641032f5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 27.922
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-5f8935f9641032f5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 52.092
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-5f8935f9641032f5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 34.879
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-5f8935f9641032f5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 48.105
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-5f8935f9641032f5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 66.848
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-1e667a860b5c340b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 30.779
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-1e667a860b5c340b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 55.842
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-1e667a860b5c340b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 33.0
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-1e667a860b5c340b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 49.858
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-1e667a860b5c340b",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 64.6
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-afd01aa42b125234",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 25.201
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-afd01aa42b125234",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 48.061
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-afd01aa42b125234",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 37.298
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-afd01aa42b125234",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 46.564
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-afd01aa42b125234",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 69.477
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-04973e622126a7fe",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 31.027
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-04973e622126a7fe",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 51.545
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-04973e622126a7fe",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 38.098
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-04973e622126a7fe",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 51.808
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-04973e622126a7fe",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 69.827
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-ba9461ec52f89314",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 27.276
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-ba9461ec52f89314",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 52.907
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-ba9461ec52f89314",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 33.447
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-ba9461ec52f89314",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 47.028
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-ba9461ec52f89314",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 65.452
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-5618279170d9a578",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 25.262
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-5618279170d9a578",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 53.871
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-5618279170d9a578",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 30.844
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-5618279170d9a578",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 44.224
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-5618279170d9a578",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 62.983
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-68a1e5b8a490c277",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 25.934
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-68a1e5b8a490c277",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 54.117
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-68a1e5b8a490c277",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 31.02
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-68a1e5b8a490c277",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 44.896
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-68a1e5b8a490c277",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 63.116
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-2651991bb30c07b5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 30.098
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-2651991bb30c07b5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 53.622
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-2651991bb30c07b5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 34.974
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-2651991bb30c07b5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 49.993
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-2651991bb30c07b5",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 66.714
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-ada45c6418328aa8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 27.121
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-ada45c6418328aa8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 63.968
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-ada45c6418328aa8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 18.585
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-ada45c6418328aa8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 39.526
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-ada45c6418328aa8",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 50.797
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-252de0271eeb6c69",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 30.147
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-252de0271eeb6c69",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 64.762
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-252de0271eeb6c69",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 20.063
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-252de0271eeb6c69",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 43.508
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-252de0271eeb6c69",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 51.863
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-99faf691a5329316",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 2.17
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-99faf691a5329316",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 44.53
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-99faf691a5329316",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 41.106
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-99faf691a5329316",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 23.039
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-99faf691a5329316",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 69.984
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-2ce5b0a53170604f",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 0.534
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-2ce5b0a53170604f",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 45.695
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-2ce5b0a53170604f",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 38.875
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-2ce5b0a53170604f",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 23.608
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-2ce5b0a53170604f",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 68.133
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-e1ba9145f6a4514e",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 0.59
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-e1ba9145f6a4514e",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 44.89
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-e1ba9145f6a4514e",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 39.356
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-e1ba9145f6a4514e",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 24.444
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-e1ba9145f6a4514e",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 68.789
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-84b746441a46b245",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 0.668
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-84b746441a46b245",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 44.565
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-84b746441a46b245",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 39.762
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-84b746441a46b245",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 24.503
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-84b746441a46b245",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 69.172
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "dbe-3a304bcf8b12c1b2",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 1.92
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "dbe-3a304bcf8b12c1b2",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 45.523
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "dbe-3a304bcf8b12c1b2",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 38.126
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "dbe-3a304bcf8b12c1b2",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 25.022
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "dbe-3a304bcf8b12c1b2",
+      "basis": "dbe_province_comparison",
+      "distance_method": "haversine",
+      "distance_km": 67.814
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "fhr-6612cfb291d15bcb",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.924
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "fhr-1d7499a07ed83e6c",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.274
+    },
+    {
+      "cbo_id": "cbo-1d50793239d8389c",
+      "school_id": "fhr-d1b186b2ea844427",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.593
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "fhr-85700e2b98a1a6ca",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.511
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "fhr-bf730515bee4dc1b",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.41
+    },
+    {
+      "cbo_id": "cbo-acc6979213214372",
+      "school_id": "fhr-3add27acd4676012",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.783
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "fhr-a83207c5ee7d31e8",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.664
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "fhr-23bf58afb7461733",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 7.039
+    },
+    {
+      "cbo_id": "cbo-1c556fb80ee574ad",
+      "school_id": "fhr-88e2e7828f8e95c2",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 7.291
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "fhr-cb3a3bd9c468a39d",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 2.718
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "fhr-cb69cd282b13f6a3",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 3.257
+    },
+    {
+      "cbo_id": "cbo-06b5e2894a139af4",
+      "school_id": "fhr-f9ed64fc9dd48ca2",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.157
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "fhr-c181caa07b147b5c",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 18.133
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "fhr-acc58f6e9f2a708b",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 24.296
+    },
+    {
+      "cbo_id": "cbo-04526c408d12ad11",
+      "school_id": "fhr-eb6f14b911d98df2",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 18.137
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "fhr-05fa1501bbe0de50",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.163
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "fhr-cfa2186bfedec195",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.337
+    },
+    {
+      "cbo_id": "cbo-18de944d6b44c5a0",
+      "school_id": "fhr-1eb1b13069b30c95",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.967
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "fhr-a56f6f666a1dfe96",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 14.289
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "fhr-4538ce30727fb5f1",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 6.166
+    },
+    {
+      "cbo_id": "cbo-75463b73f0c70986",
+      "school_id": "fhr-83cd1b2b3c4a7506",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 96.911
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "fhr-90c93f70e9b762d0",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 14.681
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "fhr-a519d2766ba9bf72",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 24.296
+    },
+    {
+      "cbo_id": "cbo-72c842092d0916b7",
+      "school_id": "fhr-fcf56fe2f80a0848",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 19.296
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "fhr-367c19b7a77279ce",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 5.565
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "fhr-2b73a93eda0f9bd4",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 14.889
+    },
+    {
+      "cbo_id": "cbo-ec9eec5e447617fc",
+      "school_id": "fhr-a746c9609952479a",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 3.956
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "fhr-5f454825e097a664",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 195.604
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "fhr-b3fd1cc1a9f4938d",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.406
+    },
+    {
+      "cbo_id": "cbo-4692c27fe91f975a",
+      "school_id": "fhr-c48b121cb8def28a",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.302
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "fhr-da8581ac8286df11",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 185.762
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "fhr-c0ec61ed4971c383",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 5.316
+    },
+    {
+      "cbo_id": "cbo-48db61d24390d52a",
+      "school_id": "fhr-c44f649eccb9ea40",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.901
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "fhr-a0f8bed8d2f84c3b",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.862
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "fhr-2ffc8dc9f6cd9c75",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.849
+    },
+    {
+      "cbo_id": "cbo-b9fe4ae7a99d7183",
+      "school_id": "fhr-678ab45396424430",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.374
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "fhr-5cb3c48d83092141",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.89
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "fhr-f800f8c1fc615d48",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.803
+    },
+    {
+      "cbo_id": "cbo-ced09b6dae0ee404",
+      "school_id": "fhr-9071b36eaaa643ee",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.016
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "fhr-ed170cca3a3554ae",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.245
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "fhr-873b67409e536ad9",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.016
+    },
+    {
+      "cbo_id": "cbo-5f768010ca9d85f1",
+      "school_id": "fhr-06e10d6c963995e8",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.892
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "fhr-4c963e93858ddcfc",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 196.888
+    },
+    {
+      "cbo_id": "cbo-7c387e47d85a549f",
+      "school_id": "fhr-971b2f23cb5c6526",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 3.024
+    },
+    {
+      "cbo_id": "cbo-889be02c4322f4f6",
+      "school_id": "fhr-ca9e0644a1167868",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 620.661
+    },
+    {
+      "cbo_id": "cbo-889be02c4322f4f6",
+      "school_id": "fhr-421b83c30d5c39ff",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 2.001
+    },
+    {
+      "cbo_id": "cbo-889be02c4322f4f6",
+      "school_id": "fhr-5be621e342edfb64",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 609.669
+    },
+    {
+      "cbo_id": "cbo-f7658de45a5431ef",
+      "school_id": "fhr-bfc651691f195ad1",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.189
+    },
+    {
+      "cbo_id": "cbo-f7658de45a5431ef",
+      "school_id": "fhr-d351b1b84f4c25f8",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.106
+    },
+    {
+      "cbo_id": "cbo-f7658de45a5431ef",
+      "school_id": "fhr-7fa5282e8f49dfba",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 2.539
+    }
+  ]
+}

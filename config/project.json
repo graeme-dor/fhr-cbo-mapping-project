@@ -1,0 +1,9 @@
+{
+  "workbook": "Heat map v2.xlsx",
+  "cbo_sheet": "CBOs Partners",
+  "dbe_sheets": ["DBE KZN", "DBE LP", "DBE MP", "DBE GP"],
+  "fhr_sheet": "FHR HRC allprovinces",
+  "dbe_distance_scope": "province",
+  "dbe_scope_status": "confirmed",
+  "coordinate_bounds": [-35.5, -22, 16, 33.5]
+}
