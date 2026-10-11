@@ -70,7 +70,7 @@ Repository: [graeme-dor/fhr-cbo-mapping-project](https://github.com/graeme-dor/f
 
 ## Future iterations
 
-1. Review unmatched names and missing coordinates, then approve DBE comparison/assignment rules.
+1. Review unmatched FHR CBO names and missing coordinates. Same-province DBE comparison rules are confirmed.
 2. Add a provider-backed geocoding stage only for unresolved sites, with cached results, source metadata and human review of ambiguous candidates. Reuse the same resolver across tab adapters. Do not run public geocoding requests in the browser or on every deployment.
 3. Add road routing as a separate distance provider. Preserve straight-line distance alongside road km and optional travel minutes. Cache by endpoint coordinates, routing profile and provider version.
 4. Add distance thresholds, nearest-CBO summaries, search and school deduplication if needed.
