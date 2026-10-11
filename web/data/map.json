@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "version": "0.1.0",
+    "version": "0.1.1",
     "workbook_sha256": "01f4776c8aee8d4647b2079713f90b7a54abf0c1364e78b939aabe8ab2bde621",
     "distance_method": "haversine",
     "dbe_scope": "province",
@@ -11,7 +11,7 @@
       "FHR": 74
     },
     "missing_coordinates": 2,
-    "unresolved_fhr_assignments": 24
+    "unresolved_fhr_assignments": 0
   },
   "sites": [
     {
@@ -4648,6 +4648,48 @@
       "distance_km": 67.814
     },
     {
+      "cbo_id": "cbo-798ff5b070f9a652",
+      "school_id": "fhr-a523ab43968ed69f",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.159
+    },
+    {
+      "cbo_id": "cbo-798ff5b070f9a652",
+      "school_id": "fhr-9035b1e77cb56c43",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.203
+    },
+    {
+      "cbo_id": "cbo-798ff5b070f9a652",
+      "school_id": "fhr-4ad1a3eab6a4c572",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.635
+    },
+    {
+      "cbo_id": "cbo-a9554c5a9bf505f8",
+      "school_id": "fhr-9be90e53eaaccbb7",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.321
+    },
+    {
+      "cbo_id": "cbo-a9554c5a9bf505f8",
+      "school_id": "fhr-0e1cbc528f3460ea",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.878
+    },
+    {
+      "cbo_id": "cbo-a9554c5a9bf505f8",
+      "school_id": "fhr-6a32e06f2f028ba8",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 5.767
+    },
+    {
       "cbo_id": "cbo-1d50793239d8389c",
       "school_id": "fhr-6612cfb291d15bcb",
       "basis": "workbook_fhr_assignment",
@@ -4795,6 +4837,69 @@
       "distance_km": 96.911
     },
     {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "fhr-10abf05f95dbbe9c",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 18.098
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "fhr-bfd8748c460de0e2",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 17.592
+    },
+    {
+      "cbo_id": "cbo-2d261f5257ff11ef",
+      "school_id": "fhr-9df4b89b5372919f",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 17.892
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "fhr-c9430610b33bf360",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 3.414
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "fhr-46b0be35391e92f3",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.604
+    },
+    {
+      "cbo_id": "cbo-554fd5be0feab57c",
+      "school_id": "fhr-9baf223bf98c5250",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 9.558
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "fhr-7afcb6cae6b7e15d",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 17.887
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "fhr-a7918e03a08b2605",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 6.169
+    },
+    {
+      "cbo_id": "cbo-df1a524c50d35754",
+      "school_id": "fhr-e4e77599a537ace3",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 11.562
+    },
+    {
       "cbo_id": "cbo-72c842092d0916b7",
       "school_id": "fhr-90c93f70e9b762d0",
       "basis": "workbook_fhr_assignment",
@@ -4879,6 +4984,27 @@
       "distance_km": 1.901
     },
     {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "fhr-f8e447655c4dee1b",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 1.038
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "fhr-1b52cfef49fe008c",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 0.604
+    },
+    {
+      "cbo_id": "cbo-35ddef9ed821ae34",
+      "school_id": "fhr-0d210af7c1808a2b",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 2.759
+    },
+    {
       "cbo_id": "cbo-b9fe4ae7a99d7183",
       "school_id": "fhr-a0f8bed8d2f84c3b",
       "basis": "workbook_fhr_assignment",
@@ -4898,6 +5024,27 @@
       "basis": "workbook_fhr_assignment",
       "distance_method": "haversine",
       "distance_km": 1.374
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "fhr-ed41cdeb4699c7bc",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 34.569
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "fhr-3ac6fa89cc1ae502",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 38.164
+    },
+    {
+      "cbo_id": "cbo-cdf4b89c301895e0",
+      "school_id": "fhr-856eb835c8da39b3",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 20.793
     },
     {
       "cbo_id": "cbo-ced09b6dae0ee404",
@@ -4954,6 +5101,27 @@
       "basis": "workbook_fhr_assignment",
       "distance_method": "haversine",
       "distance_km": 3.024
+    },
+    {
+      "cbo_id": "cbo-2aa087307afd0f69",
+      "school_id": "fhr-c3aa810b1d4a6df3",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 26.323
+    },
+    {
+      "cbo_id": "cbo-2aa087307afd0f69",
+      "school_id": "fhr-0abb4d574e4b2c45",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 2.41
+    },
+    {
+      "cbo_id": "cbo-2aa087307afd0f69",
+      "school_id": "fhr-6107ef33de37b80f",
+      "basis": "workbook_fhr_assignment",
+      "distance_method": "haversine",
+      "distance_km": 3.295
     },
     {
       "cbo_id": "cbo-889be02c4322f4f6",
