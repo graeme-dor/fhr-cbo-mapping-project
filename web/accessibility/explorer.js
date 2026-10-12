@@ -1,6 +1,6 @@
 /* global L */
-import {prepare,connections,fhrSchools,nearestConnections,provinceGroups,provinceMatches,routeKey} from './model.js?v=0.2.0-experiment.4';
-import {validateSnapshot} from './road-snapshot.js?v=0.2.0-experiment.4';
+import {prepare,connections,fhrSchools,nearestConnections,provinceGroups,provinceMatches,routeKey} from './model.js?v=0.2.0';
+import {validateSnapshot} from './road-snapshot.js?v=0.2.0';
 const $=id=>document.getElementById(id);
 const node=(tag,text)=>{const n=document.createElement(tag);n.textContent=text;return n;};
 const state={province:'__dbe__',cbo:'',mode:'straight',showFhr:false,school:''};
@@ -101,7 +101,7 @@ function provinceOptions(){
 async function start(){
   const response=await fetch('../data/map.json?v=0.1.4');if(!response.ok)throw new Error('School data could not be loaded');
   const data=await response.json();model=prepare(data);
-  const roadResponse=await fetch('data/roads.json?v=0.2.0-experiment.4');
+  const roadResponse=await fetch('data/roads.json?v=0.2.0');
   if(!roadResponse.ok)throw new Error('Preloaded road data could not be loaded');
   const snapshot=await validateSnapshot(data,await roadResponse.json());roads=snapshot.roads;routes=snapshot.routes;snapshotMetadata=snapshot.metadata;
   $('road-date').textContent=`Road snapshot: ${new Date(snapshotMetadata.built_at).toLocaleDateString('en-ZA')}. Refresh the snapshot when locations or road data change.`;

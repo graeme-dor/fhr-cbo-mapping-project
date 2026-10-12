@@ -76,3 +76,7 @@ Repository: [graeme-dor/fhr-cbo-mapping-project](https://github.com/graeme-dor/f
 4. Add distance thresholds, nearest-CBO summaries, search and school deduplication if needed.
 
 References: [GitHub Pages deployment](https://docs.github.com/en/get-started/start-your-journey/deploying-your-website-automatically), [Leaflet 1.9.4 documentation](https://leafletjs.com/reference-1.9.4.html), [OpenStreetMap tile policy](https://operations.osmfoundation.org/policies/tiles/), [Nominatim geocoding policy](https://operations.osmfoundation.org/policies/nominatim/).
+
+## Alternative accessibility map
+
+[CBO-school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/) shows each DBE school with its nearest CBO in the same province, using straight or saved road distances. Its road layer and full distance export are precomputed. The [original map](https://graeme-dor.github.io/fhr-cbo-mapping-project/) remains available. See [alternative map documentation](docs/map-experiment.md) for updates and snapshot refreshes.

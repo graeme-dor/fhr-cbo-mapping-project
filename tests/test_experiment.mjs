@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {prepare,connections,fhrSchools,routeResult,routeKey,tableResults} from '../web/experiment/model.js';
+import {prepare,connections,fhrSchools,routeResult,routeKey,tableResults} from '../web/accessibility/model.js';
 const data=JSON.parse(fs.readFileSync(new URL('../web/data/map.json',import.meta.url)));
 const model=prepare(data),links=connections(model,{});
 assert.equal(links.length,425);
@@ -33,7 +33,7 @@ globalThis.fetch=async url=>{
   requests.push(url);
   return {ok:true,json:async()=>url.includes('/table/')?table:{code:'Ok',routes:[{distance:1400,geometry:{type:'LineString',coordinates:[[28,-26],[29,-27]]}}],waypoints:[{distance:0},{distance:0}]}};
 };
-const {Routing}=await import('../web/experiment/routing.js');
+const {Routing}=await import('../web/accessibility/routing.js');
 const router=new Routing(),signal=new AbortController().signal;
 const distances=await router.distances(a,[b,c],signal);
 assert.equal(requests.length,1);assert.match(requests[0],/table\/v1/);
@@ -49,7 +49,7 @@ await assert.rejects(router.get(b,a,cancelled.signal),{name:'AbortError'});
 router.cache[routeKey(a,b)].fetched_at='2020-01-01T00:00:00Z';assert.equal(router.cached(a,b),null);
 console.log('Experiment checks passed: province-only DBE links, FHR markers without distances, batch road distances, selected routes and cache reuse.');
 // Allocation chooses the winning CBO across the entire province before focus.
-const {nearestConnections,distanceCsv}=await import('../web/experiment/model.js');
+const {nearestConnections,distanceCsv}=await import('../web/accessibility/model.js');
 const straight=nearestConnections(model,{});
 assert.equal(straight.length,85);assert.equal(new Set(straight.map(l=>l.school_id)).size,85);
 for(const l of straight){
@@ -84,17 +84,17 @@ assert.equal(batches,1);assert.equal(matrix.size,4);assert.equal(matrix.get(rout
 await matrixRouter.matrix([a1,a2],[b1,c1],signal);assert.equal(batches,1);
 await assert.rejects(matrixRouter.matrix([a1],[{...b1,province:'Other'}],signal),/within one province/);
 console.log('Allocation checks passed: metric-specific winners, focus invariance, incomplete/unreachable handling, 425-row export and province matrices.');
-const {provinceGroups,provinceMatches}=await import('../web/experiment/model.js');
+const {provinceGroups,provinceMatches}=await import('../web/accessibility/model.js');
 const groups=provinceGroups(model);
 assert.deepEqual(groups.dbe,['Gauteng','KwaZulu-Natal','Limpopo','Mpumalanga']);
 assert.equal(groups.other.length,5);assert.ok(provinceMatches(model,'Gauteng','__dbe__'));assert.ok(!provinceMatches(model,'Western Cape','__dbe__'));
 assert.equal(nearestConnections(model,{province:'__dbe__'}).length,85);
-const {validateSnapshot,datasetSignature,batchRoutes}=await import('../web/experiment/road-snapshot.js');
-const snapshot=JSON.parse(fs.readFileSync(new URL('../web/experiment/data/roads.json',import.meta.url)));
+const {validateSnapshot,datasetSignature,batchRoutes}=await import('../web/accessibility/road-snapshot.js');
+const snapshot=JSON.parse(fs.readFileSync(new URL('../web/accessibility/data/roads.json',import.meta.url)));
 const preloaded=await validateSnapshot(data,snapshot);
 assert.equal(preloaded.roads.size,425);assert.equal(Object.keys(preloaded.routes).length,85);
 assert.equal(nearestConnections(model,{mode:'road'},preloaded.roads).length,85);
-const csv=fs.readFileSync(new URL('../web/experiment/data/distances.csv',import.meta.url),'utf8');
+const csv=fs.readFileSync(new URL('../web/accessibility/data/distances.csv',import.meta.url),'utf8');
 assert.equal(csv,distanceCsv(model,{},preloaded.roads));assert.equal(csv.split('\r\n').length,426);
 const changed=structuredClone(data);changed.sites.find(s=>s.kind==='DBE').latitude+=.001;
 assert.notEqual(await datasetSignature(changed),snapshot.metadata.dataset_signature);

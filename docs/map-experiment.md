@@ -1,8 +1,8 @@
-# Nearest CBO explorer — experiment 04
+# CBO-school accessibility map
 
-Version: `0.2.0-experiment.4`. Branch: `experiment/map-visualisation`. Baseline: live `v0.1.4`. The original map and workbook are unchanged. GitHub Pages deploys only `main`.
+Alternative map version: `0.2.0`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
 
-Preview: `python3 -m http.server 8001 --bind 127.0.0.1 --directory web`, then open http://127.0.0.1:8001/experiment/.
+Preview: `python3 -m http.server 8001 --bind 127.0.0.1 --directory web`, then open http://127.0.0.1:8001/accessibility/.
 
 ## Province grouping and navigation
 
@@ -16,7 +16,7 @@ FHR remains an optional assigned-marker layer, without FHR distance calculations
 
 ## Preloaded roads
 
-`web/experiment/data/roads.json` contains a versioned snapshot of all 425 eligible CBO–DBE road distances and only the 85 nearest-CBO route geometries. It is about 1.5 MB uncompressed. The map loads this local file once at startup; mode changes, filtering, school selection and zooming make **no routing API calls**. Road mode draws every nearest route in the selected view, and selecting a school highlights and zooms to its path. Basemap tiles still load normally from OpenStreetMap.
+`web/accessibility/data/roads.json` contains a versioned snapshot of all 425 eligible CBO–DBE road distances and only the 85 nearest-CBO route geometries. It is about 1.5 MB uncompressed. The map loads this local file once at startup; mode changes, filtering, school selection and zooming make **no routing API calls**. Road mode draws every nearest route in the selected view, and selecting a school highlights and zooms to its path. Basemap tiles still load normally from OpenStreetMap.
 
 The snapshot uses OSRM car routing. Reported distances are the lengths of the routing engine's selected driving routes, not a guarantee of mathematically shortest road paths. No live traffic is included. Coordinates snap to mapped roads, excluding off-road access; snaps over 250 metres are flagged. Missing/unreachable results never substitute straight distances.
 
@@ -46,12 +46,12 @@ Only already-public institution coordinates are sent to the routing provider. No
 
 ## Full export
 
-Export full spreadsheet downloads `web/experiment/data/distances.csv` directly, regardless of province, CBO or distance-mode selections. It always contains all 425 eligible same-province CBO–DBE comparison rows. It is the complete distance table, not a copy of the original workbook or an FHR distance export.
+Export full spreadsheet downloads `web/accessibility/data/distances.csv` directly, regardless of province, CBO or distance-mode selections. It always contains all 425 eligible same-province CBO–DBE comparison rows. It is the complete distance table, not a copy of the original workbook or an FHR distance export.
 
-The 12 columns include province, CBO and DBE IDs/names, straight-line kilometres, road-network kilometres, road status, nearest CBO for each distance method and Yes/No indicators for whether each row is the winner. UTF-8 encoding supports opening the CSV in Excel. Export uses the same saved road snapshot as the map and requires no live routing requests.
+The nine columns include province, CBO and DBE names, straight-line kilometres, road-network kilometres, nearest CBO for each distance method and Yes/No indicators for whether each row is the winner. UTF-8 encoding supports opening the CSV in Excel. Export uses the same saved road snapshot as the map and requires no live routing requests.
 
 ## Validation
 
-Run `node tests/test_experiment.mjs`. Checks cover province restrictions, all 85 school winners, metric-specific allocations, focus invariance, incomplete/unreachable results, FHR markers without distances, the full CSV's agreement with saved roads, province groups, snapshot fingerprints, stale-data rejection and extraction of independent route legs. Existing workflow checks validate the snapshot and export on this branch without deploying it.
+Run `node tests/test_experiment.mjs`. Checks cover province restrictions, all 85 school winners, metric-specific allocations, focus invariance, incomplete/unreachable results, FHR markers without distances, the full CSV's agreement with saved roads, province groups, snapshot fingerprints, stale-data rejection and extraction of independent route legs. Workflow checks validate the snapshot and export before deploying both maps.
 
 References: [OSRM table, route and geometry APIs](https://project-osrm.org/docs/v5.24.0/api/), [routing service attribution and usage policy](https://routing.openstreetmap.de/about.html).

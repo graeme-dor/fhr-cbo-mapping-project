@@ -70,10 +70,10 @@ export function nearestConnections(model,{province='',cbo='',mode='straight'}={}
 export function distanceCsv(model,filter,roads=new Map()){
   const straight=new Map(nearestConnections(model,{province:filter.province}).map(l=>[l.school_id,l.cbo_id]));
   const road=new Map(nearestConnections(model,{province:filter.province,mode:'road'},roads).map(l=>[l.school_id,l.cbo_id]));
-  const rows=[['Province','CBO ID','CBO','DBE ID','DBE school','Straight-line km','Road network km','Road status','Nearest CBO (straight line)','Nearest CBO (road network)','Is nearest CBO (straight line)','Is nearest CBO (road network)']];
+  const rows=[['Province','CBO','DBE school','Straight-line km','Road network km','Nearest CBO (straight line)','Nearest CBO (road network)','Is nearest CBO (straight line)','Is nearest CBO (road network)']];
   for(const l of connections(model,filter)){
     const c=model.sites.get(l.cbo_id),s=model.sites.get(l.school_id),r=roads.get(routeKey(c,s)),winner=road.get(s.id);
-    rows.push([c.province,c.id,c.name,s.id,s.name,l.distance_km.toFixed(3),Number.isFinite(r?.distance_km)?r.distance_km.toFixed(3):'',r?.status||'not loaded',model.sites.get(straight.get(s.id))?.name||'',model.sites.get(winner)?.name||'',straight.get(s.id)===c.id?'Yes':'No',winner?(winner===c.id?'Yes':'No'):'']);
+    rows.push([c.province,c.name,s.name,l.distance_km.toFixed(3),Number.isFinite(r?.distance_km)?r.distance_km.toFixed(3):'',model.sites.get(straight.get(s.id))?.name||'',model.sites.get(winner)?.name||'',straight.get(s.id)===c.id?'Yes':'No',winner?(winner===c.id?'Yes':'No'):'']);
   }
   return '\uFEFF'+rows.map(row=>row.map(value=>{let s=String(value);if(/^[=+\-@]/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';}).join(',')).join('\r\n');
 }

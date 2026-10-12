@@ -1,11 +1,11 @@
 // Run manually when map data changes. No routing calls are made by the map UI.
 import fs from 'node:fs/promises';
-import {prepare,connections,nearestConnections,routeKey,distanceCsv} from '../web/experiment/model.js';
-import {Routing} from '../web/experiment/routing.js';
-import {batchRoutes,datasetSignature,validateSnapshot} from '../web/experiment/road-snapshot.js';
+import {prepare,connections,nearestConnections,routeKey,distanceCsv} from '../web/accessibility/model.js';
+import {Routing} from '../web/accessibility/routing.js';
+import {batchRoutes,datasetSignature,validateSnapshot} from '../web/accessibility/road-snapshot.js';
 Object.defineProperty(globalThis,'localStorage',{value:{getItem:()=>null,setItem:()=>{}}});
 const endpoint=process.argv.slice(2).find(a=>!a.startsWith('--'))||'https://routing.openstreetmap.de/routed-car';
-const input=new URL('../web/data/map.json',import.meta.url),output=new URL('../web/experiment/data/roads.json',import.meta.url);
+const input=new URL('../web/data/map.json',import.meta.url),output=new URL('../web/accessibility/data/roads.json',import.meta.url);
 const data=JSON.parse(await fs.readFile(input,'utf8')),model=prepare(data),signature=await datasetSignature(data);
 try{
   const existing=JSON.parse(await fs.readFile(output,'utf8'));
@@ -40,7 +40,7 @@ for(const [id,schools] of groups){
   for(const s of schools){const key=routeKey(cbo,s);if(Math.abs(batch[key].distance_km-roads.get(key).distance_km)>.01)throw new Error(`Route/matrix mismatch: ${s.name}`);}
   Object.assign(routes,batch);
 }
-const snapshot={metadata:{version:'0.2.0-experiment.4',dataset_signature:signature,built_at:new Date().toISOString(),provider:endpoint,
+const snapshot={metadata:{version:'0.2.0',dataset_signature:signature,built_at:new Date().toISOString(),provider:endpoint,
   distance_pairs:roads.size,nearest_routes:Object.keys(routes).length,method:'OSRM driving-route distance; no live traffic'},distances:Object.fromEntries(roads),routes};
 await validateSnapshot(data,snapshot);
 await fs.mkdir(new URL('.',output),{recursive:true});

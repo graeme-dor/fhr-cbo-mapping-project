@@ -1,5 +1,12 @@
 # Changelog
 
+## Accessibility map 0.2.0 — 2026-10-12
+
+- Published the separate CBO-school accessibility map at `/accessibility/`, retaining the original map at the root URL.
+- Added province-restricted nearest-CBO allocations for straight and preloaded road distances, DBE-first province groups and optional FHR markers.
+- The full 425-row export has nine columns; CBO ID, DBE ID and Road Status are omitted.
+- The original map stays at version 0.1.4.
+
 ## 0.1.4 — 2026-10-12
 
 - Imported newly supplied coordinates for Ramokgwakgwa Special Needs Education School and Khonzakahle Primary School.
