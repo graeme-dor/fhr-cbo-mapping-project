@@ -4,29 +4,30 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>FHR | Connection explorer — experiment</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="explorer.css?v=0.2.0-experiment.2">
+  <link rel="stylesheet" href="explorer.css?v=0.2.0-experiment.3">
   <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script type="module" src="explorer.js?v=0.2.0-experiment.2"></script>
+  <script type="module" src="explorer.js?v=0.2.0-experiment.3"></script>
 </head>
 <body>
-  <header><div><span class="eyebrow">FOUNDATION FOR HUMAN RIGHTS</span><h1>Connection explorer</h1></div><span class="badge">EXPERIMENT 02</span></header>
+  <header><div><span class="eyebrow">FOUNDATION FOR HUMAN RIGHTS</span><h1>Connection explorer</h1></div><span class="badge">EXPERIMENT 03</span></header>
   <main>
     <aside>
-      <h2>CBO to DBE schools</h2>
-      <p class="intro">Choose a province and a CBO.</p>
+      <h2>Nearest CBO connections</h2>
+      <p class="intro">DBE schools connect to their closest CBO in the same province.</p>
       <label for="province">Province</label><select id="province"></select>
       <label for="cbo">CBO</label><select id="cbo"></select>
       <fieldset class="mode"><legend>Distance</legend><div class="segmented">
         <button id="straight" type="button" aria-pressed="true">Straight line</button><button id="road" type="button" aria-pressed="false">Road network</button>
       </div></fieldset>
       <label class="check"><input id="fhr" type="checkbox">Show assigned FHR schools</label>
-      <div class="actions"><button id="fit" type="button">Show all DBE schools</button></div>
+      <div class="actions"><button id="fit" type="button">Fit view</button><button id="overview" type="button">All provinces</button><button id="export" type="button">Export distances</button></div>
+      <a id="download" hidden download="fhr-dbe-cbo-distances.csv">Download CSV</a>
       <p id="status" role="status" aria-live="polite">Loading schools…</p>
-      <div class="shape-key"><span>● CBO</span><span>○ DBE school</span><span id="fhr-key" hidden>◆ FHR school</span></div>
+      <details class="colour-legend"><summary>CBO colours · select to focus</summary><section id="legend" aria-label="CBO colours"></section></details><div class="shape-key"><span>● CBO</span><span>○ DBE school</span><span id="fhr-key" hidden>◆ FHR school</span></div>
       <h2 class="list-title">DBE school distances</h2>
-      <p id="road-help" class="context" hidden>Select a school to view its road route.</p>
+      <p id="road-help" class="context" hidden>Colours follow the nearest CBO by road distance. Select a school to load its road path.</p>
       <div id="school-list"></div>
-      <details><summary>About road distances</summary><p>Driving distances use OpenStreetMap roads through OSRM. Off-road access and live traffic are excluded. FHR schools are shown as assigned markers only.</p></details>
+      <details><summary>About road distances</summary><p>Driving distances use OpenStreetMap roads through OSRM. Off-road access and live traffic are excluded. Nearest means shortest reported driving-route distance among CBOs in the same province. This is a distance scenario and does not consider capacity. FHR schools are shown as assigned markers only.</p></details>
     </aside>
     <section class="map-wrap"><div id="map" aria-label="CBO and school connection map"></div><div class="map-caption"><span id="caption">School connections</span><span>Connections stay within the province</span></div></section>
   </main>

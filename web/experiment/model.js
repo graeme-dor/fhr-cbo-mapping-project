@@ -43,3 +43,28 @@ export function routeResult(body){
   return {distance_km:r.distance/1000,geometry:r.geometry,snap_distances:snaps,
           status:snaps.some(d=>d>250)?'check_access':'available',fetched_at:new Date().toISOString()};
 }
+
+// Determine winners before applying a CBO focus, so focus never changes allocation.
+export function nearestConnections(model,{province='',cbo='',mode='straight'}={},roads=new Map()){
+  const candidates=connections(model,{province}),groups=new Map();
+  for(const l of candidates){if(!groups.has(l.school_id))groups.set(l.school_id,[]);groups.get(l.school_id).push(l);}
+  const winners=[];
+  for(const group of groups.values()){
+    // Missing road candidates must not silently produce a provisional winner.
+    if(mode==='road'&&group.some(l=>!roads.has(routeKey(model.sites.get(l.cbo_id),model.sites.get(l.school_id)))))continue;
+    const measure=l=>mode==='straight'?l.distance_km:roads.get(routeKey(model.sites.get(l.cbo_id),model.sites.get(l.school_id)))?.distance_km;
+    const eligible=group.filter(l=>Number.isFinite(measure(l))).sort((a,b)=>measure(a)-measure(b)||a.cbo_id.localeCompare(b.cbo_id));
+    if(eligible.length&&(!cbo||eligible[0].cbo_id===cbo))winners.push(eligible[0]);
+  }
+  return winners;
+}
+export function distanceCsv(model,filter,roads=new Map()){
+  const straight=new Map(nearestConnections(model,{province:filter.province}).map(l=>[l.school_id,l.cbo_id]));
+  const road=new Map(nearestConnections(model,{province:filter.province,mode:'road'},roads).map(l=>[l.school_id,l.cbo_id]));
+  const rows=[['Province','CBO ID','CBO','DBE ID','DBE school','Straight-line km','Road network km','Road status','Nearest CBO (straight line)','Nearest CBO (road network)','Is nearest CBO (straight line)','Is nearest CBO (road network)']];
+  for(const l of connections(model,filter)){
+    const c=model.sites.get(l.cbo_id),s=model.sites.get(l.school_id),r=roads.get(routeKey(c,s)),winner=road.get(s.id);
+    rows.push([c.province,c.id,c.name,s.id,s.name,l.distance_km.toFixed(3),Number.isFinite(r?.distance_km)?r.distance_km.toFixed(3):'',r?.status||'not loaded',model.sites.get(straight.get(s.id))?.name||'',model.sites.get(winner)?.name||'',straight.get(s.id)===c.id?'Yes':'No',winner?(winner===c.id?'Yes':'No'):'']);
+  }
+  return '\uFEFF'+rows.map(row=>row.map(value=>{let s=String(value);if(/^[=+\-@]/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';}).join(',')).join('\r\n');
+}

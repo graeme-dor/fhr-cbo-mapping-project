@@ -1,43 +1,41 @@
-# DBE connection explorer — experiment 02
+# Nearest CBO explorer — experiment 03
 
-Version: `0.2.0-experiment.2`. Branch: `experiment/map-visualisation`. Baseline: live release `v0.1.4`.
+Version: `0.2.0-experiment.3`. Branch: `experiment/map-visualisation`. Baseline: live `v0.1.4`. The original map and workbook are unchanged. GitHub Pages deploys only `main`.
 
-This experiment lives in `web/experiment/`. GitHub Pages deploys only `main`; this branch does not replace the live map or modify the source workbook.
+Preview: `python3 -m http.server 8001 --bind 127.0.0.1 --directory web`, then open http://127.0.0.1:8001/experiment/.
 
-## Preview
+## Allocation and navigation
 
-```sh
-python3 -m http.server 8001 --bind 127.0.0.1 --directory web
-```
+The default view shows all provinces and all CBOs. Each DBE school is connected to the closest CBO **in its own province** and takes that CBO's colour. Straight mode chooses the shortest Haversine distance. Road mode independently chooses the shortest OSRM-reported driving-route distance among eligible CBOs. Changing distance mode can change the winning CBO.
 
-Open http://127.0.0.1:8001/experiment/.
+This is a distance suitability scenario over fixed facilities, without capacity or eligibility constraints beyond province. OSRM selects a driving route; its length does not guarantee the mathematically shortest road path. Equal distances are resolved by stable CBO ID.
 
-## Simplified view
+Province and CBO selectors filter the view. A CBO focus shows only DBE schools allocated to it; it does not recalculate winners using a reduced candidate set. CBO popups and the colour legend also offer focus. The All provinces button restores the overview; Fit view fits the current selection.
 
-Choose a province and one CBO. Every DBE school in that province is compared with the selected CBO. A validation guard rejects links whose CBO and DBE school provinces differ, even if such a link enters the dataset later. There is no nearest-CBO allocation scenario.
+The optional FHR layer shows assigned schools as diamonds. It makes no FHR distance calculations or routing requests.
 
-The grey OpenStreetMap background retains distinct CBO colours. Large circles identify CBOs; hollow circles identify DBE schools. Straight mode draws all the selected CBO's DBE connections and lists their Haversine distances. Clicking a school focuses its connection.
+## Road performance and correctness
 
-The optional FHR checkbox shows only the selected CBO's assigned FHR schools as diamond markers. It does not draw FHR lines, calculate FHR distances or make FHR routing requests. Baseline data may contain earlier FHR measurements; this experiment ignores them.
+Road allocation requires comparing every eligible CBO, not only the straight-line winner. One OSRM table request retrieves a province's complete CBO-to-DBE distance matrix. This dataset has DBE schools in four provinces, so a fresh all-province road overview needs four requests covering 425 pairs. Cache reuse can reduce that number. Province focus needs at most one batch.
 
-## Faster road mode
+School colours follow road-matrix winners. To avoid loading 85 separate road geometries, road mode loads a detailed path only when a school is selected. The road overview shows coloured locations; it does not draw straight lines masquerading as road paths.
 
-Previously each connection required its own full route request. Road mode now uses OSRM's table endpoint to retrieve all uncached DBE distances for the selected CBO in one request. Only the selected school's route geometry is requested; the nearest available school is initially selected. Choosing another school loads only that path.
+A school has no road winner until every eligible candidate has a result. Null results mean unreachable and are excluded. Missing results are not treated as unreachable or replaced by straight distances. Unresolved schools appear neutrally in the overview. A location snapped more than 250 metres from a road is marked for access review. Off-road access and live traffic are excluded.
 
-Distances and paths are cached separately in the browser for seven days, keyed by directed endpoint coordinates. Existing route caches are reused. Requests are spaced at least 1.1 seconds apart to respect the public service policy. Changing province, CBO or distance mode cancels obsolete requests. Switching the FHR layer makes no routing requests.
+Browser caches last seven days, keyed by directed endpoint coordinates. Requests are separated by at least 1.1 seconds; obsolete requests are cancelled. The public routing service can still be unavailable or slow. A production version should use a dedicated provider or precompute reviewed matrices in the data pipeline.
 
-This removes the per-school sequence of route requests when loading the distance list. The public service can still be slow or unavailable. For a widely shared version, precompute reviewed road distances in the data pipeline or use a dedicated routing provider.
+## Distance export
 
-Distances measure OSRM's selected driving route, without live traffic. Locations are snapped to mapped roads; off-road access is excluded. Snaps above 250 metres are flagged. Unreachable routes are explicitly unavailable; road mode does not substitute straight lines.
+Export distances loads all necessary province matrices before downloading a UTF-8 CSV. It includes one row per eligible CBO–DBE pair within the selected province and CBO filters, rather than only the winning pair. With All provinces and All CBOs there are 425 data rows.
 
-The provider receives institution coordinates already included in the public map. No workbook files or private addresses are sent.
+Columns include province, CBO and DBE IDs/names, straight-line kilometres, road-network kilometres, road status, nearest CBO by straight line, nearest CBO by road and a Yes/No indicator for each method. Nearest winners are always determined using every CBO in the school's province, including when the export focuses on one CBO. Unreachable pairs have blank road distances with explicit status; a school with no reachable CBO has blank road-winner fields. If the service fails, export reports the error and asks for retry instead of silently presenting incomplete comparisons as final.
 
-## Approach
-
-Leaflet suits this presentation over fixed CBOs and schools and runs on GitHub Pages. R/Shiny, r5r and optimisation solvers would be useful for a later stage involving capacity constraints, choosing facility locations or optimising allocations. They are not necessary for the current province comparisons.
-
-References: [OSRM table and route APIs](https://project-osrm.org/docs/v5.24.0/api/), [routing service policy](https://routing.openstreetmap.de/about.html).
+Institution coordinates already present on the public map are sent to the routing service. Workbook files and private addresses are not sent.
 
 ## Checks
 
-Run `node tests/test_experiment.mjs`. Checks cover all 425 DBE comparisons, rejection of injected cross-province links, FHR marker use without distances, batch request counts, null/unreachable results, route selection, cancellation and persistent cache reuse.
+Run `node tests/test_experiment.mjs`. Checks cover province guards, all 85 school winners, independently changing road winners, CBO focus invariance, incomplete and unreachable matrices, FHR markers without distances, 425 export rows, batch request counts, cancellation and cache reuse.
+
+The static Leaflet approach supports these fixed-facility comparisons on GitHub Pages. Capacity-constrained optimisation or facility location selection could later justify a separate R/Shiny or analysis pipeline.
+
+References: [OSRM APIs](https://project-osrm.org/docs/v5.24.0/api/), [public routing service policy](https://routing.openstreetmap.de/about.html).

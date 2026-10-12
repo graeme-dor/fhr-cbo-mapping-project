@@ -48,3 +48,39 @@ const cancelled=new AbortController();cancelled.abort();
 await assert.rejects(router.get(b,a,cancelled.signal),{name:'AbortError'});
 router.cache[routeKey(a,b)].fetched_at='2020-01-01T00:00:00Z';assert.equal(router.cached(a,b),null);
 console.log('Experiment checks passed: province-only DBE links, FHR markers without distances, batch road distances, selected routes and cache reuse.');
+// Allocation chooses the winning CBO across the entire province before focus.
+const {nearestConnections,distanceCsv}=await import('../web/experiment/model.js');
+const straight=nearestConnections(model,{});
+assert.equal(straight.length,85);assert.equal(new Set(straight.map(l=>l.school_id)).size,85);
+for(const l of straight){
+  const candidates=links.filter(p=>p.school_id===l.school_id);
+  assert.equal(l.distance_km,Math.min(...candidates.map(p=>p.distance_km)));
+}
+const roadValues=new Map();
+for(const l of links)roadValues.set(routeKey(model.sites.get(l.cbo_id),model.sites.get(l.school_id)),{distance_km:1000-l.distance_km,status:'available',fetched_at:new Date().toISOString()});
+const roadWinners=nearestConnections(model,{mode:'road'},roadValues);
+assert.equal(roadWinners.length,85);
+assert.ok(roadWinners.some(l=>straight.find(s=>s.school_id===l.school_id).cbo_id!==l.cbo_id));
+for(const l of roadWinners){
+  assert.equal(model.sites.get(l.cbo_id).province,model.sites.get(l.school_id).province);
+  const focus=nearestConnections(model,{mode:'road',cbo:l.cbo_id},roadValues);
+  assert.ok(focus.includes(l));
+}
+const incomplete=new Map(roadValues),schoolId=roadWinners[0].school_id;
+const candidate=links.find(l=>l.school_id===schoolId);
+incomplete.delete(routeKey(model.sites.get(candidate.cbo_id),model.sites.get(schoolId)));
+assert.ok(!nearestConnections(model,{mode:'road'},incomplete).some(l=>l.school_id===schoolId));
+const unreachable=new Map(roadValues);
+for(const l of links.filter(l=>l.school_id===schoolId))unreachable.set(routeKey(model.sites.get(l.cbo_id),model.sites.get(l.school_id)),{distance_km:null,status:'unavailable'});
+assert.ok(!nearestConnections(model,{mode:'road'},unreachable).some(l=>l.school_id===schoolId));
+assert.equal(distanceCsv(model,{},roadValues).split('\r\n').length,426);
+assert.match(distanceCsv(model,{},roadValues),/Nearest CBO \(road network\)/);
+const matrixRouter=new Routing();matrixRouter.cache={};matrixRouter.distanceCache={};
+const a2={...a,id:'a2',longitude:27,province:'Test'},a1={...a,province:'Test'},b1={...b,province:'Test'},c1={...c,province:'Test'};
+let batches=0;
+globalThis.fetch=async url=>{batches++;assert.match(url,/sources=0;1&destinations=2;3/);return {ok:true,json:async()=>({...table,distances:[[1000,2000],[3000,null]],sources:[{distance:0},{distance:0}]})};};
+const matrix=await matrixRouter.matrix([a1,a2],[b1,c1],signal);
+assert.equal(batches,1);assert.equal(matrix.size,4);assert.equal(matrix.get(routeKey(a2,c1)).distance_km,null);
+await matrixRouter.matrix([a1,a2],[b1,c1],signal);assert.equal(batches,1);
+await assert.rejects(matrixRouter.matrix([a1],[{...b1,province:'Other'}],signal),/within one province/);
+console.log('Allocation checks passed: metric-specific winners, focus invariance, incomplete/unreachable handling, 425-row export and province matrices.');

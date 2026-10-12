@@ -1,4 +1,4 @@
-import {routeKey,routeResult,tableResults} from './model.js?v=0.2.0-experiment.2';
+import {routeKey,routeResult,tableResults} from './model.js?v=0.2.0-experiment.3';
 const ENDPOINT='https://routing.openstreetmap.de/routed-car';
 const STORE='fhr-road-routes-v1', DISTANCES='fhr-road-distances-v1';
 const TTL=7*24*60*60*1000;
@@ -39,6 +39,23 @@ export class Routing {
       save(DISTANCES,this.distanceCache);
     }
     return new Map(schools.map(s=>[s.id,this.cachedDistance(a,s)]));
+  }
+  async matrix(cbos,schools,signal){
+    if(!cbos.length||!schools.length)return new Map();
+    const province=cbos[0].province;
+    if(cbos.some(c=>c.province!==province)||schools.some(s=>s.province!==province))throw new Error('Road comparisons must stay within one province');
+    const pending=schools.filter(s=>cbos.some(c=>!this.cachedDistance(c,s)));
+    if(pending.length){
+      const coordinates=[...cbos,...pending].map(s=>`${s.longitude},${s.latitude}`).join(';');
+      const sources=cbos.map((_,i)=>i).join(';'),destinations=pending.map((_,i)=>cbos.length+i).join(';');
+      const body=await this.request(`table/v1/driving/${coordinates}?sources=${sources}&destinations=${destinations}&annotations=distance`,signal);
+      if(body.code!=='Ok'||body.distances?.length!==cbos.length)throw new Error('Invalid road matrix');
+      // Validate every row before changing the cache.
+      const rows=cbos.map((_,i)=>tableResults({...body,distances:[body.distances[i]],sources:[body.sources?.[i]]},pending.length));
+      cbos.forEach((c,i)=>pending.forEach((s,j)=>{this.distanceCache[routeKey(c,s)]=rows[i][j];}));
+      save(DISTANCES,this.distanceCache);
+    }
+    return new Map(cbos.flatMap(c=>schools.map(s=>[routeKey(c,s),this.cachedDistance(c,s)])));
   }
   async get(a,b,signal){
     const cached=this.cached(a,b);if(cached)return cached;
