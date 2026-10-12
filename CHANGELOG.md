@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.4 — 2026-10-12
+
+- Imported newly supplied coordinates for Ramokgwakgwa Special Needs Education School and Khonzakahle Primary School.
+- Added both DBE school markers and their distances to CBOs in the same province.
+- All 184 institution records now have coordinates; the source workbook is read without modification.
+
 ## 0.1.3 — 2026-10-11
 
 - Fixed cached JavaScript referencing the removed methodology element.

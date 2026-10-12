@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "0.1.3",
-    "workbook_sha256": "01f4776c8aee8d4647b2079713f90b7a54abf0c1364e78b939aabe8ab2bde621",
+    "version": "0.1.4",
+    "workbook_sha256": "7dd0f209c547f06594f4fe5c2085c4be011a8f857543687fee08d99f28179971",
     "distance_method": "haversine",
     "dbe_scope": "province",
     "dbe_scope_status": "confirmed",
@@ -10,7 +10,7 @@
       "DBE": 85,
       "FHR": 74
     },
-    "missing_coordinates": 2,
+    "missing_coordinates": 0,
     "unresolved_fhr_assignments": 0
   },
   "sites": [
@@ -442,9 +442,9 @@
       "kind": "DBE",
       "name": "Ramokgwakgwa Special Needs Education School",
       "province": "Limpopo",
-      "latitude": null,
-      "longitude": null,
-      "coordinate_status": "needs_review"
+      "latitude": -23.5618827974723,
+      "longitude": 30.3785548884794,
+      "coordinate_status": "available"
     },
     {
       "id": "dbe-3f2f991ca9a0e099",
@@ -622,9 +622,9 @@
       "kind": "DBE",
       "name": "Khonzakahle Primary School",
       "province": "Mpumalanga",
-      "latitude": null,
-      "longitude": null,
-      "coordinate_status": "needs_review"
+      "latitude": -26.2993744930944,
+      "longitude": 29.9887247824204,
+      "coordinate_status": "available"
     },
     {
       "id": "dbe-5ab2807bbc742d3a",
@@ -2447,35 +2447,35 @@
       "school_id": "dbe-2142d1932163a7e1",
       "basis": "dbe_province_comparison",
       "distance_method": "haversine",
-      "distance_km": null
+      "distance_km": 37.499
     },
     {
       "cbo_id": "cbo-ec9eec5e447617fc",
       "school_id": "dbe-2142d1932163a7e1",
       "basis": "dbe_province_comparison",
       "distance_method": "haversine",
-      "distance_km": null
+      "distance_km": 204.329
     },
     {
       "cbo_id": "cbo-4692c27fe91f975a",
       "school_id": "dbe-2142d1932163a7e1",
       "basis": "dbe_province_comparison",
       "distance_method": "haversine",
-      "distance_km": null
+      "distance_km": 351.926
     },
     {
       "cbo_id": "cbo-48db61d24390d52a",
       "school_id": "dbe-2142d1932163a7e1",
       "basis": "dbe_province_comparison",
       "distance_method": "haversine",
-      "distance_km": null
+      "distance_km": 156.113
     },
     {
       "cbo_id": "cbo-35ddef9ed821ae34",
       "school_id": "dbe-2142d1932163a7e1",
       "basis": "dbe_province_comparison",
       "distance_method": "haversine",
-      "distance_km": null
+      "distance_km": 169.302
     },
     {
       "cbo_id": "cbo-72c842092d0916b7",
@@ -3147,35 +3147,35 @@
       "school_id": "dbe-5344128cc081c0e7",
       "basis": "dbe_province_comparison",
       "distance_method": "haversine",
-      "distance_km": null
+      "distance_km": 203.13
     },
     {
       "cbo_id": "cbo-cdf4b89c301895e0",
       "school_id": "dbe-5344128cc081c0e7",
       "basis": "dbe_province_comparison",
       "distance_method": "haversine",
-      "distance_km": null
+      "distance_km": 134.906
     },
     {
       "cbo_id": "cbo-ced09b6dae0ee404",
       "school_id": "dbe-5344128cc081c0e7",
       "basis": "dbe_province_comparison",
       "distance_method": "haversine",
-      "distance_km": null
+      "distance_km": 69.641
     },
     {
       "cbo_id": "cbo-5f768010ca9d85f1",
       "school_id": "dbe-5344128cc081c0e7",
       "basis": "dbe_province_comparison",
       "distance_method": "haversine",
-      "distance_km": null
+      "distance_km": 95.221
     },
     {
       "cbo_id": "cbo-7c387e47d85a549f",
       "school_id": "dbe-5344128cc081c0e7",
       "basis": "dbe_province_comparison",
       "distance_method": "haversine",
-      "distance_km": null
+      "distance_km": 105.505
     },
     {
       "cbo_id": "cbo-b9fe4ae7a99d7183",
