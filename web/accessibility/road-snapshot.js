@@ -1,4 +1,4 @@
-import {prepare,connections,nearestConnections,routeKey} from './model.js?v=0.2.0';
+import {prepare,connections,nearestConnections,routeKey} from './model.js?v=0.2.1';
 
 export async function datasetSignature(data){
   const model=prepare(data);

@@ -3,3 +3,5 @@
 .school-row.selected{background:#f1f5f7;border-radius:4px;padding:10px 6px}.context{margin:8px 0 12px}[hidden]{display:none!important}
 
 .actions a{display:inline-block;background:#fff;border:1px solid #d5dce0;border-radius:5px;color:#3f5260;padding:8px 12px;font-size:12px;text-decoration:none}.colour-legend{margin:10px 0}.actions a:focus-visible{outline:3px solid #426da9;outline-offset:3px}
+
+.segmented button:disabled{opacity:.5;cursor:wait}

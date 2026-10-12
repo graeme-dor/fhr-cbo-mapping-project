@@ -1,6 +1,6 @@
 /* global L */
-import {prepare,connections,fhrSchools,nearestConnections,provinceGroups,provinceMatches,routeKey} from './model.js?v=0.2.0';
-import {validateSnapshot} from './road-snapshot.js?v=0.2.0';
+import {prepare,connections,fhrSchools,nearestConnections,provinceGroups,provinceMatches,routeKey} from './model.js?v=0.2.1';
+import {validateSnapshot} from './road-snapshot.js?v=0.2.1';
 const $=id=>document.getElementById(id);
 const node=(tag,text)=>{const n=document.createElement(tag);n.textContent=text;return n;};
 const state={province:'__dbe__',cbo:'',mode:'straight',showFhr:false,school:''};
@@ -99,19 +99,34 @@ function provinceOptions(){
   $('province').value=state.province;
 }
 async function start(){
+  // Start independent downloads together, but do not block the initial map on roads.
+  const roadFilePromise=fetch('data/roads.json?v=0.2.0').then(response=>{
+    if(!response.ok)throw new Error('Preloaded road data could not be loaded');
+    return response.json();
+  }).then(value=>({value}),error=>({error}));
   const response=await fetch('../data/map.json?v=0.1.4');if(!response.ok)throw new Error('School data could not be loaded');
   const data=await response.json();model=prepare(data);
-  const roadResponse=await fetch('data/roads.json?v=0.2.0');
-  if(!roadResponse.ok)throw new Error('Preloaded road data could not be loaded');
-  const snapshot=await validateSnapshot(data,await roadResponse.json());roads=snapshot.roads;routes=snapshot.routes;snapshotMetadata=snapshot.metadata;
-  $('road-date').textContent=`Road snapshot: ${new Date(snapshotMetadata.built_at).toLocaleDateString('en-ZA')}. Refresh the snapshot when locations or road data change.`;
   map=L.map('map',{preferCanvas:true}).setView([-29,25],5);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · Routes: <a href="https://project-osrm.org/">OSRM</a> / <a href="https://routing.openstreetmap.de/about.html">FOSSGIS</a> · <a href="https://www.openstreetmap.org/fixthemap">Fix the map</a>'}).addTo(map);
+
   lineLayer=L.layerGroup().addTo(map);markerLayer=L.layerGroup().addTo(map);L.control.scale({imperial:false}).addTo(map);
   provinceOptions();cboOptions();
   $('province').onchange=()=>{state.province=$('province').value;state.cbo='';cboOptions();refresh(true);};
   $('cbo').onchange=()=>{state.cbo=$('cbo').value;if(state.cbo){state.province=model.sites.get(state.cbo).province;$('province').value=state.province;}cboOptions();refresh(true);};
   $('straight').onclick=()=>{state.mode='straight';refresh(true);};$('road').onclick=()=>{state.mode='road';refresh(true);};
   $('fhr').onchange=()=>{state.showFhr=$('fhr').checked;markers();};refresh(true);
+  // Request tiles only after fitting the actual initial school/CBO view.
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · Routes: <a href="https://project-osrm.org/">OSRM</a> / <a href="https://routing.openstreetmap.de/about.html">FOSSGIS</a> · <a href="https://www.openstreetmap.org/fixthemap">Fix the map</a>'}).addTo(map);
+  try{
+    const roadFile=await roadFilePromise;if(roadFile.error)throw roadFile.error;
+    const snapshot=await validateSnapshot(data,roadFile.value);
+    roads=snapshot.roads;routes=snapshot.routes;snapshotMetadata=snapshot.metadata;
+    $('road-date').textContent=`Road snapshot: ${new Date(snapshotMetadata.built_at).toLocaleDateString('en-ZA')}. Refresh the snapshot when locations or road data change.`;
+    $('road').disabled=false;$('road').title='';
+  }catch(error){
+    $('road').title='Saved road layer unavailable';
+    $('road-date').textContent='Saved road layer unavailable.';
+    status(`Road layer unavailable: ${error.message}. The straight-line map remains available.`);
+  }
+
 }
 start().catch(error=>status(`Unable to load explorer: ${error.message}`));

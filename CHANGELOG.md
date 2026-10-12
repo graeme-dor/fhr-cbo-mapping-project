@@ -1,5 +1,11 @@
 # Changelog
 
+## Accessibility map 0.2.1 — 2026-10-12
+
+- Start the basemap and straight-line view without waiting for road data.
+- Load the saved road layer in the background and enable its control after validation.
+- Serve pinned Leaflet assets locally and request tiles only after fitting the initial view.
+
 ## Accessibility map 0.2.0 — 2026-10-12
 
 - Published the separate CBO-school accessibility map at `/accessibility/`, retaining the original map at the root URL.

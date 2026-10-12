@@ -1,6 +1,6 @@
-# CBO-school accessibility map
+# CBO-DBE school accessibility map
 
-Alternative map version: `0.2.0`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
+Alternative map version: `0.2.1`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
 
 Preview: `python3 -m http.server 8001 --bind 127.0.0.1 --directory web`, then open http://127.0.0.1:8001/accessibility/.
 
@@ -16,11 +16,15 @@ FHR remains an optional assigned-marker layer, without FHR distance calculations
 
 ## Preloaded roads
 
-`web/accessibility/data/roads.json` contains a versioned snapshot of all 425 eligible CBO–DBE road distances and only the 85 nearest-CBO route geometries. It is about 1.5 MB uncompressed. The map loads this local file once at startup; mode changes, filtering, school selection and zooming make **no routing API calls**. Road mode draws every nearest route in the selected view, and selecting a school highlights and zooms to its path. Basemap tiles still load normally from OpenStreetMap.
+`web/accessibility/data/roads.json` contains a versioned snapshot of all 425 eligible CBO–DBE road distances and only the 85 nearest-CBO route geometries. It is about 1.5 MB uncompressed. The map loads this local file once in the background after starting the basemap and straight-line view; mode changes, filtering, school selection and zooming make **no routing API calls**. Road mode draws every nearest route in the selected view, and selecting a school highlights and zooms to its path. Basemap tiles still load normally from OpenStreetMap.
 
 The snapshot uses OSRM car routing. Reported distances are the lengths of the routing engine's selected driving routes, not a guarantee of mathematically shortest road paths. No live traffic is included. Coordinates snap to mapped roads, excluding off-road access; snaps over 250 metres are flagged. Missing/unreachable results never substitute straight distances.
 
 A fingerprint of institution coordinates, IDs, provinces and comparison distances binds the snapshot to the dataset. The app and tests reject mismatched or incomplete snapshots instead of reusing obsolete allocations.
+
+## First-load performance
+
+The basemap starts after the institution data loads, without waiting for the larger road snapshot. Both data downloads start together; the road toggle becomes available only after its snapshot passes validation. A failed road download leaves the straight-line map usable. Tiles are first requested at the fitted DBE-province view, avoiding a redundant initial national tile request. Leaflet 1.9.4 and its licence are included under `vendor/` so the map library loads from GitHub Pages rather than a separate CDN. A preconnect hint prepares the tile connection; no tiles are bulk-prefetched. First visits still depend on the visitor’s network and the public tile provider.
 
 ## Refresh pipeline
 

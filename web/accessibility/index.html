@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>CBO-DBE school accessibility map</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="explorer.css?v=0.2.0">
-  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script type="module" src="explorer.js?v=0.2.0"></script>
+  <link rel="preconnect" href="https://tile.openstreetmap.org">
+  <link rel="stylesheet" href="vendor/leaflet-1.9.4/leaflet.css">
+  <link rel="stylesheet" href="explorer.css?v=0.2.1">
+  <script defer src="vendor/leaflet-1.9.4/leaflet.js"></script>
+  <script type="module" src="explorer.js?v=0.2.1"></script>
 </head>
 <body>
   <header><div><span class="eyebrow">FOUNDATION FOR HUMAN RIGHTS</span><h1>CBO-DBE school accessibility map</h1></div></header>
@@ -17,7 +18,7 @@
       <label for="province">Province</label><select id="province"></select>
       <label for="cbo">CBO</label><select id="cbo"></select>
       <fieldset class="mode"><legend>Distance</legend><div class="segmented">
-        <button id="straight" type="button" aria-pressed="true">Straight line</button><button id="road" type="button" aria-pressed="false">Road network</button>
+        <button id="straight" type="button" aria-pressed="true">Straight line</button><button id="road" type="button" aria-pressed="false" disabled title="Loading saved road layer">Road network</button>
       </div></fieldset>
       <label class="check"><input id="fhr" type="checkbox">Show assigned FHR schools</label>
       <div class="actions"><a id="export" href="data/distances.csv?v=0.2.0" download="fhr-dbe-cbo-distances.csv">Export full spreadsheet</a></div>
