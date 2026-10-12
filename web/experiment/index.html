@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FHR | Connection explorer — experiment</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="explorer.css?v=0.2.0-experiment.1">
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="explorer.js?v=0.2.0-experiment.1"></script>
+</head>
+<body>
+  <header><div><span class="eyebrow">FOUNDATION FOR HUMAN RIGHTS</span><h1>Connection explorer</h1></div><span class="badge">EXPERIMENT 01</span></header>
+  <main>
+    <aside>
+      <h2>Explore school connections</h2>
+      <p class="intro">Choose a province or focus on one CBO.</p>
+      <label for="province">Province</label><select id="province"></select>
+      <label for="cbo">CBO focus</label><select id="cbo"></select>
+      <fieldset class="mode"><legend>Connection geometry</legend><div class="segmented">
+        <button id="straight" type="button" aria-pressed="true">Straight line</button><button id="road" type="button" aria-pressed="false">Road network</button>
+      </div></fieldset>
+      <label for="view">School connections</label>
+      <select id="view">
+        <option value="both">FHR assigned + nearest DBE scenario</option>
+        <option value="fhr">FHR assigned schools</option>
+        <option value="nearest">DBE nearest CBO scenario</option>
+        <option value="all">DBE all schools in province</option>
+      </select>
+      <p id="scenario" class="context"></p>
+      <label class="check"><input id="rings" type="checkbox">Show 5, 10 and 25 km rings</label>
+      <div class="actions"><button id="fit" type="button">Fit connections</button><button id="export" type="button">Export this view</button></div>
+      <section class="stats" aria-label="Connection statistics"><div><strong id="count">—</strong><span>connections</span></div><div><strong id="average">—</strong><span id="average-label">avg. straight km</span></div><div><strong id="longest">—</strong><span id="longest-label">longest km</span></div></section>
+      <p id="status" role="status" aria-live="polite">Loading schools…</p>
+      <section id="legend" aria-label="CBO colour legend"></section>
+      <div class="shape-key"><span>● CBO</span><span>○ DBE school</span><span>◆ FHR school</span></div>
+      <h2 class="list-title">School distances</h2><div id="school-list"></div>
+      <details><summary>About this experiment</summary><p>Road mode shows driving routes and kilometres from OSRM using OpenStreetMap data. It does not use live traffic. The route follows roads after snapping each location to the network; off-road access is excluded.</p><p>Rings show straight-line radius, not travel catchments. Nearest DBE scenarios are based on straight-line distance within the province and remain fixed when switching geometry.</p><p>The live map and source workbook are unchanged. Public demo routing is for occasional exploration. A dedicated provider or precomputed routes are recommended for a shared production version.</p></details>
+    </aside>
+    <section class="map-wrap"><div id="map" aria-label="CBO and school connection map"></div><div class="map-caption"><span id="caption">School connections</span><span>Colour follows CBO · shape identifies school layer</span></div></section>
+  </main>
+</body>
+</html>
