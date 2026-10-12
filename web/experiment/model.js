@@ -7,12 +7,21 @@ export function prepare(data) {
   return {sites,cbos,colors,links:data.links};
 }
 
+export function provinceGroups(model){
+  const dbe=[...new Set([...model.sites.values()].filter(s=>s.kind==='DBE').map(s=>s.province))].sort();
+  const other=[...new Set(model.cbos.map(c=>c.province))].filter(p=>!dbe.includes(p)).sort();
+  return {dbe,other};
+}
+export function provinceMatches(model,province,scope){
+  return !scope || (scope==='__dbe__'?provinceGroups(model).dbe.includes(province):province===scope);
+}
+
 export function connections(model,{province='',cbo=''}){
   return model.links.filter(link=>{
     const source=model.sites.get(link.cbo_id),school=model.sites.get(link.school_id);
     return source?.kind==='CBO' && school?.kind==='DBE'
       && source.province===school.province && Number.isFinite(link.distance_km)
-      && (!province || source.province===province) && (!cbo || source.id===cbo);
+      && provinceMatches(model,source.province,province) && (!cbo || source.id===cbo);
   });
 }
 
