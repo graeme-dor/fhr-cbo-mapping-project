@@ -4,28 +4,31 @@ export function prepare(data) {
   const sites=new Map(data.sites.map(s=>[s.id,s]));
   const cbos=data.sites.filter(s=>s.kind==='CBO').sort((a,b)=>a.id.localeCompare(b.id));
   const colors=new Map(cbos.map((c,i)=>[c.id,palette[i % palette.length]]));
-  const nearest=new Map();
-  for(const link of data.links){
-    const school=sites.get(link.school_id);
-    if(school?.kind==='DBE'&&link.distance_km!==null){
-      const current=nearest.get(school.id);
-      if(!current || link.distance_km<current.distance_km || (link.distance_km===current.distance_km && link.cbo_id<current.cbo_id)) nearest.set(school.id,link);
-    }
-  }
-  return {sites,cbos,colors,links:data.links,nearest};
+  return {sites,cbos,colors,links:data.links};
 }
 
-export function connections(model,{province='',cbo='',view='both'}){
+export function connections(model,{province='',cbo=''}){
   return model.links.filter(link=>{
     const source=model.sites.get(link.cbo_id),school=model.sites.get(link.school_id);
-    if(!source||!school||link.distance_km===null)return false;
-    if(province&&source.province!==province)return false;
-    if(cbo&&source.id!==cbo)return false;
-    if(school.kind==='FHR')return view==='both'||view==='fhr';
-    if(view==='fhr')return false;
-    if(view==='all')return true;
-    return model.nearest.get(school.id)?.cbo_id===source.id;
+    return source?.kind==='CBO' && school?.kind==='DBE'
+      && source.province===school.province && Number.isFinite(link.distance_km)
+      && (!province || source.province===province) && (!cbo || source.id===cbo);
   });
+}
+
+export function fhrSchools(model,cboId){
+  const cbo=model.sites.get(cboId);
+  if(!cbo)return [];
+  const ids=new Set(model.links.filter(l=>l.cbo_id===cboId && l.basis==='workbook_fhr_assignment').map(l=>l.school_id));
+  return [...ids].map(id=>model.sites.get(id)).filter(s=>s?.kind==='FHR' && s.province===cbo.province && Number.isFinite(s.latitude) && Number.isFinite(s.longitude));
+}
+
+export function tableResults(body,count){
+  const values=body.distances?.[0];
+  if(body.code!=='Ok' || !Array.isArray(values) || values.length!==count || values.some(d=>d!==null && (!Number.isFinite(d)||d<0)))throw new Error('Invalid road-distance response');
+  return values.map((d,i)=>({distance_km:d===null?null:d/1000,
+    status:d===null?'unavailable':(body.sources?.[0]?.distance>250 || body.destinations?.[i]?.distance>250)?'check_access':'available',
+    fetched_at:new Date().toISOString()}));
 }
 
 export function routeKey(a,b){

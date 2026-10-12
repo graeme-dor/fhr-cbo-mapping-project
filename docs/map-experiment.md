@@ -1,8 +1,8 @@
-# Connection explorer — experiment 01
+# DBE connection explorer — experiment 02
 
-Branch: `experiment/map-visualisation`. Baseline: live release `v0.1.4`.
+Version: `0.2.0-experiment.2`. Branch: `experiment/map-visualisation`. Baseline: live release `v0.1.4`.
 
-This experiment adds `web/experiment/` and keeps the existing map and dataset intact. There is no production deployment from this branch: GitHub Pages deploys only `main`. No optimisation solver is used in this iteration.
+This experiment lives in `web/experiment/`. GitHub Pages deploys only `main`; this branch does not replace the live map or modify the source workbook.
 
 ## Preview
 
@@ -10,36 +10,34 @@ This experiment adds `web/experiment/` and keeps the existing map and dataset in
 python3 -m http.server 8001 --bind 127.0.0.1 --directory web
 ```
 
-Open http://127.0.0.1:8001/experiment/. For the original design in the same checkout, open http://127.0.0.1:8001/.
+Open http://127.0.0.1:8001/experiment/.
 
-## Visual choices
+## Simplified view
 
-- Grey OpenStreetMap background, produced by filtering only the raster tile pane. Markers and lines retain their colours. A designed grey vector basemap could replace this later; CARTO now requires an API key.
-- Each of the 25 CBOs has a distinct colour, allocated in stable ID order. The same colour follows its connections. CBOs are large circles, DBE schools hollow circles, and FHR schools diamonds. The legend and shape reinforce colour meaning.
-- Solid lines represent supplied FHR assignments. Dashed lines represent DBE comparisons/scenarios.
-- Straight-line and driving-route geometry toggles preserve the selected relationships, allowing a like-for-like comparison.
-- CBO focus, distance sorting, view export, and optional 5/10/25 km straight-line rings.
+Choose a province and one CBO. Every DBE school in that province is compared with the selected CBO. A validation guard rejects links whose CBO and DBE school provinces differ, even if such a link enters the dataset later. There is no nearest-CBO allocation scenario.
 
-## Relationships
+The grey OpenStreetMap background retains distinct CBO colours. Large circles identify CBOs; hollow circles identify DBE schools. Straight mode draws all the selected CBO's DBE connections and lists their Haversine distances. Clicking a school focuses its connection.
 
-FHR schools retain the existing reviewed workbook assignments.
+The optional FHR checkbox shows only the selected CBO's assigned FHR schools as diamond markers. It does not draw FHR lines, calculate FHR distances or make FHR routing requests. Baseline data may contain earlier FHR measurements; this experiment ignores them.
 
-DBE nearest-CBO mode is explicitly a hypothetical scenario: each school is linked to the nearest current CBO **by straight-line distance within its province**. This is not an approved allocation and does not consider workload, service eligibility or capacity. Switching to road geometry does not reassign schools. Finding the nearest CBO by driving distance would require a complete road-distance matrix and a separate scenario definition.
+## Faster road mode
 
-The all-DBE comparison view reproduces the existing rule: each CBO compared against every DBE school in its province. In its overview, school markers are neutral because each school has multiple candidate CBOs; line colours identify the CBOs.
+Previously each connection required its own full route request. Road mode now uses OSRM's table endpoint to retrieve all uncached DBE distances for the selected CBO in one request. Only the selected school's route geometry is requested; the nearest available school is initially selected. Choosing another school loads only that path.
 
-## Road routing
+Distances and paths are cached separately in the browser for seven days, keyed by directed endpoint coordinates. Existing route caches are reused. Requests are spaced at least 1.1 seconds apart to respect the public service policy. Changing province, CBO or distance mode cancels obsolete requests. Switching the FHR layer makes no routing requests.
 
-Routes use OSRM's car endpoint operated by FOSSGIS. Requests are sequential, spaced at least 1.1 seconds apart. Up to 60 uncached routes are requested for a view; larger views require a province/CBO filter. Results are cached in the browser for seven days, keyed by directed endpoint coordinates. Failed/no-route requests remain unavailable. There is no silent substitution of straight lines for road geometry.
+This removes the per-school sequence of route requests when loading the distance list. The public service can still be slow or unavailable. For a widely shared version, precompute reviewed road distances in the data pipeline or use a dedicated routing provider.
 
-The distance is the length of OSRM's selected driving route, not a guarantee of the mathematically shortest road path. Coordinates are snapped onto roads; off-road access is excluded. A snap above 250 metres is marked for road-access review. No live traffic or real-time travel-time claims are made. Summary statistics show loaded-route coverage and label partial averages.
+Distances measure OSRM's selected driving route, without live traffic. Locations are snapped to mapped roads; off-road access is excluded. Snaps above 250 metres are flagged. Unreachable routes are explicitly unavailable; road mode does not substitute straight lines.
 
-The routing provider receives the endpoint coordinates. No private street addresses or workbook contents are sent. These institution coordinates are already included in the public map. Public demo routing is appropriate for occasional exploration; a dedicated provider or a reviewed precomputed route dataset is recommended before wider sharing.
+The provider receives institution coordinates already included in the public map. No workbook files or private addresses are sent.
 
-## Why retain Leaflet rather than migrate to R/Shiny now?
+## Approach
 
-The requested behaviours are map presentation and route comparison over fixed facilities. They can be implemented in the existing static application. GitHub Pages cannot run an R/Shiny server.
+Leaflet suits this presentation over fixed CBOs and schools and runs on GitHub Pages. R/Shiny, r5r and optimisation solvers would be useful for a later stage involving capacity constraints, choosing facility locations or optimising allocations. They are not necessary for the current province comparisons.
 
-R/Shiny plus r5r or a spopt-based pipeline is appropriate if a later stage introduces optimisation: e.g. choose facility locations, minimise weighted travel cost, or allocate schools subject to CBO capacity. First define demand weights, eligible facilities, capacity, province/catchment restrictions and the objective. Then generate scenario outputs in a separate analysis pipeline and visualise them here, or move to Shiny if live solver interaction becomes necessary.
+References: [OSRM table and route APIs](https://project-osrm.org/docs/v5.24.0/api/), [routing service policy](https://routing.openstreetmap.de/about.html).
 
-Sources: [OSRM API](https://project-osrm.org/docs/v5.24.0/api/), [routing service policy](https://routing.openstreetmap.de/about.html), [spopt location solvers](https://pysal.org/spopt/api.html), [r5r detailed itineraries](https://ipeagit.github.io/r5r/reference/detailed_itineraries.html), [CARTO basemap requirements](https://github.com/CartoDB/basemap-styles).
+## Checks
+
+Run `node tests/test_experiment.mjs`. Checks cover all 425 DBE comparisons, rejection of injected cross-province links, FHR marker use without distances, batch request counts, null/unreachable results, route selection, cancellation and persistent cache reuse.

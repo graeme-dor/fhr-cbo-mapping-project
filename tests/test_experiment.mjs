@@ -1,33 +1,50 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {prepare,connections,routeResult,routeKey} from '../web/experiment/model.js';
+import {prepare,connections,fhrSchools,routeResult,routeKey,tableResults} from '../web/experiment/model.js';
 const data=JSON.parse(fs.readFileSync(new URL('../web/data/map.json',import.meta.url)));
-const model=prepare(data);
-const fhr=connections(model,{view:'fhr'});
-assert.equal(fhr.length,74);
-const nearest=connections(model,{view:'nearest'});
-assert.equal(nearest.length,85);
-assert.equal(new Set(nearest.map(l=>l.school_id)).size,85);
-for(const l of nearest){
-  const candidates=data.links.filter(c=>c.school_id===l.school_id);
-  assert.equal(l.distance_km,Math.min(...candidates.map(c=>c.distance_km)));
-  assert.equal(model.sites.get(l.school_id).province,model.sites.get(l.cbo_id).province);
-}
+const model=prepare(data),links=connections(model,{});
+assert.equal(links.length,425);
 assert.equal(new Set(model.colors.values()).size,25);
-assert.equal(connections(model,{province:'Gauteng',view:'both'}).length,40);
-assert.equal(connections(model,{view:'all'}).length,data.links.length-74);
+for(const cbo of model.cbos)for(const link of connections(model,{province:cbo.province,cbo:cbo.id})){
+  assert.equal(link.cbo_id,cbo.id);
+  assert.equal(model.sites.get(link.school_id).province,cbo.province);
+  assert.equal(model.sites.get(link.school_id).kind,'DBE');
+}
+const source=model.cbos[0],outsider=data.sites.find(s=>s.kind==='DBE'&&s.province!==source.province);
+const bad={cbo_id:source.id,school_id:outsider.id,distance_km:0};
+const contaminated=prepare({...data,links:[...data.links,bad]});
+assert.ok(!connections(contaminated,{}).includes(bad));
+assert.ok(!connections(contaminated,{cbo:source.id}).includes(bad));
+const markerOnly=prepare({...data,links:data.links.map(l=>({...l,distance_km:null}))});
+assert.equal(model.cbos.reduce((n,c)=>n+fhrSchools(markerOnly,c.id).length,0),74);
+assert.equal(connections(markerOnly,{}).length,0);
 assert.throws(()=>routeResult({code:'NoRoute'}),/No driving route/);
-assert.equal(routeResult({code:'Ok',routes:[{distance:1234,geometry:{type:'LineString',coordinates:[[28,-26],[29,-27]]}}],waypoints:[{distance:300}]}).status,'check_access');
-const a={latitude:-26,longitude:28},b={latitude:-27,longitude:29};
+assert.throws(()=>tableResults({code:'Ok',distances:[[1]]},2),/Invalid/);
+assert.throws(()=>tableResults({code:'Ok',distances:[[-1]]},1),/Invalid/);
+const table={code:'Ok',distances:[[1234,null]],sources:[{distance:0}],destinations:[{distance:300},{distance:0}]};
+const parsed=tableResults(table,2);
+assert.equal(parsed[0].distance_km,1.234);assert.equal(parsed[0].status,'check_access');
+assert.equal(parsed[1].distance_km,null);assert.equal(parsed[1].status,'unavailable');
+const a={id:'a',latitude:-26,longitude:28},b={id:'b',latitude:-27,longitude:29},c={id:'c',latitude:-28,longitude:30};
 assert.notEqual(routeKey(a,b),routeKey(b,a));
-// Cached routes should remain usable without another network request.
-globalThis.localStorage={getItem:()=>null,setItem:()=>{}};
+const storage=new Map();globalThis.localStorage={getItem:k=>storage.get(k),setItem:(k,v)=>storage.set(k,v)};
+const requests=[];
+globalThis.fetch=async url=>{
+  requests.push(url);
+  return {ok:true,json:async()=>url.includes('/table/')?table:{code:'Ok',routes:[{distance:1400,geometry:{type:'LineString',coordinates:[[28,-26],[29,-27]]}}],waypoints:[{distance:0},{distance:0}]}};
+};
 const {Routing}=await import('../web/experiment/routing.js');
-const router=new Routing();
-router.cache[routeKey(a,b)]={distance_km:1.5,fetched_at:new Date().toISOString()};
-assert.equal((await router.get(a,b,new AbortController().signal)).distance_km,1.5);
+const router=new Routing(),signal=new AbortController().signal;
+const distances=await router.distances(a,[b,c],signal);
+assert.equal(requests.length,1);assert.match(requests[0],/table\/v1/);
+assert.equal(distances.get('b').distance_km,1.234);assert.equal(distances.get('c').distance_km,null);
+await router.distances(a,[b,c],signal);assert.equal(requests.length,1);
+const reloaded=new Routing();await reloaded.distances(a,[b,c],signal);assert.equal(requests.length,1);
+router.nextRequest=0;
+assert.equal((await router.get(a,b,signal)).distance_km,1.4);
+assert.equal(requests.length,2);assert.match(requests[1],/route\/v1/);
+await router.get(a,b,signal);assert.equal(requests.length,2);
 const cancelled=new AbortController();cancelled.abort();
 await assert.rejects(router.get(b,a,cancelled.signal),{name:'AbortError'});
-router.cache[routeKey(a,b)].fetched_at='2020-01-01T00:00:00Z';
-assert.equal(router.cached(a,b),null);
-console.log('Experiment checks passed: FHR assignments, province-only nearest scenarios, stable colours and route handling.');
+router.cache[routeKey(a,b)].fetched_at='2020-01-01T00:00:00Z';assert.equal(router.cached(a,b),null);
+console.log('Experiment checks passed: province-only DBE links, FHR markers without distances, batch road distances, selected routes and cache reuse.');
