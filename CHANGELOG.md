@@ -1,5 +1,11 @@
 # Changelog
 
+## Accessibility map 0.3.1 — 2026-10-14
+
+- Improve connection visibility with slightly thicker coloured strokes, darker grey comparisons and thin white casings in both distance modes.
+- Explain coloured nearest-CBO, grey same-province and dashed assigned-FHR connections in the legend.
+- Match legend symbol proportions with a larger CBO circle and smaller DBE circle.
+
 ## Accessibility map 0.3.0 — 2026-10-14
 
 - Show all same-province CBO–DBE connections, with nearest allocations coloured and other connections in neutral grey.

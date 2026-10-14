@@ -1,6 +1,6 @@
 # CBO-DBE school accessibility map
 
-Alternative map version: `0.3.0`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
+Alternative map version: `0.3.1`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
 
 Preview: `python3 -m http.server 8001 --bind 127.0.0.1 --directory web`, then open http://127.0.0.1:8001/accessibility/.
 
@@ -61,3 +61,5 @@ Run `node tests/test_experiment.mjs`. Checks cover province restrictions, all 85
 References: [OSRM table, route and geometry APIs](https://project-osrm.org/docs/v5.24.0/api/), [routing service attribution and usage policy](https://routing.openstreetmap.de/about.html).
 
 Assigned FHR CSV export downloads `web/accessibility/data/fhr-distances.csv` independently of view filters. It contains 74 assigned pairs with CBO province/name, FHR school province/name, straight-line kilometres and road-network kilometres. CSV files do not support tabs, so DBE and FHR are separate downloads. Neither export includes internal IDs or road-status fields.
+
+Connection strokes have thin, non-interactive white casings to separate them from the grey basemap. The symbol legend uses the map’s 20 px CBO and 8 px DBE proportions, and the line legend explains nearest-CBO colours, neutral comparisons and assigned FHR dashes.
