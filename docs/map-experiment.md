@@ -1,6 +1,6 @@
 # CBO-DBE school accessibility map
 
-Alternative map version: `0.3.3`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
+Alternative map version: `0.3.4. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
 
 Preview: `python3 -m http.server 8001 --bind 127.0.0.1 --directory web`, then open http://127.0.0.1:8001/accessibility/.
 
@@ -67,3 +67,5 @@ Connection strokes have thin, non-interactive white casings to separate them fro
 Version 0.3.2 trials white comparison lines in place of grey. The legend retains the owner’s requested Grey wording pending feedback on the trial.
 
 Version 0.3.3 restores grey comparison strokes. White casings are used only in road mode; straight connections have no outline. The illustrative coloured-line legend swatch uses green, gold and blue. CBO assignment colours are unchanged.
+
+Version 0.3.4 uses finer, lighter grey straight connections while retaining the road styling. A pro bono design credit for Graeme Dor and DataVision Analytics appears below the map acknowledgements.

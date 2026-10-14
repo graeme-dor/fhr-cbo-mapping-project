@@ -1,6 +1,6 @@
 /* global L */
-import {prepare,connections,fhrSchools,nearestConnections,displayedConnections,provinceGroups,provinceMatches,routeKey} from './model.js?v=0.3.3';
-import {validateSnapshot} from './road-snapshot.js?v=0.3.3';
+import {prepare,connections,fhrSchools,nearestConnections,displayedConnections,provinceGroups,provinceMatches,routeKey} from './model.js?v=0.3.4';
+import {validateSnapshot} from './road-snapshot.js?v=0.3.4';
 const $=id=>document.getElementById(id);
 const node=(tag,text)=>{const n=document.createElement(tag);n.textContent=text;return n;};
 const state={province:'__dbe__',cbo:'',mode:'straight',showFhr:false,school:''};
@@ -50,8 +50,9 @@ function measurement(l){return state.mode==='straight'?l.distance_km:roads.get(r
 const key=l=>`${l.cbo_id}|${l.school_id}`;
 function drawConnection(l,colour,nearest=false,fhr=false){
   const c=model.sites.get(l.cbo_id),s=model.sites.get(l.school_id),selected=key(l)===state.school;
-  const style={color:colour,weight:selected?4:nearest||fhr?2.2:state.cbo?2:1.6,
-    opacity:selected?.98:nearest||fhr?.88:state.cbo?.8:.65,...(fhr?{dashArray:'5 4'}:{})};
+  const straight=state.mode==='straight';
+  const style={color:colour,weight:selected?(straight?3:4):nearest||fhr?(straight?1.7:2.2):state.cbo?(straight?1.3:2):(straight?1:1.6),
+    opacity:selected?.98:nearest||fhr?.88:state.cbo?(straight?.7:.8):(straight?.5:.65),...(fhr?{dashArray:'5 4'}:{})};
   const r=routes[routeKey(c,s)];
   const makeLayer=options=>state.mode==='road'?(r&&L.geoJSON(r.geometry,{style:options,interactive:options.interactive!==false})):
     L.polyline([[c.latitude,c.longitude],[s.latitude,s.longitude]],options);
@@ -78,7 +79,7 @@ function listSection(title,links){
 }
 function render(){
   groups=displayedConnections(model,state,roads);active=[...groups.nearest,...groups.other,...(state.showFhr?groups.fhr:[])];lineLayer.clearLayers();
-  for(const l of groups.other)drawConnection(l,'#6b7882');
+  for(const l of groups.other)drawConnection(l,state.mode==='straight'?'#81909a':'#6b7882');
   for(const l of groups.nearest)drawConnection(l,model.colors.get(l.cbo_id),true);
   if(state.showFhr)for(const l of groups.fhr)drawConnection(l,model.colors.get(l.cbo_id),false,true);
   markers();
@@ -117,7 +118,7 @@ function provinceOptions(){
 }
 async function start(){
   // Start independent downloads together, but do not block the initial map on roads.
-  const roadFilePromise=fetch('data/roads.json?v=0.3.3',{cache:'no-cache'}).then(response=>{
+  const roadFilePromise=fetch('data/roads.json?v=0.3.4',{cache:'no-cache'}).then(response=>{
     if(!response.ok)throw new Error('Preloaded road data could not be loaded');
     return response.json();
   }).then(value=>({value}),error=>({error}));
@@ -132,7 +133,7 @@ async function start(){
   $('straight').onclick=()=>{state.mode='straight';refresh(true);};$('road').onclick=()=>{state.mode='road';refresh(true);};
   $('fhr').onchange=()=>{state.showFhr=$('fhr').checked;refresh(true);};refresh(true);
   // Request tiles only after fitting the actual initial school/CBO view.
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · Routes: <a href="https://project-osrm.org/">OSRM</a> / <a href="https://routing.openstreetmap.de/about.html">FOSSGIS</a> · <a href="https://www.openstreetmap.org/fixthemap">Fix the map</a>'}).addTo(map);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · Routes: <a href="https://project-osrm.org/">OSRM</a> / <a href="https://routing.openstreetmap.de/about.html">FOSSGIS</a> · <a href="https://www.openstreetmap.org/fixthemap">Fix the map</a><span class="design-credit">Pro bono design by <strong>Graeme Dor</strong> &amp; <a href="https://datavisionanalytics.com/" target="_blank" rel="noopener noreferrer">DataVision Analytics</a></span>'}).addTo(map);
   try{
     const roadFile=await roadFilePromise;if(roadFile.error)throw roadFile.error;
     const snapshot=await validateSnapshot(data,roadFile.value);
