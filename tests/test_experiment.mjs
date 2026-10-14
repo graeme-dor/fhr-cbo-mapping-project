@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {prepare,connections,fhrSchools,routeResult,routeKey,tableResults} from '../web/accessibility/model.js';
+import {prepare,connections,fhrSchools,routeResult,routeKey,tableResults,fhrConnections,fhrDistanceCsv,displayedConnections} from '../web/accessibility/model.js';
 const data=JSON.parse(fs.readFileSync(new URL('../web/data/map.json',import.meta.url)));
 const model=prepare(data),links=connections(model,{});
 assert.equal(links.length,425);
@@ -92,7 +92,7 @@ assert.equal(nearestConnections(model,{province:'__dbe__'}).length,85);
 const {validateSnapshot,datasetSignature,batchRoutes}=await import('../web/accessibility/road-snapshot.js');
 const snapshot=JSON.parse(fs.readFileSync(new URL('../web/accessibility/data/roads.json',import.meta.url)));
 const preloaded=await validateSnapshot(data,snapshot);
-assert.equal(preloaded.roads.size,425);assert.equal(Object.keys(preloaded.routes).length,85);
+assert.equal(preloaded.roads.size,499);assert.equal(Object.keys(preloaded.routes).length,499);
 assert.equal(nearestConnections(model,{mode:'road'},preloaded.roads).length,85);
 const csv=fs.readFileSync(new URL('../web/accessibility/data/distances.csv',import.meta.url),'utf8');
 assert.equal(csv,distanceCsv(model,{},preloaded.roads));assert.equal(csv.split('\r\n').length,426);
@@ -106,3 +106,30 @@ const batch= batchRoutes({code:'Ok',routes:[{legs:[{distance:1000,steps:[step([2
 assert.equal(batch[routeKey(a,b)].geometry.coordinates.length,3);assert.equal(batch[routeKey(a,b)].status,'check_access');assert.equal(batch[routeKey(a,c)].distance_km,2);
 assert.throws(()=>batchRoutes({code:'Ok',routes:[{legs:[]}]},a,[b]),/Invalid route batch/);
 console.log('Preload checks passed: province grouping, complete road snapshot, matching full CSV, stale-data rejection and independent route legs.');
+
+const assigned=fhrConnections(model);
+assert.equal(assigned.length,74);
+assert.ok(assigned.every(l=>l.basis==='workbook_fhr_assignment'&&model.sites.get(l.school_id).kind==='FHR'));
+const fhrCsv=fs.readFileSync(new URL('../web/accessibility/data/fhr-distances.csv',import.meta.url),'utf8');
+assert.equal(fhrCsv,fhrDistanceCsv(model,preloaded.roads));assert.equal(fhrCsv.split('\r\n').length,75);
+for(const mode of ['straight','road']){
+  const overview=displayedConnections(model,{mode},preloaded.roads);
+  assert.equal(overview.nearest.length,85);assert.equal(overview.other.length,340);assert.equal(overview.fhr.length,74);
+  for(const c of model.cbos){
+    const grouped=displayedConnections(model,{cbo:c.id,province:c.province,mode},preloaded.roads);
+    const pairKeys=grouped.nearest.concat(grouped.other).map(l=>`${l.cbo_id}|${l.school_id}`);
+    assert.equal(pairKeys.length,connections(model,{cbo:c.id}).length);
+    assert.equal(new Set(pairKeys).size,pairKeys.length);
+    assert.ok(grouped.other.every(l=>l.cbo_id===c.id&&model.sites.get(l.school_id).province===c.province));
+    assert.ok(grouped.nearest.every(l=>overview.nearest.includes(l)));
+    assert.ok(grouped.fhr.every(l=>l.cbo_id===c.id));
+  }
+}
+const fhrChange=structuredClone(data);fhrChange.sites.find(s=>s.kind==='FHR').latitude+=.001;
+assert.notEqual(await datasetSignature(fhrChange),snapshot.metadata.dataset_signature);
+await assert.rejects(validateSnapshot(fhrChange,snapshot),/needs rebuilding/);
+const {simplifyRoute}=await import('../web/accessibility/road-snapshot.js');
+const points=[[28,-26],[28.0001,-26],[28.0002,-26],[28.1,-26.1]];
+const simplified=simplifyRoute(points,15);
+assert.deepEqual(simplified[0],points[0]);assert.deepEqual(simplified.at(-1),points.at(-1));assert.ok(simplified.length<points.length);
+console.log('All-pair and assigned FHR checks passed: 425 DBE pairs, 74 assigned FHR pairs, invariant winners, grouped panels, complete exports and simplified road paths.');
