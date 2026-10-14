@@ -1,5 +1,9 @@
 # Changelog
 
+## Accessibility map 0.3.6 — 2026-10-14
+
+- Remove the road snapshot date and refresh instruction from the About road distances dropdown.
+
 ## Accessibility map 0.3.5 — 2026-10-14
 
 - Shorten connection legend labels and use FHR-assigned school and FHR-CBO connection wording.

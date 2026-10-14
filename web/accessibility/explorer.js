@@ -4,7 +4,7 @@ import {validateSnapshot} from './road-snapshot.js?v=0.3.5';
 const $=id=>document.getElementById(id);
 const node=(tag,text)=>{const n=document.createElement(tag);n.textContent=text;return n;};
 const state={province:'__dbe__',cbo:'',mode:'straight',showFhr:false,school:''};
-let model,map,markerLayer,lineLayer,snapshotMetadata;
+let model,map,markerLayer,lineLayer;
 let active=[],groups,roads=new Map(),routes={};
 function status(text=''){$('status').textContent=text;$('status').hidden=!text;}
 function cbos(){return model.cbos.filter(c=>provinceMatches(model,c.province,state.province));}
@@ -139,12 +139,11 @@ async function start(){
   try{
     const roadFile=await roadFilePromise;if(roadFile.error)throw roadFile.error;
     const snapshot=await validateSnapshot(data,roadFile.value);
-    roads=snapshot.roads;routes=snapshot.routes;snapshotMetadata=snapshot.metadata;
-    $('road-date').textContent=`Road snapshot: ${new Date(snapshotMetadata.built_at).toLocaleDateString('en-ZA')}. Refresh the snapshot when locations or road data change.`;
+    roads=snapshot.roads;routes=snapshot.routes;
     $('road').disabled=false;$('road').title='';
   }catch(error){
     $('road').title='Saved road layer unavailable';
-    $('road-date').textContent='Saved road layer unavailable.';
+    $('road-date').hidden=false;$('road-date').textContent='Saved road layer unavailable.';
     status(`Road layer unavailable: ${error.message}. The straight-line map remains available.`);
   }
 
