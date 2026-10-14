@@ -1,5 +1,10 @@
 # Changelog
 
+## Accessibility map 0.3.2 — 2026-10-14
+
+- Trial white strokes for other same-province DBE connections in both distance modes.
+- Use the requested concise legend wording, retaining the Grey label during this visual trial.
+
 ## Accessibility map 0.3.1 — 2026-10-14
 
 - Improve connection visibility with slightly thicker coloured strokes, darker grey comparisons and thin white casings in both distance modes.
