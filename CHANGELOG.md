@@ -1,5 +1,11 @@
 # Changelog
 
+## Accessibility map 0.3.3 — 2026-10-14
+
+- Restore grey comparison connections after the white-line trial.
+- Keep white casings only for road-network paths; straight lines use plain strokes.
+- Use green, gold and blue in the coloured-connection legend swatch.
+
 ## Accessibility map 0.3.2 — 2026-10-14
 
 - Trial white strokes for other same-province DBE connections in both distance modes.
