@@ -1,5 +1,10 @@
 # Changelog
 
+## Accessibility map 0.3.4 — 2026-10-14
+
+- Use thinner straight-line connections with a lighter grey closer to the original styling. Road styling stays unchanged.
+- Add a pro bono design credit for Graeme Dor and DataVision Analytics alongside the map acknowledgements.
+
 ## Accessibility map 0.3.3 — 2026-10-14
 
 - Restore grey comparison connections after the white-line trial.
