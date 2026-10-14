@@ -1,5 +1,12 @@
 # Changelog
 
+## Accessibility map 0.3.0 — 2026-10-14
+
+- Show all same-province CBO–DBE connections, with nearest allocations coloured and other connections in neutral grey.
+- Split the distance panel into nearest and other DBE connections. Focusing a CBO shows every DBE school in its province without changing allocation colours.
+- Add workbook-assigned FHR straight-line and road distances, dashed connections and a separate full CSV export.
+- Preload all 425 DBE and 74 assigned FHR road paths, simplified for faster rendering. Map interaction makes no routing calls.
+
 ## Accessibility map 0.2.1 — 2026-10-12
 
 - Start the basemap and straight-line view without waiting for road data.

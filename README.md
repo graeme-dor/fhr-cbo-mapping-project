@@ -79,4 +79,4 @@ References: [GitHub Pages deployment](https://docs.github.com/en/get-started/sta
 
 ## Alternative accessibility map
 
-[CBO-school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/) shows each DBE school with its nearest CBO in the same province, using straight or saved road distances. Its road layer and full distance export are precomputed. The [original map](https://graeme-dor.github.io/fhr-cbo-mapping-project/) remains available. See [alternative map documentation](docs/map-experiment.md) for updates and snapshot refreshes.
+[CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/) compares each CBO with every DBE school in its province, retaining nearest-CBO colours and showing other connections in neutral grey. Optional FHR connections and distances follow workbook assignments. Its road layer and full distance export are precomputed. The [original map](https://graeme-dor.github.io/fhr-cbo-mapping-project/) remains available. See [alternative map documentation](docs/map-experiment.md) for updates and snapshot refreshes.

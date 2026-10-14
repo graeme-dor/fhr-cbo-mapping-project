@@ -1,4 +1,4 @@
-import {routeKey,routeResult,tableResults} from './model.js?v=0.2.0-experiment.3';
+import {routeKey,routeResult,tableResults} from './model.js?v=0.3.0';
 const ENDPOINT='https://routing.openstreetmap.de/routed-car';
 const STORE='fhr-road-routes-v1', DISTANCES='fhr-road-distances-v1';
 const TTL=7*24*60*60*1000;

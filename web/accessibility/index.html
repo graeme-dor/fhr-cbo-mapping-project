@@ -5,31 +5,31 @@
   <title>CBO-DBE school accessibility map</title>
   <link rel="preconnect" href="https://tile.openstreetmap.org">
   <link rel="stylesheet" href="vendor/leaflet-1.9.4/leaflet.css">
-  <link rel="stylesheet" href="explorer.css?v=0.2.1">
+  <link rel="stylesheet" href="explorer.css?v=0.3.0">
   <script defer src="vendor/leaflet-1.9.4/leaflet.js"></script>
-  <script type="module" src="explorer.js?v=0.2.1"></script>
+  <script type="module" src="explorer.js?v=0.3.0"></script>
 </head>
 <body>
   <header><div><span class="eyebrow">FOUNDATION FOR HUMAN RIGHTS</span><h1>CBO-DBE school accessibility map</h1></div></header>
   <main>
     <aside>
-      <h2>Nearest CBO connections</h2>
-      <p class="intro">DBE schools connect to their closest CBO in the same province.</p>
+      <h2>CBO–school connections</h2>
+      <p class="intro">Compare each CBO with every DBE school in its province. Colours identify each school’s nearest CBO.</p>
       <label for="province">Province</label><select id="province"></select>
       <label for="cbo">CBO</label><select id="cbo"></select>
       <fieldset class="mode"><legend>Distance</legend><div class="segmented">
         <button id="straight" type="button" aria-pressed="true">Straight line</button><button id="road" type="button" aria-pressed="false" disabled title="Loading saved road layer">Road network</button>
       </div></fieldset>
-      <label class="check"><input id="fhr" type="checkbox">Show assigned FHR schools</label>
-      <div class="actions"><a id="export" href="data/distances.csv?v=0.2.0" download="fhr-dbe-cbo-distances.csv">Export full spreadsheet</a></div>
+      <label class="check"><input id="fhr" type="checkbox">Show assigned FHR schools and distances</label>
+      <div class="actions"><a id="export" href="data/distances.csv?v=0.3.0" download="fhr-dbe-cbo-distances.csv">Export all DBE distances</a><a id="fhr-export" href="data/fhr-distances.csv?v=0.3.0" download="fhr-assigned-school-distances.csv">Export assigned FHR distances</a></div>
       <p id="status" role="status" aria-live="polite">Loading schools…</p>
-      <details class="colour-legend"><summary>CBO colours · select to focus</summary><section id="legend" aria-label="CBO colours"></section></details><div class="shape-key"><span>● CBO</span><span>○ DBE school</span><span id="fhr-key" hidden>◆ FHR school</span></div>
-      <h2 class="list-title">DBE school distances</h2>
+      <details class="colour-legend"><summary>CBO colours · select to focus</summary><section id="legend" aria-label="CBO colours"></section></details><div class="shape-key"><span>● CBO</span><span>○ DBE school</span><span>— Other DBE connection</span><span id="fhr-key" hidden>◆ FHR school</span></div>
+      <h2 class="list-title">School distances</h2>
       <p id="road-help" class="context" hidden>Road paths are preloaded. Select a school to zoom to its route.</p>
       <div id="school-list"></div>
-      <details><summary>About road distances</summary><p>The saved road layer uses OpenStreetMap roads through OSRM. Nearest means shortest reported driving-route distance among CBOs in the same province. FHR schools are shown as assigned markers only.</p><p id="road-date"></p></details>
+      <details><summary>About road distances</summary><p>The saved road layer uses OpenStreetMap roads through OSRM. Nearest means shortest reported driving-route distance among CBOs in the same province. Other DBE connections are neutral grey. FHR connections follow workbook assignments, with dashed lines.</p><p id="road-date"></p></details>
     </aside>
-    <section class="map-wrap"><div id="map" aria-label="CBO and school connection map"></div><div class="map-caption"><span id="caption">School connections</span><span>Connections stay within the province</span></div></section>
+    <section class="map-wrap"><div id="map" aria-label="CBO and school connection map"></div><div class="map-caption"><span id="caption">School connections</span><span>DBE comparisons stay within the province</span></div></section>
   </main>
 </body>
 </html>

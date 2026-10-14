@@ -1,11 +1,11 @@
 /* global L */
-import {prepare,connections,fhrSchools,nearestConnections,provinceGroups,provinceMatches,routeKey} from './model.js?v=0.2.1';
-import {validateSnapshot} from './road-snapshot.js?v=0.2.1';
+import {prepare,connections,fhrSchools,nearestConnections,displayedConnections,provinceGroups,provinceMatches,routeKey} from './model.js?v=0.3.0';
+import {validateSnapshot} from './road-snapshot.js?v=0.3.0';
 const $=id=>document.getElementById(id);
 const node=(tag,text)=>{const n=document.createElement(tag);n.textContent=text;return n;};
 const state={province:'__dbe__',cbo:'',mode:'straight',showFhr:false,school:''};
 let model,map,markerLayer,lineLayer,snapshotMetadata;
-let active=[],roads=new Map(),routes={};
+let active=[],groups,roads=new Map(),routes={};
 function status(text=''){$('status').textContent=text;$('status').hidden=!text;}
 function cbos(){return model.cbos.filter(c=>provinceMatches(model,c.province,state.province));}
 function cboOptions(){
@@ -25,18 +25,18 @@ function markers(){
   markerLayer.clearLayers();
   for(const c of shownCbos())L.circleMarker([c.latitude,c.longitude],{radius:10,color:'#fff',weight:2,fillColor:model.colors.get(c.id),fillOpacity:1})
     .bindPopup(popup(c)).bindTooltip(node('span',c.name)).addTo(markerLayer);
-  const winners=new Map(active.map(l=>[l.school_id,l]));
+  const winners=new Map(nearestConnections(model,{province:state.province,mode:state.mode},roads).map(l=>[l.school_id,l]));
   // Show unresolved/unreachable schools neutrally in the overview; never use straight winners in road mode.
-  const schools=[...model.sites.values()].filter(s=>s.kind==='DBE'&&(provinceMatches(model,s.province,state.province))&&(!state.cbo||winners.has(s.id)));
+  const schools=[...model.sites.values()].filter(s=>s.kind==='DBE'&&(provinceMatches(model,s.province,state.province)));
   for(const s of schools){
     const l=winners.get(s.id),c=l&&model.sites.get(l.cbo_id),color=c?model.colors.get(c.id):'#86929b';
     const label=`${s.name}${c?' · '+c.name:' · road allocation unavailable or loading'}`;
-    L.circleMarker([s.latitude,s.longitude],{radius:s.id===state.school?6:4,color,weight:1,fillColor:color,fillOpacity:.95})
-      .bindTooltip(node('span',label)).on('click',()=>l?selectSchool(s.id):status('No complete road allocation is available for this school.')).addTo(markerLayer);
+    L.circleMarker([s.latitude,s.longitude],{radius:state.school.endsWith('|'+s.id)?6:4,color,weight:1,fillColor:color,fillOpacity:.95})
+      .bindTooltip(node('span',label)).on('click',()=>selectSchool(s.id)).addTo(markerLayer);
   }
   if(state.showFhr)for(const c of shownCbos())for(const s of fhrSchools(model,c.id)){
     const color=model.colors.get(c.id),icon=L.divIcon({className:'school-icon',html:`<span class="school-dot fhr" style="--cbo:${color}"></span>`,iconSize:[10,10],iconAnchor:[5,5]});
-    L.marker([s.latitude,s.longitude],{icon}).bindPopup(popup(s,c)).bindTooltip(node('span',s.name)).addTo(markerLayer);
+    L.marker([s.latitude,s.longitude],{icon}).bindPopup(popup(s,c)).bindTooltip(node('span',s.name)).on('click',()=>selectConnection(groups.fhr.find(l=>l.cbo_id===c.id&&l.school_id===s.id))).addTo(markerLayer);
   }
   $('fhr-key').hidden=!state.showFhr;
   $('legend').replaceChildren();
@@ -47,44 +47,53 @@ function markers(){
   }
 }
 function measurement(l){return state.mode==='straight'?l.distance_km:roads.get(routeKey(model.sites.get(l.cbo_id),model.sites.get(l.school_id)))?.distance_km??Infinity;}
-function render(){
-  active=nearestConnections(model,state,roads);lineLayer.clearLayers();
-  if(state.mode==='straight')for(const l of active){
-    const c=model.sites.get(l.cbo_id),s=model.sites.get(l.school_id),selected=s.id===state.school;
-    L.polyline([[c.latitude,c.longitude],[s.latitude,s.longitude]],{color:model.colors.get(c.id),weight:selected?3:1.5,opacity:selected ? .9 : .5})
-      .bindTooltip(node('span',`${s.name} → ${c.name}: ${l.distance_km.toFixed(1)} km`)).on('click',()=>selectSchool(s.id)).addTo(lineLayer);
-  }
-  else for(const l of active){
-    const c=model.sites.get(l.cbo_id),s=model.sites.get(l.school_id),r=routes[routeKey(c,s)],selected=s.id===state.school;
-    if(!r)continue;
-    L.geoJSON(r.geometry,{style:{color:model.colors.get(c.id),weight:selected?3.5:1.6,opacity:selected ? .95 : .6}})
-      .bindTooltip(node('span',`${s.name} → ${c.name}: ${measurement(l).toFixed(1)} km road`))
-      .on('click',()=>selectSchool(s.id)).addTo(lineLayer);
-  }
-  markers();
-  $('straight').setAttribute('aria-pressed',String(state.mode==='straight'));$('road').setAttribute('aria-pressed',String(state.mode==='road'));
-  $('road-help').hidden=state.mode!=='road';
-  $('caption').textContent=`${state.cbo?model.sites.get(state.cbo).name:(state.province==='__dbe__'?'DBE provinces':state.province||'All provinces')} · nearest CBO by ${state.mode==='road'?'road':'straight-line'} distance`;
-  $('school-list').replaceChildren();
-  for(const l of [...active].sort((a,b)=>measurement(a)-measurement(b))){
-    const s=model.sites.get(l.school_id),c=model.sites.get(l.cbo_id),r=roads.get(routeKey(c,s));
-    const row=node('div','');row.className=`school-row${s.id===state.school?' selected':''}`;
-    const button=node('button',s.name);button.append(node('small',c.name));button.onclick=()=>selectSchool(s.id);
-    const value=node('span',`${measurement(l).toFixed(1)} km`);value.className='distance';
+const key=l=>`${l.cbo_id}|${l.school_id}`;
+function drawConnection(l,colour,nearest=false,fhr=false){
+  const c=model.sites.get(l.cbo_id),s=model.sites.get(l.school_id),selected=key(l)===state.school;
+  const style={color:colour,weight:selected?3.5:nearest||fhr?1.8:state.cbo?1.2:.8,opacity:selected ? .95 : nearest||fhr ? .65 : state.cbo ? .45 : .18,...(fhr?{dashArray:'5 4'}:{})};
+  const r=routes[routeKey(c,s)];
+  const layer=state.mode==='road'?(r&&L.geoJSON(r.geometry,{style})):L.polyline([[c.latitude,c.longitude],[s.latitude,s.longitude]],style);
+  if(layer)layer.bindTooltip(node('span',`${c.name} to ${s.name}: ${distanceLabel(l)}`)).on('click',()=>selectConnection(l)).addTo(lineLayer);
+}
+function distanceLabel(l){const value=measurement(l);return Number.isFinite(value)?`${value.toFixed(1)} km${state.mode==='road'?' road':''}`:'Road route unavailable';}
+function listSection(title,links){
+  const heading=node('h3',`${title} (${links.length})`);heading.className='distance-heading';$('school-list').append(heading);
+  if(!links.length){$('school-list').append(node('p','No connections in this group.'));return;}
+  for(const l of [...links].sort((a,b)=>measurement(a)-measurement(b))){
+    const school=model.sites.get(l.school_id),c=model.sites.get(l.cbo_id),r=roads.get(routeKey(c,school));
+    const row=node('div','');row.className=`school-row${key(l)===state.school?' selected':''}`;
+    const button=node('button',school.name);button.append(node('small',c.name));button.onclick=()=>selectConnection(l);
+    const value=node('span',distanceLabel(l));value.className='distance';
     if(state.mode==='road'&&r?.status==='check_access')value.append(node('small','check road access'));
     row.append(button,value);$('school-list').append(row);
   }
-  if(!active.length)$('school-list').append(node('p',state.mode==='road'?'No complete road allocations in this view.':'No nearest DBE connections in this view.'));
+}
+function render(){
+  groups=displayedConnections(model,state,roads);active=[...groups.nearest,...groups.other,...(state.showFhr?groups.fhr:[])];lineLayer.clearLayers();
+  for(const l of groups.other)drawConnection(l,'#87949d');
+  for(const l of groups.nearest)drawConnection(l,model.colors.get(l.cbo_id),true);
+  if(state.showFhr)for(const l of groups.fhr)drawConnection(l,model.colors.get(l.cbo_id),false,true);
+  markers();
+  $('straight').setAttribute('aria-pressed',String(state.mode==='straight'));$('road').setAttribute('aria-pressed',String(state.mode==='road'));
+  $('road-help').hidden=state.mode!=='road';
+  $('caption').textContent=`${state.cbo?model.sites.get(state.cbo).name:(state.province==='__dbe__'?'DBE provinces':state.province||'All provinces')} · ${state.mode==='road'?'road':'straight-line'} distances`;
+  $('school-list').replaceChildren();
+  listSection(state.cbo?'DBE schools nearest to this CBO':'Nearest CBO–DBE connections',groups.nearest);
+  listSection(state.cbo?'Other DBE schools in this province':'Other same-province CBO–DBE connections',groups.other);
+  if(state.showFhr)listSection('Workbook-assigned FHR schools',groups.fhr);
 }
 function fit(){
-  const sites=[...shownCbos(),...active.map(l=>model.sites.get(l.school_id)),...(state.showFhr?shownCbos().flatMap(c=>fhrSchools(model,c.id)):[])];
+  const sites=[...shownCbos(),...active.map(l=>model.sites.get(l.school_id))];
   if(sites.length)map.fitBounds(sites.map(s=>[s.latitude,s.longitude]),{padding:[45,45],maxZoom:13});
 }
 function selectSchool(id){
-  const l=active.find(l=>l.school_id===id);if(!l)return;
-  state.school=id;render();
-  const c=model.sites.get(l.cbo_id),s=model.sites.get(id),r=routes[routeKey(c,s)];
-  if(c.province!==s.province)return;
+  const link=active.find(l=>l.school_id===id&&(!state.cbo||l.cbo_id===state.cbo));
+  if(link)selectConnection(link);
+}
+function selectConnection(l){
+  if(!l)return;state.school=key(l);render();
+  const c=model.sites.get(l.cbo_id),s=model.sites.get(l.school_id),r=routes[routeKey(c,s)];
+  if(s.kind==='DBE'&&c.province!==s.province)return;
   const points=state.mode==='road'&&r?r.geometry.coordinates.map(([lon,lat])=>[lat,lon]):[[c.latitude,c.longitude],[s.latitude,s.longitude]];
   map.fitBounds(points,{padding:[55,55],maxZoom:14});
   const measured=roads.get(routeKey(c,s));
@@ -100,11 +109,11 @@ function provinceOptions(){
 }
 async function start(){
   // Start independent downloads together, but do not block the initial map on roads.
-  const roadFilePromise=fetch('data/roads.json?v=0.2.0').then(response=>{
+  const roadFilePromise=fetch('data/roads.json?v=0.3.0',{cache:'no-cache'}).then(response=>{
     if(!response.ok)throw new Error('Preloaded road data could not be loaded');
     return response.json();
   }).then(value=>({value}),error=>({error}));
-  const response=await fetch('../data/map.json?v=0.1.4');if(!response.ok)throw new Error('School data could not be loaded');
+  const response=await fetch('../data/map.json?v=0.1.4',{cache:'no-cache'});if(!response.ok)throw new Error('School data could not be loaded');
   const data=await response.json();model=prepare(data);
   map=L.map('map',{preferCanvas:true}).setView([-29,25],5);
 
@@ -113,7 +122,7 @@ async function start(){
   $('province').onchange=()=>{state.province=$('province').value;state.cbo='';cboOptions();refresh(true);};
   $('cbo').onchange=()=>{state.cbo=$('cbo').value;if(state.cbo){state.province=model.sites.get(state.cbo).province;$('province').value=state.province;}cboOptions();refresh(true);};
   $('straight').onclick=()=>{state.mode='straight';refresh(true);};$('road').onclick=()=>{state.mode='road';refresh(true);};
-  $('fhr').onchange=()=>{state.showFhr=$('fhr').checked;markers();};refresh(true);
+  $('fhr').onchange=()=>{state.showFhr=$('fhr').checked;refresh(true);};refresh(true);
   // Request tiles only after fitting the actual initial school/CBO view.
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · Routes: <a href="https://project-osrm.org/">OSRM</a> / <a href="https://routing.openstreetmap.de/about.html">FOSSGIS</a> · <a href="https://www.openstreetmap.org/fixthemap">Fix the map</a>'}).addTo(map);
   try{

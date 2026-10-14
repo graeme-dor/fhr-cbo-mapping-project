@@ -25,11 +25,23 @@ export function connections(model,{province='',cbo=''}){
   });
 }
 
+export function fhrConnections(model,{province='',cbo=''}={}){
+  return model.links.filter(l=>{
+    const c=model.sites.get(l.cbo_id),s=model.sites.get(l.school_id);
+    return l.basis==='workbook_fhr_assignment' && c?.kind==='CBO' && s?.kind==='FHR'
+      && Number.isFinite(l.distance_km) && provinceMatches(model,c.province,province) && (!cbo||c.id===cbo);
+  });
+}
+export function displayedConnections(model,filter={},roads=new Map()){
+  const nearest=nearestConnections(model,filter,roads),keys=new Set(nearest.map(l=>`${l.cbo_id}|${l.school_id}`));
+  return {nearest,other:connections(model,filter).filter(l=>!keys.has(`${l.cbo_id}|${l.school_id}`)),fhr:fhrConnections(model,filter)};
+}
+
 export function fhrSchools(model,cboId){
   const cbo=model.sites.get(cboId);
   if(!cbo)return [];
   const ids=new Set(model.links.filter(l=>l.cbo_id===cboId && l.basis==='workbook_fhr_assignment').map(l=>l.school_id));
-  return [...ids].map(id=>model.sites.get(id)).filter(s=>s?.kind==='FHR' && s.province===cbo.province && Number.isFinite(s.latitude) && Number.isFinite(s.longitude));
+  return [...ids].map(id=>model.sites.get(id)).filter(s=>s?.kind==='FHR' && Number.isFinite(s.latitude) && Number.isFinite(s.longitude));
 }
 
 export function tableResults(body,count){
@@ -74,6 +86,15 @@ export function distanceCsv(model,filter,roads=new Map()){
   for(const l of connections(model,filter)){
     const c=model.sites.get(l.cbo_id),s=model.sites.get(l.school_id),r=roads.get(routeKey(c,s)),winner=road.get(s.id);
     rows.push([c.province,c.name,s.name,l.distance_km.toFixed(3),Number.isFinite(r?.distance_km)?r.distance_km.toFixed(3):'',model.sites.get(straight.get(s.id))?.name||'',model.sites.get(winner)?.name||'',straight.get(s.id)===c.id?'Yes':'No',winner?(winner===c.id?'Yes':'No'):'']);
+  }
+  return '\uFEFF'+rows.map(row=>row.map(value=>{let s=String(value);if(/^[=+\-@]/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';}).join(',')).join('\r\n');
+}
+
+export function fhrDistanceCsv(model,roads=new Map()){
+  const rows=[['CBO province','CBO','FHR school province','FHR school','Straight-line km','Road network km']];
+  for(const l of fhrConnections(model)){
+    const c=model.sites.get(l.cbo_id),s=model.sites.get(l.school_id),r=roads.get(routeKey(c,s));
+    rows.push([c.province,c.name,s.province,s.name,l.distance_km.toFixed(3),Number.isFinite(r?.distance_km)?r.distance_km.toFixed(3):'']);
   }
   return '\uFEFF'+rows.map(row=>row.map(value=>{let s=String(value);if(/^[=+\-@]/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';}).join(',')).join('\r\n');
 }

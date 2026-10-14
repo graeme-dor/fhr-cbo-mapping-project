@@ -1,6 +1,6 @@
 # CBO-DBE school accessibility map
 
-Alternative map version: `0.2.1`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
+Alternative map version: `0.3.0`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
 
 Preview: `python3 -m http.server 8001 --bind 127.0.0.1 --directory web`, then open http://127.0.0.1:8001/accessibility/.
 
@@ -10,13 +10,13 @@ The default is **DBE provinces**: Gauteng, KwaZulu-Natal, Limpopo and Mpumalanga
 
 Each DBE school connects to its closest CBO in its own province and takes that CBO's colour. Straight mode chooses the shortest Haversine distance. Road mode independently chooses the smallest OSRM-reported driving-route length among eligible CBOs; winners can differ. This is a distance suitability scenario without capacity constraints. Equal distances use stable CBO IDs.
 
-CBO focus shows only allocated schools and does not recalculate winners using fewer candidates. Selecting a province/CBO automatically fits the map. Select All provinces in the dropdown to restore the national overview. Fit-view and overview buttons have been removed.
+CBO focus shows all DBE schools in the CBO’s province, grouped as nearest allocations and other connections, and does not recalculate winners using fewer candidates. Selecting a province/CBO automatically fits the map. Select All provinces in the dropdown to restore the national overview. Fit-view and overview buttons have been removed.
 
-FHR remains an optional assigned-marker layer, without FHR distance calculations or routing requests.
+FHR is an optional workbook-assigned layer with straight-line and road distances. Only explicit workbook CBO–FHR assignments are connected. FHR links do not change DBE nearest allocations.
 
 ## Preloaded roads
 
-`web/accessibility/data/roads.json` contains a versioned snapshot of all 425 eligible CBO–DBE road distances and only the 85 nearest-CBO route geometries. It is about 1.5 MB uncompressed. The map loads this local file once in the background after starting the basemap and straight-line view; mode changes, filtering, school selection and zooming make **no routing API calls**. Road mode draws every nearest route in the selected view, and selecting a school highlights and zooms to its path. Basemap tiles still load normally from OpenStreetMap.
+`web/accessibility/data/roads.json` contains a versioned snapshot of all 425 eligible CBO–DBE road distances and 74 workbook-assigned CBO–FHR distances, plus route geometries for every available pair. Paths are simplified with a 15 metre tolerance for display only, retaining their original road-distance measurements. The map loads this local file once in the background after starting the basemap and straight-line view; mode changes, filtering, school selection and zooming make **no routing API calls**. Road mode draws all same-province DBE routes, with nearest allocations coloured and other comparisons in grey, plus optional dashed assigned FHR routes in the selected view, and selecting a school highlights and zooms to its path. Basemap tiles still load normally from OpenStreetMap.
 
 The snapshot uses OSRM car routing. Reported distances are the lengths of the routing engine's selected driving routes, not a guarantee of mathematically shortest road paths. No live traffic is included. Coordinates snap to mapped roads, excluding off-road access; snaps over 250 metres are flagged. Missing/unreachable results never substitute straight distances.
 
@@ -32,7 +32,7 @@ The basemap starts after the institution data loads, without waiting for the lar
 node scripts/build_road_snapshot.mjs
 ```
 
-The script reads the generated `web/data/map.json`, leaving the workbook untouched. If the snapshot matches, it makes no routing requests and regenerates the full export. After location/comparison updates it rebuilds the snapshot. For newer road data with unchanged institutions:
+The script reads the generated `web/data/map.json`, leaving the workbook untouched. If the snapshot matches, it makes no routing requests and regenerates both full exports. After location/comparison updates it rebuilds the snapshot. For newer road data with unchanged institutions:
 
 ```sh
 node scripts/build_road_snapshot.mjs --refresh
@@ -44,7 +44,7 @@ For another compatible OSRM provider:
 node scripts/build_road_snapshot.mjs https://your-osrm-server.example/routed-car --refresh
 ```
 
-Building this dataset uses four province table requests and ten grouped route requests, spaced at least 1.1 seconds apart. Route batches alternate CBO and school waypoints; only independent outbound legs are kept, with `continue_straight=false`. Each extracted path is checked against its matrix distance within 10 metres before saving. A complete validated snapshot replaces the previous JSON atomically. No scheduled/background refresh is enabled. A dedicated provider is appropriate if refresh frequency or dataset size grows.
+The builder reuses saved distances and paths by coordinate pair when extending the dataset. Missing distances and paths are requested in sequential CBO groups, spaced at least 1.1 seconds apart. Route batches contain at most 25 schools. Route batches alternate CBO and school waypoints; only independent outbound legs are kept, with `continue_straight=false`. Each extracted path is checked against its matrix distance within 10 metres before saving. A complete validated snapshot replaces the previous JSON atomically. No scheduled/background refresh is enabled. A dedicated provider is appropriate if refresh frequency or dataset size grows.
 
 Only already-public institution coordinates are sent to the routing provider. No workbook files or private addresses are sent. The build timestamp and provider are recorded, and the snapshot date appears under About road distances.
 
@@ -56,6 +56,8 @@ The nine columns include province, CBO and DBE names, straight-line kilometres, 
 
 ## Validation
 
-Run `node tests/test_experiment.mjs`. Checks cover province restrictions, all 85 school winners, metric-specific allocations, focus invariance, incomplete/unreachable results, FHR markers without distances, the full CSV's agreement with saved roads, province groups, snapshot fingerprints, stale-data rejection and extraction of independent route legs. Workflow checks validate the snapshot and export before deploying both maps.
+Run `node tests/test_experiment.mjs`. Checks cover province restrictions, all 85 school winners, metric-specific allocations, focus invariance, incomplete/unreachable results, assigned FHR connections and distances, both full CSVs's agreement with saved roads, province groups, snapshot fingerprints, stale-data rejection and extraction of independent route legs. Workflow checks validate the snapshot and export before deploying both maps.
 
 References: [OSRM table, route and geometry APIs](https://project-osrm.org/docs/v5.24.0/api/), [routing service attribution and usage policy](https://routing.openstreetmap.de/about.html).
+
+Assigned FHR CSV export downloads `web/accessibility/data/fhr-distances.csv` independently of view filters. It contains 74 assigned pairs with CBO province/name, FHR school province/name, straight-line kilometres and road-network kilometres. CSV files do not support tabs, so DBE and FHR are separate downloads. Neither export includes internal IDs or road-status fields.
