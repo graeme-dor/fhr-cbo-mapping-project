@@ -1,6 +1,6 @@
 /* global L */
-import {prepare,connections,fhrSchools,nearestConnections,displayedConnections,provinceGroups,provinceMatches,routeKey} from './model.js?v=0.3.4';
-import {validateSnapshot} from './road-snapshot.js?v=0.3.4';
+import {prepare,connections,fhrSchools,nearestConnections,displayedConnections,provinceGroups,provinceMatches,routeKey} from './model.js?v=0.3.5';
+import {validateSnapshot} from './road-snapshot.js?v=0.3.5';
 const $=id=>document.getElementById(id);
 const node=(tag,text)=>{const n=document.createElement(tag);n.textContent=text;return n;};
 const state={province:'__dbe__',cbo:'',mode:'straight',showFhr:false,school:''};
@@ -118,7 +118,7 @@ function provinceOptions(){
 }
 async function start(){
   // Start independent downloads together, but do not block the initial map on roads.
-  const roadFilePromise=fetch('data/roads.json?v=0.3.4',{cache:'no-cache'}).then(response=>{
+  const roadFilePromise=fetch('data/roads.json?v=0.3.5',{cache:'no-cache'}).then(response=>{
     if(!response.ok)throw new Error('Preloaded road data could not be loaded');
     return response.json();
   }).then(value=>({value}),error=>({error}));
@@ -132,8 +132,10 @@ async function start(){
   $('cbo').onchange=()=>{state.cbo=$('cbo').value;if(state.cbo){state.province=model.sites.get(state.cbo).province;$('province').value=state.province;}cboOptions();refresh(true);};
   $('straight').onclick=()=>{state.mode='straight';refresh(true);};$('road').onclick=()=>{state.mode='road';refresh(true);};
   $('fhr').onchange=()=>{state.showFhr=$('fhr').checked;refresh(true);};refresh(true);
+  // Centre the design credit above Leaflet and the data acknowledgements.
+  map.attributionControl.setPrefix('<span class="design-credit">Pro bono design by <strong>Graeme Dor</strong> &amp; <a href="https://datavisionanalytics.com/" target="_blank" rel="noopener noreferrer">DataVision Analytics</a></span>'+map.attributionControl.options.prefix);
   // Request tiles only after fitting the actual initial school/CBO view.
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · Routes: <a href="https://project-osrm.org/">OSRM</a> / <a href="https://routing.openstreetmap.de/about.html">FOSSGIS</a> · <a href="https://www.openstreetmap.org/fixthemap">Fix the map</a><span class="design-credit">Pro bono design by <strong>Graeme Dor</strong> &amp; <a href="https://datavisionanalytics.com/" target="_blank" rel="noopener noreferrer">DataVision Analytics</a></span>'}).addTo(map);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · Routes: <a href="https://project-osrm.org/">OSRM</a> / <a href="https://routing.openstreetmap.de/about.html">FOSSGIS</a> · <a href="https://www.openstreetmap.org/fixthemap">Fix the map</a>'}).addTo(map);
   try{
     const roadFile=await roadFilePromise;if(roadFile.error)throw roadFile.error;
     const snapshot=await validateSnapshot(data,roadFile.value);
