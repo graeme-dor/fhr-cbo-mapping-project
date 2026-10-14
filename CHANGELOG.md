@@ -1,5 +1,11 @@
 # Changelog
 
+## Accessibility map 0.3.5 — 2026-10-14
+
+- Shorten connection legend labels and use FHR-assigned school and FHR-CBO connection wording.
+- Use neutral grey FHR legend symbols.
+- Centre the design credit above the Leaflet/data acknowledgements with tighter spacing.
+
 ## Accessibility map 0.3.4 — 2026-10-14
 
 - Use thinner straight-line connections with a lighter grey closer to the original styling. Road styling stays unchanged.

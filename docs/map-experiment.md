@@ -69,3 +69,5 @@ Version 0.3.2 trials white comparison lines in place of grey. The legend retains
 Version 0.3.3 restores grey comparison strokes. White casings are used only in road mode; straight connections have no outline. The illustrative coloured-line legend swatch uses green, gold and blue. CBO assignment colours are unchanged.
 
 Version 0.3.4 uses finer, lighter grey straight connections while retaining the road styling. A pro bono design credit for Graeme Dor and DataVision Analytics appears below the map acknowledgements.
+
+Version 0.3.5 uses shorter legend labels and neutral FHR legend symbols. The compact acknowledgement block centres the design credit above the Leaflet and data-provider credits.
