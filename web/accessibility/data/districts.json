@@ -1,0 +1,1856 @@
+{
+  "metadata": {
+    "source_url": "https://gis.westerncape.gov.za/hosting/rest/services/Hosted/Demarcation/FeatureServer/0",
+    "query_url": "https://gis.westerncape.gov.za/hosting/rest/services/Hosted/Demarcation/FeatureServer/0/query?where=1%3D1&outFields=province,district,district_n,category,date&returnGeometry=true&outSR=4326&f=geojson",
+    "publisher": "Western Cape Government",
+    "custodian": "Municipal Demarcation Board",
+    "boundary_vintage": "2018 (service description)",
+    "retrieved_on": "2026-10-15",
+    "feature_count": 52,
+    "crs": "EPSG:4326",
+    "geometry_sha256": "aadd57460efb6c68074744ad1b903cd4d8309ad6809e125539d9d1ba2500a887",
+    "notes": "District municipalities and metropolitan municipalities. Metros are treated as district-level areas. This is a pinned baseline, not a claim of current legal boundaries."
+  },
+  "assignments": {
+    "cbo-798ff5b070f9a652": {
+      "latitude": -33.86664182750577,
+      "longitude": 25.560671754337122,
+      "province": "Eastern Cape",
+      "status": "matched",
+      "district_code": "NMA",
+      "district_name": "Nelson Mandela Bay",
+      "district_province": "Eastern Cape",
+      "category": "A"
+    },
+    "cbo-a9554c5a9bf505f8": {
+      "latitude": -29.25064,
+      "longitude": 26.684814,
+      "province": "Free State",
+      "status": "matched",
+      "district_code": "MAN",
+      "district_name": "Mangaung",
+      "district_province": "Free State",
+      "category": "A"
+    },
+    "cbo-1d50793239d8389c": {
+      "latitude": -26.28896945897409,
+      "longitude": 27.89657353643242,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "JHB",
+      "district_name": "City of Johannesburg",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "cbo-acc6979213214372": {
+      "latitude": -26.68407596657216,
+      "longitude": 27.790724334053753,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "DC42",
+      "district_name": "Sedibeng",
+      "district_province": "Gauteng",
+      "category": "C"
+    },
+    "cbo-1c556fb80ee574ad": {
+      "latitude": -26.044125084332656,
+      "longitude": 28.181723359613425,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "EKU",
+      "district_name": "Ekurhuleni",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "cbo-06b5e2894a139af4": {
+      "latitude": -26.103751570499938,
+      "longitude": 27.775484455360342,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "DC48",
+      "district_name": "West Rand",
+      "district_province": "Gauteng",
+      "category": "C"
+    },
+    "cbo-04526c408d12ad11": {
+      "latitude": -25.761514377430476,
+      "longitude": 28.253961013073422,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "TSH",
+      "district_name": "City of Tshwane",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "cbo-18de944d6b44c5a0": {
+      "latitude": -29.489154861192773,
+      "longitude": 30.23075964581707,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "cbo-75463b73f0c70986": {
+      "latitude": -28.765309178496523,
+      "longitude": 32.136855925337144,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC28",
+      "district_name": "King Cetshwayo",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "cbo-2d261f5257ff11ef": {
+      "latitude": -29.861372935170255,
+      "longitude": 31.039431709651083,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "ETH",
+      "district_name": "eThekwini",
+      "district_province": "KwaZulu-Natal",
+      "category": "A"
+    },
+    "cbo-554fd5be0feab57c": {
+      "latitude": -30.10022550428455,
+      "longitude": 30.05613507210521,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC43",
+      "district_name": "Harry Gwala",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "cbo-df1a524c50d35754": {
+      "latitude": -29.598137054250802,
+      "longitude": 30.37934591843496,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "cbo-72c842092d0916b7": {
+      "latitude": -23.83190178366738,
+      "longitude": 30.15792061233378,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC33",
+      "district_name": "Mopani",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "cbo-ec9eec5e447617fc": {
+      "latitude": -25.16907400998319,
+      "longitude": 29.400552650656323,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC47",
+      "district_name": "Sekhukhune",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "cbo-4692c27fe91f975a": {
+      "latitude": -24.96004270662662,
+      "longitude": 27.263947476476705,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC36",
+      "district_name": "Waterberg",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "cbo-48db61d24390d52a": {
+      "latitude": -24.18398299045967,
+      "longitude": 29.002181468652896,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC36",
+      "district_name": "Waterberg",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "cbo-35ddef9ed821ae34": {
+      "latitude": -22.855126137814917,
+      "longitude": 28.911194738085726,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC35",
+      "district_name": "Capricorn",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "cbo-b9fe4ae7a99d7183": {
+      "latitude": -24.76378326956091,
+      "longitude": 31.085377064554823,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC32",
+      "district_name": "Ehlanzeni",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "cbo-cdf4b89c301895e0": {
+      "latitude": -25.470508172880542,
+      "longitude": 30.973498941246977,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC32",
+      "district_name": "Ehlanzeni",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "cbo-ced09b6dae0ee404": {
+      "latitude": -25.954941903345933,
+      "longitude": 30.57133831651395,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "cbo-5f768010ca9d85f1": {
+      "latitude": -26.55226942089739,
+      "longitude": 29.075111804023777,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "cbo-7c387e47d85a549f": {
+      "latitude": -27.17261248476873,
+      "longitude": 30.404291116350695,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "cbo-2aa087307afd0f69": {
+      "latitude": -25.46068136136955,
+      "longitude": 27.8316911667962,
+      "province": "North West",
+      "status": "matched",
+      "district_code": "DC37",
+      "district_name": "Bojanala",
+      "district_province": "North West",
+      "category": "C"
+    },
+    "cbo-889be02c4322f4f6": {
+      "latitude": -30.646905620123285,
+      "longitude": 24.012859894734135,
+      "province": "Northern Cape",
+      "status": "matched",
+      "district_code": "DC7",
+      "district_name": "Pixley ka Seme",
+      "district_province": "Northern Cape",
+      "category": "C"
+    },
+    "cbo-f7658de45a5431ef": {
+      "latitude": -33.95638564824076,
+      "longitude": 18.534929371467733,
+      "province": "Western Cape",
+      "status": "matched",
+      "district_code": "CPT",
+      "district_name": "City of Cape Town",
+      "district_province": "Western Cape",
+      "category": "A"
+    },
+    "dbe-56e2064fc8acfc30": {
+      "latitude": -29.568761259850785,
+      "longitude": 30.389758017979545,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "dbe-8bec085d0a39679b": {
+      "latitude": -29.565451568348426,
+      "longitude": 30.398891215283967,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "dbe-428ff70b11b011d2": {
+      "latitude": -29.63784204492753,
+      "longitude": 30.287659129635212,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "dbe-a82350802282df10": {
+      "latitude": -29.586023827916705,
+      "longitude": 30.4045430610895,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "dbe-a1266a4302469b80": {
+      "latitude": -29.60159602049966,
+      "longitude": 30.286207028350187,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "dbe-954ddcedd989fbf0": {
+      "latitude": -29.603234146873085,
+      "longitude": 30.398910025078543,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "dbe-8628b6172957bea4": {
+      "latitude": -29.583821514350323,
+      "longitude": 30.4273665880199,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "dbe-1899926b06c8fb3c": {
+      "latitude": -29.647934212405595,
+      "longitude": 30.274729665092774,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "dbe-e3e53e7648bda45c": {
+      "latitude": -29.666057699558785,
+      "longitude": 30.208182843884224,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "dbe-7462f72c3f89c9e7": {
+      "latitude": -29.67034127853438,
+      "longitude": 30.351901250643586,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "dbe-70235248068839d8": {
+      "latitude": -29.74151663011021,
+      "longitude": 30.962400338684517,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "ETH",
+      "district_name": "eThekwini",
+      "district_province": "KwaZulu-Natal",
+      "category": "A"
+    },
+    "dbe-752a95cbad2dd814": {
+      "latitude": -29.755044780846788,
+      "longitude": 30.956587884242282,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "ETH",
+      "district_name": "eThekwini",
+      "district_province": "KwaZulu-Natal",
+      "category": "A"
+    },
+    "dbe-3b92bc224ca7a9c7": {
+      "latitude": -29.703300084827802,
+      "longitude": 30.92248074091515,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "ETH",
+      "district_name": "eThekwini",
+      "district_province": "KwaZulu-Natal",
+      "category": "A"
+    },
+    "dbe-8937aaea4855ea05": {
+      "latitude": -29.760325350346438,
+      "longitude": 30.92242189384639,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "ETH",
+      "district_name": "eThekwini",
+      "district_province": "KwaZulu-Natal",
+      "category": "A"
+    },
+    "dbe-548978da7ed01e2a": {
+      "latitude": -29.866164701088532,
+      "longitude": 30.822812112023133,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "ETH",
+      "district_name": "eThekwini",
+      "district_province": "KwaZulu-Natal",
+      "category": "A"
+    },
+    "dbe-c47d188fa7f79fbc": {
+      "latitude": -29.674087441396328,
+      "longitude": 30.920739336636547,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "ETH",
+      "district_name": "eThekwini",
+      "district_province": "KwaZulu-Natal",
+      "category": "A"
+    },
+    "dbe-71145ea57a7c7040": {
+      "latitude": -29.544455255376167,
+      "longitude": 31.12470855816635,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "ETH",
+      "district_name": "eThekwini",
+      "district_province": "KwaZulu-Natal",
+      "category": "A"
+    },
+    "dbe-afe41682f15f950d": {
+      "latitude": -29.769280355195882,
+      "longitude": 30.950320663381813,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "ETH",
+      "district_name": "eThekwini",
+      "district_province": "KwaZulu-Natal",
+      "category": "A"
+    },
+    "dbe-114ad9c2bd11b93b": {
+      "latitude": -29.707049185754173,
+      "longitude": 30.754811948519563,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "ETH",
+      "district_name": "eThekwini",
+      "district_province": "KwaZulu-Natal",
+      "category": "A"
+    },
+    "dbe-0d09fd4431887fb1": {
+      "latitude": -29.813588983234045,
+      "longitude": 30.615928086476824,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "ETH",
+      "district_name": "eThekwini",
+      "district_province": "KwaZulu-Natal",
+      "category": "A"
+    },
+    "dbe-5217a70171b0dbf5": {
+      "latitude": -23.54874851202075,
+      "longitude": 30.711403613093225,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC33",
+      "district_name": "Mopani",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-b55fda08df6035f6": {
+      "latitude": -23.9068080235473,
+      "longitude": 31.05488383896871,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC33",
+      "district_name": "Mopani",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-2142d1932163a7e1": {
+      "latitude": -23.5618827974723,
+      "longitude": 30.3785548884794,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC33",
+      "district_name": "Mopani",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-3f2f991ca9a0e099": {
+      "latitude": -23.207786951368615,
+      "longitude": 30.704785969061057,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC33",
+      "district_name": "Mopani",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-ec0655968cd91dd7": {
+      "latitude": -23.641348646479777,
+      "longitude": 30.245870138625126,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC33",
+      "district_name": "Mopani",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-06b122d885b46e87": {
+      "latitude": -23.87184972910617,
+      "longitude": 30.26806989368848,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC33",
+      "district_name": "Mopani",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-c3c189d1b93a9fc1": {
+      "latitude": -23.87171225203807,
+      "longitude": 30.260256810278975,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC33",
+      "district_name": "Mopani",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-340ae73274527f4d": {
+      "latitude": -23.73046755234598,
+      "longitude": 30.41261322831739,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC33",
+      "district_name": "Mopani",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-5fbf0d5f95426213": {
+      "latitude": -23.63787232964795,
+      "longitude": 29.96486556903328,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC33",
+      "district_name": "Mopani",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-1157332b30a1955b": {
+      "latitude": -23.99980948385724,
+      "longitude": 30.273221221673282,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC33",
+      "district_name": "Mopani",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-4d0f44bead7bc47a": {
+      "latitude": -22.997967458449388,
+      "longitude": 30.42552878605044,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC34",
+      "district_name": "Vhembe",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-97059d80955b5492": {
+      "latitude": -23.050063122338333,
+      "longitude": 30.637218047779704,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC34",
+      "district_name": "Vhembe",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-9eb6be8c401fa294": {
+      "latitude": -22.96458101689455,
+      "longitude": 30.481946377395545,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC34",
+      "district_name": "Vhembe",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-e61295b0c24d55e4": {
+      "latitude": -22.470225637978142,
+      "longitude": 30.59404645329034,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC34",
+      "district_name": "Vhembe",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-0801f1107901fd9e": {
+      "latitude": -22.944780371760807,
+      "longitude": 30.474978633415386,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC34",
+      "district_name": "Vhembe",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-e71973195409b610": {
+      "latitude": -23.21480479582951,
+      "longitude": 29.993849978262745,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC34",
+      "district_name": "Vhembe",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-a056673e2fccf440": {
+      "latitude": -23.166928763361994,
+      "longitude": 30.063097014972065,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC34",
+      "district_name": "Vhembe",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-1d7bd8308d8ac21b": {
+      "latitude": -23.205511818603267,
+      "longitude": 30.23145874572862,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC34",
+      "district_name": "Vhembe",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-5e8d5f50c1bea7b8": {
+      "latitude": -22.899178260791814,
+      "longitude": 29.9404592124685,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC34",
+      "district_name": "Vhembe",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-44b47a64b76eae00": {
+      "latitude": -22.33029281204435,
+      "longitude": 30.026456024120613,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC34",
+      "district_name": "Vhembe",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "dbe-43dda4a42732cab8": {
+      "latitude": -26.500067868196602,
+      "longitude": 29.973069271163578,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-f0c111bcafe34162": {
+      "latitude": -26.134287796982253,
+      "longitude": 30.25076265902197,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-5344128cc081c0e7": {
+      "latitude": -26.2993744930944,
+      "longitude": 29.9887247824204,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-5ab2807bbc742d3a": {
+      "latitude": -26.530200892666734,
+      "longitude": 29.078794220952474,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-511339ef53f499c1": {
+      "latitude": -26.437057101567184,
+      "longitude": 29.45087493254638,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-969b56429e92878a": {
+      "latitude": -26.931441285600073,
+      "longitude": 29.225727931331164,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-558153e9cf9ce481": {
+      "latitude": -26.840978057113677,
+      "longitude": 30.531796681919992,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-3b67f28fa81c89cc": {
+      "latitude": -25.95886378771913,
+      "longitude": 30.580612454901647,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-8331b80a2f5f5b2c": {
+      "latitude": -27.031609632550904,
+      "longitude": 30.78403825348111,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-89c0c06432381952": {
+      "latitude": -27.09144877054294,
+      "longitude": 30.008368982930484,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-a06bca7b80521cec": {
+      "latitude": -25.69487033016968,
+      "longitude": 30.245702114786305,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC31",
+      "district_name": "Nkangala",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-190a9b854dd48915": {
+      "latitude": -25.86769141290724,
+      "longitude": 29.174182816349134,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC31",
+      "district_name": "Nkangala",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-f57a4116f5f65da5": {
+      "latitude": -25.141380727958158,
+      "longitude": 28.863809810342893,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC31",
+      "district_name": "Nkangala",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-d2f27d75462e8582": {
+      "latitude": -25.836124947410447,
+      "longitude": 29.20073590814653,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC31",
+      "district_name": "Nkangala",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-be3237ad195405c3": {
+      "latitude": -25.542243740498005,
+      "longitude": 29.017016324958682,
+      "province": "Mpumalanga",
+      "status": "province_mismatch",
+      "district_code": "TSH",
+      "district_name": "City of Tshwane",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-295879a5091a19af": {
+      "latitude": -26.10537681021827,
+      "longitude": 28.690555300000003,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC31",
+      "district_name": "Nkangala",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-918af74e798ba4b3": {
+      "latitude": -25.00965107520675,
+      "longitude": 28.68597044603711,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC31",
+      "district_name": "Nkangala",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-e5dedcd81b0154f7": {
+      "latitude": -25.81100206009731,
+      "longitude": 29.516002625622296,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC31",
+      "district_name": "Nkangala",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-f96b5a9a4f419a86": {
+      "latitude": -25.997950763860075,
+      "longitude": 30.81718485767285,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-ea941b4c044b6955": {
+      "latitude": -25.344080132147585,
+      "longitude": 28.834727884862623,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC31",
+      "district_name": "Nkangala",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "dbe-85b1837a6404cafe": {
+      "latitude": -25.371031353339813,
+      "longitude": 28.287486388241554,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "TSH",
+      "district_name": "City of Tshwane",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-30029600ac0a2748": {
+      "latitude": -25.401211083128477,
+      "longitude": 28.23154865080587,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "TSH",
+      "district_name": "City of Tshwane",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-0a547551c6e4d95c": {
+      "latitude": -25.455717091006917,
+      "longitude": 28.088897679527104,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "TSH",
+      "district_name": "City of Tshwane",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-aba5db1367c8985c": {
+      "latitude": -25.516502604945625,
+      "longitude": 28.10940918678017,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "TSH",
+      "district_name": "City of Tshwane",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-6b7b4e54592892bd": {
+      "latitude": -25.48744459307031,
+      "longitude": 28.124327417913683,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "TSH",
+      "district_name": "City of Tshwane",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-f32c19760355977f": {
+      "latitude": -25.3827761504757,
+      "longitude": 28.19310100608832,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "TSH",
+      "district_name": "City of Tshwane",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-aef1954aebc216d4": {
+      "latitude": -25.397442659258534,
+      "longitude": 28.233997644538096,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "TSH",
+      "district_name": "City of Tshwane",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-7615f02e4116dc75": {
+      "latitude": -25.382290294468675,
+      "longitude": 28.193608859725476,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "TSH",
+      "district_name": "City of Tshwane",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-220feb4e977fd68c": {
+      "latitude": -25.510700107142117,
+      "longitude": 28.104030729225723,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "TSH",
+      "district_name": "City of Tshwane",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-784a0632d61729d4": {
+      "latitude": -25.99784984986531,
+      "longitude": 28.180137199337825,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "JHB",
+      "district_name": "City of Johannesburg",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-5f8935f9641032f5": {
+      "latitude": -26.35749015567956,
+      "longitude": 28.166100472183814,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "EKU",
+      "district_name": "Ekurhuleni",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-1e667a860b5c340b": {
+      "latitude": -26.340448823116148,
+      "longitude": 28.19999332793572,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "EKU",
+      "district_name": "Ekurhuleni",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-afd01aa42b125234": {
+      "latitude": -26.376318072896417,
+      "longitude": 28.129920863385525,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "EKU",
+      "district_name": "Ekurhuleni",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-04973e622126a7fe": {
+      "latitude": -26.386702612137537,
+      "longitude": 28.188198016977545,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "EKU",
+      "district_name": "Ekurhuleni",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-ba9461ec52f89314": {
+      "latitude": -26.344456927389043,
+      "longitude": 28.16313949397656,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "EKU",
+      "district_name": "Ekurhuleni",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-5618279170d9a578": {
+      "latitude": -26.319822838064393,
+      "longitude": 28.147654092003595,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "EKU",
+      "district_name": "Ekurhuleni",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-68a1e5b8a490c277": {
+      "latitude": -26.321993426203925,
+      "longitude": 28.154121386403084,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "EKU",
+      "district_name": "Ekurhuleni",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-2651991bb30c07b5": {
+      "latitude": -26.35859240842784,
+      "longitude": 28.188401390469807,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "EKU",
+      "district_name": "Ekurhuleni",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-ada45c6418328aa8": {
+      "latitude": -26.20934895568919,
+      "longitude": 28.153626702265925,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "EKU",
+      "district_name": "Ekurhuleni",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-252de0271eeb6c69": {
+      "latitude": -26.22439670584903,
+      "longitude": 28.19018683259826,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "EKU",
+      "district_name": "Ekurhuleni",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-99faf691a5329316": {
+      "latitude": -26.290762984171664,
+      "longitude": 27.87490284318163,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "JHB",
+      "district_name": "City of Johannesburg",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-2ce5b0a53170604f": {
+      "latitude": -26.28475717799374,
+      "longitude": 27.899147406248357,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "JHB",
+      "district_name": "City of Johannesburg",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-e1ba9145f6a4514e": {
+      "latitude": -26.29260132847802,
+      "longitude": 27.900891387949233,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "JHB",
+      "district_name": "City of Johannesburg",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-84b746441a46b245": {
+      "latitude": -26.294894105011593,
+      "longitude": 27.897687430214383,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "JHB",
+      "district_name": "City of Johannesburg",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "dbe-3a304bcf8b12c1b2": {
+      "latitude": -26.290274972249396,
+      "longitude": 27.915781323723806,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "JHB",
+      "district_name": "City of Johannesburg",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "fhr-a523ab43968ed69f": {
+      "latitude": -33.8587946268997,
+      "longitude": 25.5524060653592,
+      "province": "Eastern Cape",
+      "status": "matched",
+      "district_code": "NMA",
+      "district_name": "Nelson Mandela Bay",
+      "district_province": "Eastern Cape",
+      "category": "A"
+    },
+    "fhr-9035b1e77cb56c43": {
+      "latitude": -33.8670506390532,
+      "longitude": 25.5585307603936,
+      "province": "Eastern Cape",
+      "status": "matched",
+      "district_code": "NMA",
+      "district_name": "Nelson Mandela Bay",
+      "district_province": "Eastern Cape",
+      "category": "A"
+    },
+    "fhr-4ad1a3eab6a4c572": {
+      "latitude": -33.8623373803959,
+      "longitude": 25.5561533949174,
+      "province": "Eastern Cape",
+      "status": "matched",
+      "district_code": "NMA",
+      "district_name": "Nelson Mandela Bay",
+      "district_province": "Eastern Cape",
+      "category": "A"
+    },
+    "fhr-9be90e53eaaccbb7": {
+      "latitude": -29.248803969689,
+      "longitude": 26.6822541111642,
+      "province": "Free State",
+      "status": "matched",
+      "district_code": "MAN",
+      "district_name": "Mangaung",
+      "district_province": "Free State",
+      "category": "A"
+    },
+    "fhr-0e1cbc528f3460ea": {
+      "latitude": -29.2675232593835,
+      "longitude": 26.684356647116,
+      "province": "Free State",
+      "status": "matched",
+      "district_code": "MAN",
+      "district_name": "Mangaung",
+      "district_province": "Free State",
+      "category": "A"
+    },
+    "fhr-6a32e06f2f028ba8": {
+      "latitude": -29.2785355155704,
+      "longitude": 26.7349359024997,
+      "province": "Free State",
+      "status": "matched",
+      "district_code": "MAN",
+      "district_name": "Mangaung",
+      "district_province": "Free State",
+      "category": "A"
+    },
+    "fhr-6612cfb291d15bcb": {
+      "latitude": -26.2904692430046,
+      "longitude": 27.9158041651045,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "JHB",
+      "district_name": "City of Johannesburg",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "fhr-1d7499a07ed83e6c": {
+      "latitude": -26.2951457946629,
+      "longitude": 27.9073388250588,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "JHB",
+      "district_name": "City of Johannesburg",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "fhr-d1b186b2ea844427": {
+      "latitude": -26.2926551863725,
+      "longitude": 27.900877320071,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "JHB",
+      "district_name": "City of Johannesburg",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "fhr-85700e2b98a1a6ca": {
+      "latitude": -26.6824985571959,
+      "longitude": 27.7858894436305,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "DC42",
+      "district_name": "Sedibeng",
+      "district_province": "Gauteng",
+      "category": "C"
+    },
+    "fhr-bf730515bee4dc1b": {
+      "latitude": -26.6876194353933,
+      "longitude": 27.7895721887348,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "DC42",
+      "district_name": "Sedibeng",
+      "district_province": "Gauteng",
+      "category": "C"
+    },
+    "fhr-3add27acd4676012": {
+      "latitude": -26.6882326769871,
+      "longitude": 27.7843674975429,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "DC42",
+      "district_name": "Sedibeng",
+      "district_province": "Gauteng",
+      "category": "C"
+    },
+    "fhr-a83207c5ee7d31e8": {
+      "latitude": -26.0499862758789,
+      "longitude": 28.1829799288365,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "EKU",
+      "district_name": "Ekurhuleni",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "fhr-23bf58afb7461733": {
+      "latitude": -26.0088376936018,
+      "longitude": 28.2402092349437,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "EKU",
+      "district_name": "Ekurhuleni",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "fhr-88e2e7828f8e95c2": {
+      "latitude": -26.0116798086546,
+      "longitude": 28.2451394848843,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "EKU",
+      "district_name": "Ekurhuleni",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "fhr-cb3a3bd9c468a39d": {
+      "latitude": -26.1027070489754,
+      "longitude": 27.7482875133024,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "DC48",
+      "district_name": "West Rand",
+      "district_province": "Gauteng",
+      "category": "C"
+    },
+    "fhr-cb69cd282b13f6a3": {
+      "latitude": -26.1158455686865,
+      "longitude": 27.7457787544594,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "DC48",
+      "district_name": "West Rand",
+      "district_province": "Gauteng",
+      "category": "C"
+    },
+    "fhr-f9ed64fc9dd48ca2": {
+      "latitude": -26.0980378264313,
+      "longitude": 27.7657960189064,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "DC48",
+      "district_name": "West Rand",
+      "district_province": "Gauteng",
+      "category": "C"
+    },
+    "fhr-c181caa07b147b5c": {
+      "latitude": -25.7777149586359,
+      "longitude": 28.0737745324783,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "TSH",
+      "district_name": "City of Tshwane",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "fhr-acc58f6e9f2a708b": {
+      "latitude": -25.9199320529559,
+      "longitude": 28.086759426964,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "TSH",
+      "district_name": "City of Tshwane",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "fhr-eb6f14b911d98df2": {
+      "latitude": -25.7690908435896,
+      "longitude": 28.0730435348412,
+      "province": "Gauteng",
+      "status": "matched",
+      "district_code": "TSH",
+      "district_name": "City of Tshwane",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "fhr-05fa1501bbe0de50": {
+      "latitude": -29.490551858597,
+      "longitude": 30.2302547948935,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "fhr-cfa2186bfedec195": {
+      "latitude": -29.4920219269783,
+      "longitude": 30.2296200620073,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "fhr-1eb1b13069b30c95": {
+      "latitude": -29.5063662209034,
+      "longitude": 30.2260757670431,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "fhr-a56f6f666a1dfe96": {
+      "latitude": -28.653678544165,
+      "longitude": 32.2094412643217,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC28",
+      "district_name": "King Cetshwayo",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "fhr-4538ce30727fb5f1": {
+      "latitude": -28.7160143786275,
+      "longitude": 32.1658090239563,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC28",
+      "district_name": "King Cetshwayo",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "fhr-83cd1b2b3c4a7506": {
+      "latitude": -28.837404736081,
+      "longitude": 31.1456855617307,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC28",
+      "district_name": "King Cetshwayo",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "fhr-10abf05f95dbbe9c": {
+      "latitude": -29.7210304971997,
+      "longitude": 30.944449715019,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "ETH",
+      "district_name": "eThekwini",
+      "district_province": "KwaZulu-Natal",
+      "category": "A"
+    },
+    "fhr-bfd8748c460de0e2": {
+      "latitude": -29.9491584955231,
+      "longitude": 30.8875998062769,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "ETH",
+      "district_name": "eThekwini",
+      "district_province": "KwaZulu-Natal",
+      "category": "A"
+    },
+    "fhr-9df4b89b5372919f": {
+      "latitude": -29.7244116180783,
+      "longitude": 30.9421130138518,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "ETH",
+      "district_name": "eThekwini",
+      "district_province": "KwaZulu-Natal",
+      "category": "A"
+    },
+    "fhr-c9430610b33bf360": {
+      "latitude": -30.0744745367765,
+      "longitude": 30.0368136229894,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC43",
+      "district_name": "Harry Gwala",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "fhr-46b0be35391e92f3": {
+      "latitude": -30.09740690613,
+      "longitude": 30.0614978656071,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC43",
+      "district_name": "Harry Gwala",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "fhr-9baf223bf98c5250": {
+      "latitude": -30.0381507604705,
+      "longitude": 30.1248365806068,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC43",
+      "district_name": "Harry Gwala",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "fhr-7afcb6cae6b7e15d": {
+      "latitude": -29.5760138077427,
+      "longitude": 30.5625697003519,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "fhr-a7918e03a08b2605": {
+      "latitude": -29.6014780237077,
+      "longitude": 30.315653472311,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "fhr-e4e77599a537ace3": {
+      "latitude": -29.6480536246847,
+      "longitude": 30.2744198614402,
+      "province": "KwaZulu-Natal",
+      "status": "matched",
+      "district_code": "DC22",
+      "district_name": "Umgungundlovu",
+      "district_province": "KwaZulu-Natal",
+      "category": "C"
+    },
+    "fhr-90c93f70e9b762d0": {
+      "latitude": -23.8848229285115,
+      "longitude": 30.2901816901627,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC33",
+      "district_name": "Mopani",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-a519d2766ba9bf72": {
+      "latitude": -24.0217093415717,
+      "longitude": 30.2763229457147,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC33",
+      "district_name": "Mopani",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-fcf56fe2f80a0848": {
+      "latitude": -23.9751216047384,
+      "longitude": 30.2651004852463,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC33",
+      "district_name": "Mopani",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-367c19b7a77279ce": {
+      "latitude": -25.172218,
+      "longitude": 29.3453611,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC47",
+      "district_name": "Sekhukhune",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-2b73a93eda0f9bd4": {
+      "latitude": -25.0386812763011,
+      "longitude": 29.3669238930306,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC47",
+      "district_name": "Sekhukhune",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-a746c9609952479a": {
+      "latitude": -25.1346490140787,
+      "longitude": 29.3906173248377,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC47",
+      "district_name": "Sekhukhune",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-5f454825e097a664": {
+      "latitude": -24.1367011615659,
+      "longitude": 28.9729892211254,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC36",
+      "district_name": "Waterberg",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-b3fd1cc1a9f4938d": {
+      "latitude": -24.950784364391,
+      "longitude": 27.2734391647654,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC36",
+      "district_name": "Waterberg",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-c48b121cb8def28a": {
+      "latitude": -24.9699742517873,
+      "longitude": 27.2707948329761,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC36",
+      "district_name": "Waterberg",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-da8581ac8286df11": {
+      "latitude": -24.7855279376533,
+      "longitude": 27.289618215991,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC36",
+      "district_name": "Waterberg",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-c0ec61ed4971c383": {
+      "latitude": -24.1404577005252,
+      "longitude": 28.980495196661,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC36",
+      "district_name": "Waterberg",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-c44f649eccb9ea40": {
+      "latitude": -24.1764962951031,
+      "longitude": 28.9853359509241,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC36",
+      "district_name": "Waterberg",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-f8e447655c4dee1b": {
+      "latitude": -22.8462152823245,
+      "longitude": 28.9081838960664,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC35",
+      "district_name": "Capricorn",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-1b52cfef49fe008c": {
+      "latitude": -22.8499951728703,
+      "longitude": 28.913133935424,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC35",
+      "district_name": "Capricorn",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-0d210af7c1808a2b": {
+      "latitude": -22.8613067117722,
+      "longitude": 28.8851162133017,
+      "province": "Limpopo",
+      "status": "matched",
+      "district_code": "DC35",
+      "district_name": "Capricorn",
+      "district_province": "Limpopo",
+      "category": "C"
+    },
+    "fhr-a0f8bed8d2f84c3b": {
+      "latitude": -24.756523,
+      "longitude": 31.082396,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC32",
+      "district_name": "Ehlanzeni",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "fhr-2ffc8dc9f6cd9c75": {
+      "latitude": -24.7710817057992,
+      "longitude": 31.0829025025134,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC32",
+      "district_name": "Ehlanzeni",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "fhr-678ab45396424430": {
+      "latitude": -24.7660592486094,
+      "longitude": 31.0720005927152,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC32",
+      "district_name": "Ehlanzeni",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "fhr-ed41cdeb4699c7bc": {
+      "latitude": -25.5300678311518,
+      "longitude": 31.3115569815073,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC32",
+      "district_name": "Ehlanzeni",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "fhr-3ac6fa89cc1ae502": {
+      "latitude": -25.5050216394646,
+      "longitude": 31.3517885052229,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC32",
+      "district_name": "Ehlanzeni",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "fhr-856eb835c8da39b3": {
+      "latitude": -25.3496807564735,
+      "longitude": 31.1314971901798,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC32",
+      "district_name": "Ehlanzeni",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "fhr-5cb3c48d83092141": {
+      "latitude": -25.9488477541159,
+      "longitude": 30.5889869809651,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "fhr-f800f8c1fc615d48": {
+      "latitude": -25.9620725980449,
+      "longitude": 30.5700444594072,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "fhr-9071b36eaaa643ee": {
+      "latitude": -25.9587692404821,
+      "longitude": 30.5805628021297,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "fhr-ed170cca3a3554ae": {
+      "latitude": -26.5419353626407,
+      "longitude": 29.0799342355905,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "fhr-873b67409e536ad9": {
+      "latitude": -26.5524088594789,
+      "longitude": 29.0750965106598,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "fhr-06e10d6c963995e8": {
+      "latitude": -26.5677868882125,
+      "longitude": 29.0829235212764,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "fhr-4c963e93858ddcfc": {
+      "latitude": -25.9093306635339,
+      "longitude": 31.7912035020782,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC32",
+      "district_name": "Ehlanzeni",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "fhr-971b2f23cb5c6526": {
+      "latitude": -27.1467153779357,
+      "longitude": 30.3949633831221,
+      "province": "Mpumalanga",
+      "status": "matched",
+      "district_code": "DC30",
+      "district_name": "Gert Sibande",
+      "district_province": "Mpumalanga",
+      "category": "C"
+    },
+    "fhr-c3aa810b1d4a6df3": {
+      "latitude": -25.3220299275596,
+      "longitude": 28.0440794736693,
+      "province": "North West",
+      "status": "matched",
+      "district_code": "DC37",
+      "district_name": "Bojanala",
+      "district_province": "North West",
+      "category": "C"
+    },
+    "fhr-0abb4d574e4b2c45": {
+      "latitude": -25.4812605659249,
+      "longitude": 27.8392158813773,
+      "province": "North West",
+      "status": "matched",
+      "district_code": "DC37",
+      "district_name": "Bojanala",
+      "district_province": "North West",
+      "category": "C"
+    },
+    "fhr-6107ef33de37b80f": {
+      "latitude": -25.4894878190003,
+      "longitude": 27.8393902158265,
+      "province": "North West",
+      "status": "matched",
+      "district_code": "DC37",
+      "district_name": "Bojanala",
+      "district_province": "North West",
+      "category": "C"
+    },
+    "fhr-ca9e0644a1167868": {
+      "latitude": -26.2325955747653,
+      "longitude": 27.8997597045722,
+      "province": "Northern Cape",
+      "status": "province_mismatch",
+      "district_code": "JHB",
+      "district_name": "City of Johannesburg",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "fhr-421b83c30d5c39ff": {
+      "latitude": -30.6476078368279,
+      "longitude": 24.0337649667587,
+      "province": "Northern Cape",
+      "status": "matched",
+      "district_code": "DC7",
+      "district_name": "Pixley ka Seme",
+      "district_province": "Northern Cape",
+      "category": "C"
+    },
+    "fhr-5be621e342edfb64": {
+      "latitude": -26.311212967446,
+      "longitude": 27.8329225363171,
+      "province": "Northern Cape",
+      "status": "province_mismatch",
+      "district_code": "JHB",
+      "district_name": "City of Johannesburg",
+      "district_province": "Gauteng",
+      "category": "A"
+    },
+    "fhr-bfc651691f195ad1": {
+      "latitude": -33.9555723118486,
+      "longitude": 18.5331291410918,
+      "province": "Western Cape",
+      "status": "matched",
+      "district_code": "CPT",
+      "district_name": "City of Cape Town",
+      "district_province": "Western Cape",
+      "category": "A"
+    },
+    "fhr-d351b1b84f4c25f8": {
+      "latitude": -33.9535914662074,
+      "longitude": 18.5234213014024,
+      "province": "Western Cape",
+      "status": "matched",
+      "district_code": "CPT",
+      "district_name": "City of Cape Town",
+      "district_province": "Western Cape",
+      "category": "A"
+    },
+    "fhr-7fa5282e8f49dfba": {
+      "latitude": -33.9515950126573,
+      "longitude": 18.508009285991,
+      "province": "Western Cape",
+      "status": "matched",
+      "district_code": "CPT",
+      "district_name": "City of Cape Town",
+      "district_province": "Western Cape",
+      "category": "A"
+    }
+  }
+}

@@ -1,10 +1,14 @@
 export const palette = ['#bf4d45','#377ca8','#559b55','#9864ac','#d48a27','#318e8b','#b35d86','#827142','#6273bb','#8b6252','#cf596c','#428562','#b47631','#626aa4','#2995a4','#a54f69','#799334','#ab673f','#685d90','#40716d','#a78425','#47799a','#966b85','#638d69','#906447'];
 
-export function prepare(data) {
-  const sites=new Map(data.sites.map(s=>[s.id,s]));
-  const cbos=data.sites.filter(s=>s.kind==='CBO').sort((a,b)=>a.id.localeCompare(b.id));
+export function prepare(data,districtData=null) {
+  const sites=new Map(data.sites.map(s=>{
+    const d=districtData?.assignments?.[s.id];
+    const valid=d&&d.latitude===s.latitude&&d.longitude===s.longitude&&d.province===s.province;
+    return [s.id,{...s,district:valid?d:null}];
+  }));
+  const cbos=[...sites.values()].filter(s=>s.kind==='CBO').sort((a,b)=>a.id.localeCompare(b.id));
   const colors=new Map(cbos.map((c,i)=>[c.id,palette[i % palette.length]]));
-  return {sites,cbos,colors,links:data.links};
+  return {sites,cbos,colors,links:data.links,districtMetadata:districtData?.metadata};
 }
 
 export function provinceGroups(model){
@@ -66,8 +70,8 @@ export function routeResult(body){
 }
 
 // Determine winners before applying a CBO focus, so focus never changes allocation.
-export function nearestConnections(model,{province='',cbo='',mode='straight'}={},roads=new Map()){
-  const candidates=connections(model,{province}),groups=new Map();
+export function nearestConnections(model,{province='',cbo='',mode='straight',scope='province'}={},roads=new Map()){
+  const candidates=connections(model,{province}).filter(l=>scope!=='district'||sameDistrict(model.sites.get(l.cbo_id),model.sites.get(l.school_id))),groups=new Map();
   for(const l of candidates){if(!groups.has(l.school_id))groups.set(l.school_id,[]);groups.get(l.school_id).push(l);}
   const winners=[];
   for(const group of groups.values()){
@@ -79,13 +83,27 @@ export function nearestConnections(model,{province='',cbo='',mode='straight'}={}
   }
   return winners;
 }
+export function sameDistrict(a,b){
+  return a?.province===b?.province && a?.district?.status==='matched' && b?.district?.status==='matched'
+    && Boolean(a.district.district_code) && a.district.district_code===b.district.district_code;
+}
+export function districtReason(model,school){
+  if(!school.district)return 'District assignment unavailable';
+  if(school.district?.status!=='matched')return 'Location / province needs review';
+  return model.cbos.some(c=>sameDistrict(c,school))?'':'No CBO in this district';
+}
+
 export function distanceCsv(model,filter,roads=new Map()){
   const straight=new Map(nearestConnections(model,{province:filter.province}).map(l=>[l.school_id,l.cbo_id]));
   const road=new Map(nearestConnections(model,{province:filter.province,mode:'road'},roads).map(l=>[l.school_id,l.cbo_id]));
-  const rows=[['Province','CBO','DBE school','Straight-line km','Road network km','Nearest CBO (straight line)','Nearest CBO (road network)','Is nearest CBO (straight line)','Is nearest CBO (road network)']];
+  const districtStraight=new Map(nearestConnections(model,{scope:'district'}).map(l=>[l.school_id,l]));
+  const districtRoad=new Map(nearestConnections(model,{scope:'district',mode:'road'},roads).map(l=>[l.school_id,l]));
+  const rows=[['Province','CBO','DBE school','Straight-line km','Road network km','Nearest CBO (straight line)','Nearest CBO (road network)','Is nearest CBO (straight line)','Is nearest CBO (road network)',...(model.districtMetadata?['CBO district / metro','DBE district / metro','Same district / metro','Nearest district CBO (straight line)','Nearest district straight-line km','Nearest district CBO (road network)','Nearest district road km','District comparison note']:[])]];
   for(const l of connections(model,filter)){
     const c=model.sites.get(l.cbo_id),s=model.sites.get(l.school_id),r=roads.get(routeKey(c,s)),winner=road.get(s.id);
-    rows.push([c.province,c.name,s.name,l.distance_km.toFixed(3),Number.isFinite(r?.distance_km)?r.distance_km.toFixed(3):'',model.sites.get(straight.get(s.id))?.name||'',model.sites.get(winner)?.name||'',straight.get(s.id)===c.id?'Yes':'No',winner?(winner===c.id?'Yes':'No'):'']);
+    const ds=districtStraight.get(s.id),dr=districtRoad.get(s.id),drKm=dr&&roads.get(routeKey(model.sites.get(dr.cbo_id),s))?.distance_km;
+    const districtCells=model.districtMetadata?[c.district?.district_name||'',s.district?.district_name||'',sameDistrict(c,s)?'Yes':'No',ds?model.sites.get(ds.cbo_id).name:'',ds?ds.distance_km.toFixed(3):'',dr?model.sites.get(dr.cbo_id).name:'',Number.isFinite(drKm)?drKm.toFixed(3):'',districtReason(model,s)||(!dr?'District road route unavailable':'')]:[];
+    rows.push([c.province,c.name,s.name,l.distance_km.toFixed(3),Number.isFinite(r?.distance_km)?r.distance_km.toFixed(3):'',model.sites.get(straight.get(s.id))?.name||'',model.sites.get(winner)?.name||'',straight.get(s.id)===c.id?'Yes':'No',winner?(winner===c.id?'Yes':'No'):'',...districtCells]);
   }
   return '\uFEFF'+rows.map(row=>row.map(value=>{let s=String(value);if(/^[=+\-@]/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';}).join(',')).join('\r\n');
 }

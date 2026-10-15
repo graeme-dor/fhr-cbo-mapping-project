@@ -1,6 +1,6 @@
 # CBO-DBE school accessibility map
 
-Alternative map version: `0.3.5`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
+Alternative map version: `0.4.0`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
 
 Preview: `python3 -m http.server 8001 --bind 127.0.0.1 --directory web`, then open http://127.0.0.1:8001/accessibility/.
 
@@ -71,3 +71,22 @@ Version 0.3.3 restores grey comparison strokes. White casings are used only in r
 Version 0.3.4 uses finer, lighter grey straight connections while retaining the road styling. A pro bono design credit for Graeme Dor and DataVision Analytics appears below the map acknowledgements.
 
 Version 0.3.5 uses shorter legend labels and neutral FHR legend symbols. The compact acknowledgement block centres the design credit above the Leaflet and data-provider credits.
+
+## District / metro comparison
+
+The **Nearest CBO comparison** selector defaults to **Within the province**. **Within the same district / metro** restricts nearest candidates to CBOs whose coordinates fall in the same district or metropolitan municipality as the school, and whose recorded province matches the school. The existing province-wide distances and grey comparisons remain available. Colours follow the selected nearest comparison. CBO focus never changes which CBO wins. FHR assignments remain unchanged.
+
+School popups show both provincial and district nearest results for the selected distance method. A district with no mapped CBO has **No CBO in this district**, rather than a silent provincial fallback. In district view those schools stay visible neutrally and are listed separately. A mapped-versus-recorded province mismatch is flagged for location/province review and excluded from district allocation; province-wide results continue to use the recorded province.
+
+Boundaries: Municipal Demarcation Board, hosted by [Western Cape Government](https://gis.westerncape.gov.za/hosting/rest/services/Hosted/Demarcation/FeatureServer/0), **labelled 2018 in the service description**, retrieved 15 October 2026. This is a pinned reference baseline, not a statement of current legal boundaries. The 52 areas include district and metropolitan municipalities; metros such as Tshwane are district-level comparison areas. Source metadata, URL and SHA-256 are in `data/boundaries/source.json`; lossless source geometry is archived in `data/boundaries/districts-mdb-2018.geojson.gz`. Coordinate assignment uses the full polygons including holes; ambiguous boundary points are flagged for review. Only the small generated `districts.json` file is loaded by the map. No school coordinates are sent to the boundary service.
+
+To regenerate district assignments after location updates:
+
+```sh
+python3 scripts/build_districts.py
+node scripts/build_road_snapshot.mjs
+```
+
+The main `scripts/build.py` pipeline also regenerates district assignments without changing the source workbook. Changed coordinates invalidate saved assignments in the map. The road snapshot builder regenerates the full 425-row DBE export with district names, same-district flags, nearest district CBO names and distances for both methods, and gap/review notes. Updating district information alone makes no routing requests. To update the boundary baseline, replace the geometry and source manifest together and rerun the commands above.
+
+Baseline checks (15 October 2026): 66 of 85 DBE schools have an eligible same-district CBO; 18 have no mapped CBO in their district; one (Wolvenkop Special School) needs location/province review. Two assigned FHR schools (Alpha Primary and Veritas Secondary) also have coordinate/province mismatches; their recorded FHR relationships are retained. These flags identify data to review, not a confirmed correction.

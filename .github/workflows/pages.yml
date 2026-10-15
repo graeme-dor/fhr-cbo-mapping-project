@@ -27,6 +27,7 @@ jobs:
           if [ -f tests/test_experiment.mjs ]; then
             node --check web/accessibility/explorer.js
             node tests/test_experiment.mjs
+            node tests/test_districts.mjs
           fi
       - run: python -c "import json; d=json.load(open('web/data/map.json')); assert d['sites']; assert d['metadata']['version']==open('VERSION').read().strip()"
   deploy:

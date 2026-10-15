@@ -95,7 +95,7 @@ const preloaded=await validateSnapshot(data,snapshot);
 assert.equal(preloaded.roads.size,499);assert.equal(Object.keys(preloaded.routes).length,499);
 assert.equal(nearestConnections(model,{mode:'road'},preloaded.roads).length,85);
 const csv=fs.readFileSync(new URL('../web/accessibility/data/distances.csv',import.meta.url),'utf8');
-assert.equal(csv,distanceCsv(model,{},preloaded.roads));assert.equal(csv.split('\r\n').length,426);
+assert.equal(csv,distanceCsv(prepare(data,JSON.parse(fs.readFileSync(new URL('../web/accessibility/data/districts.json',import.meta.url)))),{},preloaded.roads));assert.equal(csv.split('\r\n').length,426);
 const changed=structuredClone(data);changed.sites.find(s=>s.kind==='DBE').latitude+=.001;
 assert.notEqual(await datasetSignature(changed),snapshot.metadata.dataset_signature);
 await assert.rejects(validateSnapshot(changed,snapshot),/needs rebuilding/);

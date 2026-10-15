@@ -1,0 +1,12 @@
+{
+  "source_url": "https://gis.westerncape.gov.za/hosting/rest/services/Hosted/Demarcation/FeatureServer/0",
+  "query_url": "https://gis.westerncape.gov.za/hosting/rest/services/Hosted/Demarcation/FeatureServer/0/query?where=1%3D1&outFields=province,district,district_n,category,date&returnGeometry=true&outSR=4326&f=geojson",
+  "publisher": "Western Cape Government",
+  "custodian": "Municipal Demarcation Board",
+  "boundary_vintage": "2018 (service description)",
+  "retrieved_on": "2026-10-15",
+  "feature_count": 52,
+  "crs": "EPSG:4326",
+  "geometry_sha256": "aadd57460efb6c68074744ad1b903cd4d8309ad6809e125539d9d1ba2500a887",
+  "notes": "District municipalities and metropolitan municipalities. Metros are treated as district-level areas. This is a pinned baseline, not a claim of current legal boundaries."
+}

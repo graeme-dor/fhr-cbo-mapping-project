@@ -7,6 +7,7 @@ from collections import Counter
 from pathlib import Path
 import openpyxl
 from pipeline import cbos, dbe, fhr, geocoding, distances
+from build_districts import build as build_district_assignments
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -56,7 +57,9 @@ def main():
     save("reports/build_summary.json", metadata)
     # Only fields needed for the shareable map enter the website.
     public_sites = [{k: s[k] for k in ("id", "kind", "name", "province", "latitude", "longitude", "coordinate_status")} for s in sites]
-    save("web/data/map.json", dict(metadata=metadata, sites=public_sites, links=links))
+    public_data = dict(metadata=metadata, sites=public_sites, links=links)
+    save("web/data/map.json", public_data)
+    save("web/accessibility/data/districts.json", build_district_assignments(public_data))
     # A new release must not reuse cached scripts/styles from a previous page.
     index = ROOT / "web/index.html"
     html = index.read_text()

@@ -1,5 +1,13 @@
 # Changelog
 
+## Accessibility map 0.4.0 — 2026-10-15
+
+- Add an optional nearest-CBO comparison restricted to the same district / metro and recorded province, retaining province-wide results as the default.
+- Precompute district assignments from a pinned MDB boundary layer (service labelled 2018), including metros, with source provenance and offline regeneration.
+- Flag schools without a project CBO in their district and locations whose mapped province differs from their recorded province; never fall back silently to another district.
+- Show both nearest results in school popups and append district comparison columns to the full DBE CSV export.
+- Reuse the existing road snapshot without additional routing queries.
+
 ## Accessibility map 0.3.7 — 2026-10-15
 
 - Clarify that nearest DBE connections are determined per school by the selected distance method within the same province, without district boundaries.

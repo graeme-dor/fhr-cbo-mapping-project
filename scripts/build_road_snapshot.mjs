@@ -7,7 +7,7 @@ Object.defineProperty(globalThis,'localStorage',{value:{getItem:()=>null,setItem
 const endpoint=process.argv.slice(2).find(a=>!a.startsWith('--'))||'https://routing.openstreetmap.de/routed-car';
 const refresh=process.argv.includes('--refresh');
 const input=new URL('../web/data/map.json',import.meta.url),output=new URL('../web/accessibility/data/roads.json',import.meta.url);
-const data=JSON.parse(await fs.readFile(input,'utf8')),model=prepare(data),signature=await datasetSignature(data);
+const data=JSON.parse(await fs.readFile(input,'utf8')),model=prepare(data,JSON.parse(await fs.readFile(new URL('districts.json',output),'utf8'))),signature=await datasetSignature(data);
 let existing;
 try{existing=JSON.parse(await fs.readFile(output,'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
 async function exports(roads){await fs.writeFile(new URL('distances.csv',output),distanceCsv(model,{},roads));await fs.writeFile(new URL('fhr-distances.csv',output),fhrDistanceCsv(model,roads));}
