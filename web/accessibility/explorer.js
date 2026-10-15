@@ -112,7 +112,7 @@ function render(){
   const distanceMethod=state.mode==='road'?'road-network':'straight-line';
   $('grouping-help').textContent=state.scope==='district'?`Closest CBO in the school’s district and recorded province, using ${distanceMethod} distance. If no eligible CBO exists, the school has no district match.`:`Closest CBO anywhere in the school’s recorded province, using ${distanceMethod} distance. District boundaries do not restrict this match.`;
   listSection(state.cbo?(state.scope==='district'?'This CBO is nearest in the school’s district':'This CBO is the school’s nearest'):(state.scope==='district'?'Nearest within each district':'Nearest CBO–DBE connections'),groups.nearest);
-  listSection(state.scope==='district'?'Other provincial connections':state.cbo?'Another CBO is nearer':'Other same-province CBO–DBE connections',groups.other);
+  listSection(state.cbo?'Other DBE schools in this province':state.scope==='district'?'Other provincial connections':'Other same-province CBO–DBE connections',groups.other);
   if(state.showFhr)listSection('Workbook-assigned FHR schools',groups.fhr);
 }
 function fit(){
