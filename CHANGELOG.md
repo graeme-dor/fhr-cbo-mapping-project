@@ -1,5 +1,11 @@
 # Changelog
 
+## Accessibility map 0.3.7 — 2026-10-15
+
+- Clarify that nearest DBE connections are determined per school by the selected distance method within the same province, without district boundaries.
+- Rename focused school groups to make clear whether this CBO or another CBO is nearer.
+- Use a pipe between the design acknowledgements.
+
 ## Accessibility map 0.3.6 — 2026-10-14
 
 - Remove the road snapshot date and refresh instruction from the About road distances dropdown.

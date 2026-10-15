@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="vendor/leaflet-1.9.4/leaflet.css">
   <link rel="stylesheet" href="explorer.css?v=0.3.5">
   <script defer src="vendor/leaflet-1.9.4/leaflet.js"></script>
-  <script type="module" src="explorer.js?v=0.3.6"></script>
+  <script type="module" src="explorer.js?v=0.3.7"></script>
 </head>
 <body>
   <header><div><span class="eyebrow">FOUNDATION FOR HUMAN RIGHTS</span><h1>CBO-DBE school accessibility map</h1></div></header>
@@ -35,6 +35,7 @@
       </div>
       <h2 class="list-title">School distances</h2>
       <p id="road-help" class="context" hidden>Road paths are preloaded. Select a school to zoom to its route.</p>
+      <p id="grouping-help" class="context"></p>
       <div id="school-list"></div>
       <details><summary>About road distances</summary><p>The saved road layer uses OpenStreetMap roads through OSRM. Nearest means shortest reported driving-route distance among CBOs in the same province. Other DBE connections are neutral grey. FHR connections follow workbook assignments, with dashed lines.</p><p id="road-date" hidden></p></details>
     </aside>

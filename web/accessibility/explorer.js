@@ -87,8 +87,9 @@ function render(){
   $('road-help').hidden=state.mode!=='road';
   $('caption').textContent=`${state.cbo?model.sites.get(state.cbo).name:(state.province==='__dbe__'?'DBE provinces':state.province||'All provinces')} · ${state.mode==='road'?'road':'straight-line'} distances`;
   $('school-list').replaceChildren();
-  listSection(state.cbo?'DBE schools nearest to this CBO':'Nearest CBO–DBE connections',groups.nearest);
-  listSection(state.cbo?'Other DBE schools in this province':'Other same-province CBO–DBE connections',groups.other);
+  $('grouping-help').textContent=`Each DBE school is matched to its closest CBO in the same province using ${state.mode==='road'?'road-network':'straight-line'} distance. Coloured connections show that match; grey connections show the other CBOs. District boundaries are not used.`;
+  listSection(state.cbo?'This CBO is the school’s nearest':'Nearest CBO–DBE connections',groups.nearest);
+  listSection(state.cbo?'Another CBO is nearer':'Other same-province CBO–DBE connections',groups.other);
   if(state.showFhr)listSection('Workbook-assigned FHR schools',groups.fhr);
 }
 function fit(){
@@ -133,7 +134,7 @@ async function start(){
   $('straight').onclick=()=>{state.mode='straight';refresh(true);};$('road').onclick=()=>{state.mode='road';refresh(true);};
   $('fhr').onchange=()=>{state.showFhr=$('fhr').checked;refresh(true);};refresh(true);
   // Centre the design credit above Leaflet and the data acknowledgements.
-  map.attributionControl.setPrefix('<span class="design-credit">Pro bono design by <strong>Graeme Dor</strong> &amp; <a href="https://datavisionanalytics.com/" target="_blank" rel="noopener noreferrer">DataVision Analytics</a></span>'+map.attributionControl.options.prefix);
+  map.attributionControl.setPrefix('<span class="design-credit">Pro bono design by <strong>Graeme Dor</strong> | <a href="https://datavisionanalytics.com/" target="_blank" rel="noopener noreferrer">DataVision Analytics</a></span>'+map.attributionControl.options.prefix);
   // Request tiles only after fitting the actual initial school/CBO view.
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · Routes: <a href="https://project-osrm.org/">OSRM</a> / <a href="https://routing.openstreetmap.de/about.html">FOSSGIS</a> · <a href="https://www.openstreetmap.org/fixthemap">Fix the map</a>'}).addTo(map);
   try{
