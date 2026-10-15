@@ -1,6 +1,6 @@
 # CBO-DBE school accessibility map
 
-Alternative map version: `0.4.1`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
+Alternative map version: `0.4.2`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
 
 Preview: `python3 -m http.server 8001 --bind 127.0.0.1 --directory web`, then open http://127.0.0.1:8001/accessibility/.
 
@@ -72,9 +72,9 @@ Version 0.3.4 uses finer, lighter grey straight connections while retaining the 
 
 Version 0.3.5 uses shorter legend labels and neutral FHR legend symbols. The compact acknowledgement block centres the design credit above the Leaflet and data-provider credits.
 
-## District / metro comparison
+## District comparison
 
-The **Nearest CBO comparison** selector defaults to **Within the province**. **Within the same district / metro** restricts nearest candidates to CBOs whose coordinates fall in the same district or metropolitan municipality as the school, and whose recorded province matches the school. The existing province-wide distances and grey comparisons remain available. Colours follow the selected nearest comparison. CBO focus never changes which CBO wins. FHR assignments remain unchanged.
+The **Nearest CBO comparison** selector defaults to **Within the province**. **Within the same district** restricts nearest candidates to CBOs whose coordinates fall in the same district or metropolitan municipality as the school, and whose recorded province matches the school. The existing province-wide distances and grey comparisons remain available. Colours follow the selected nearest comparison. CBO focus never changes which CBO wins. FHR assignments remain unchanged.
 
 School popups show both provincial and district nearest results for the selected distance method. A district with no mapped CBO has **No CBO in this district**, rather than a silent provincial fallback. In district view those schools stay visible neutrally and are listed separately. A mapped-versus-recorded province mismatch is flagged for location/province review and excluded from district allocation; province-wide results continue to use the recorded province.
 
@@ -93,6 +93,6 @@ Baseline checks (15 October 2026): 66 of 85 DBE schools have an eligible same-di
 
 ## Excel downloads
 
-The two export buttons download `distances.xlsx` (all 425 DBE comparison rows) and `fhr-distances.xlsx` (all 74 assigned FHR rows). Both are single-sheet Excel tables with filters, the first row and two identifier columns frozen, numeric distances displayed to one decimal place, and the full three-decimal values retained. District gaps keep blank numeric cells and explanatory text. Exports always include the complete dataset, independent of map filters. CSV files remain as internal, testable pipeline intermediates.
+The two export buttons download `distances.xlsx` (all 425 DBE comparison rows) and `fhr-distances.xlsx` (all 74 assigned FHR rows). Both use plain black text, standard-height data rows and uncoloured headers, with filters, the first row and two identifier columns frozen, numeric distances displayed to one decimal place, and the full three-decimal values retained. District gaps keep blank numeric cells and explanatory text. Exports always include the complete dataset, independent of map filters. CSV files remain as internal, testable pipeline intermediates.
 
 `scripts/build_road_snapshot.mjs` regenerates both Excel files through `scripts/export_excel.mjs`. Excel generation uses the bundled Codex Node.js runtime and `@oai/artifact-tool`; run the builder with that runtime's Node executable. It locates the bundled package directory at `~/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules`, or use `RUNTIME_NODE_MODULES` to specify the directory returned by the workspace dependency loader. No packages are installed into the repository. To regenerate only Excel files from the current CSV intermediates, run `scripts/export_excel.mjs` with the same runtime. The committed Excel files are checked in CI using read-only value comparisons with the CSV intermediates.

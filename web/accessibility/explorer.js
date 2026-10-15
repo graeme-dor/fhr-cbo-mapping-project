@@ -1,5 +1,5 @@
 /* global L */
-import {prepare,connections,fhrSchools,nearestConnections,displayedConnections,provinceGroups,provinceMatches,routeKey,districtReason} from './model.js?v=0.4.0';
+import {prepare,connections,fhrSchools,nearestConnections,displayedConnections,provinceGroups,provinceMatches,routeKey,districtReason} from './model.js?v=0.4.2';
 import {validateSnapshot} from './road-snapshot.js?v=0.3.5';
 const $=id=>document.getElementById(id);
 const node=(tag,text)=>{const n=document.createElement(tag);n.textContent=text;return n;};
@@ -16,7 +16,7 @@ function cboOptions(){
 function focus(id){state.cbo=id;state.province=model.sites.get(id).province;$('province').value=state.province;cboOptions();refresh(true);}
 function popup(site,assigned){
   const box=node('div','');box.append(node('strong',site.name),node('p',`${site.kind} · ${site.province}`));
-  if(site.district)box.append(node('p',`District / metro: ${site.district.district_name||'Needs review'}${site.district.status==='matched'?'':' · location / province needs review'}`));
+  if(site.district)box.append(node('p',`District: ${site.district.district_name||'Needs review'}${site.district.status==='matched'?'':' · location / province needs review'}`));
   if(assigned)box.append(node('p',`Assigned CBO: ${assigned.name}`));
   if(site.kind==='CBO'){const button=node('button','Focus on this CBO');button.onclick=()=>focus(site.id);box.append(button);}
   return box;
@@ -75,7 +75,7 @@ function listSection(title,links){
     const row=node('div','');row.className=`school-row${key(l)===state.school?' selected':''}`;
     const button=node('button',school.name);button.append(node('small',c.name));button.onclick=()=>{selectConnection(l);if(school.kind==='DBE')showSchoolComparison(school);};
     const value=node('span',distanceLabel(l));value.className='distance';
-    if(model.districtMetadata)button.append(node('small',`District / metro: ${school.district?.district_name||'Needs review'}`));
+    if(model.districtMetadata)button.append(node('small',`District: ${school.district?.district_name||'Needs review'}`));
     if(state.mode==='road'&&r?.status==='check_access')value.append(node('small','check road access'));
     row.append(button,value);$('school-list').append(row);
   }
@@ -84,7 +84,7 @@ function showSchoolComparison(s){
   const box=popup(s);
   const describe=l=>l?`${model.sites.get(l.cbo_id).name} · ${distanceLabel(l)}`:'Road allocation unavailable or loading';
   box.append(node('p',`Nearest in province: ${describe(provinceWinners.get(s.id))}`));
-  box.append(node('p',`Nearest in district / metro: ${districtWinners.has(s.id)?describe(districtWinners.get(s.id)):districtReason(model,s)||'District road route unavailable or loading'}`));
+  box.append(node('p',`Nearest in district: ${districtWinners.has(s.id)?describe(districtWinners.get(s.id)):districtReason(model,s)||'District road route unavailable or loading'}`));
   L.popup().setLatLng([s.latitude,s.longitude]).setContent(box).openOn(map);
 }
 function districtGaps(){
@@ -104,14 +104,14 @@ function render(){
   markers();
   $('straight').setAttribute('aria-pressed',String(state.mode==='straight'));$('road').setAttribute('aria-pressed',String(state.mode==='road'));
   $('road-help').hidden=state.mode!=='road';
-  $('caption').textContent=`${state.cbo?model.sites.get(state.cbo).name:(state.province==='__dbe__'?'DBE provinces':state.province||'All provinces')} · ${state.mode==='road'?'road':'straight-line'} distances · ${state.scope==='district'?'district / metro':'province'} comparison`;
+  $('caption').textContent=`${state.cbo?model.sites.get(state.cbo).name:(state.province==='__dbe__'?'DBE provinces':state.province||'All provinces')} · ${state.mode==='road'?'road':'straight-line'} distances · ${state.scope==='district'?'district':'province'} comparison`;
   $('school-list').replaceChildren();
-  $('nearest-key').textContent=`Coloured: DBE school’s nearest CBO ${state.scope==='district'?'in its district / metro':'in its province'}`;
+  $('nearest-key').textContent=`Coloured: DBE school’s nearest CBO ${state.scope==='district'?'in its district':'in its province'}`;
   districtGaps();
-  $('comparison-title').textContent=state.scope==='district'?'District / metro matching':'Province-wide matching';
+  $('comparison-title').textContent=state.scope==='district'?'District matching':'Province-wide matching';
   const distanceMethod=state.mode==='road'?'road-network':'straight-line';
-  $('grouping-help').textContent=state.scope==='district'?`Closest CBO in the school’s district / metro and recorded province, using ${distanceMethod} distance. If no eligible CBO exists, the school has no district match.`:`Closest CBO anywhere in the school’s recorded province, using ${distanceMethod} distance. District boundaries do not restrict this match.`;
-  listSection(state.cbo?(state.scope==='district'?'This CBO is nearest in the school’s district':'This CBO is the school’s nearest'):(state.scope==='district'?'Nearest within each district / metro':'Nearest CBO–DBE connections'),groups.nearest);
+  $('grouping-help').textContent=state.scope==='district'?`Closest CBO in the school’s district and recorded province, using ${distanceMethod} distance. If no eligible CBO exists, the school has no district match.`:`Closest CBO anywhere in the school’s recorded province, using ${distanceMethod} distance. District boundaries do not restrict this match.`;
+  listSection(state.cbo?(state.scope==='district'?'This CBO is nearest in the school’s district':'This CBO is the school’s nearest'):(state.scope==='district'?'Nearest within each district':'Nearest CBO–DBE connections'),groups.nearest);
   listSection(state.scope==='district'?'Other provincial connections':state.cbo?'Another CBO is nearer':'Other same-province CBO–DBE connections',groups.other);
   if(state.showFhr)listSection('Workbook-assigned FHR schools',groups.fhr);
 }

@@ -20,30 +20,32 @@ export async function exportExcelDownloads({previewDir=null}={}){
     const cols=matrix[0].length;
     for(const row of matrix.slice(1))for(const i of d.numeric){if(row[i]!==''&&row[i]!==null){const v=Number(row[i]);if(!Number.isFinite(v))throw new Error('Invalid distance value');row[i]=v;}else row[i]=null;}
     used.values=matrix;
-    used.format.font={name:'Helvetica Neue',size:11,color:'#23313B'};
-    used.format.verticalAlignment='center';used.format.wrapText=true;used.format.rowHeight=42;
+    used.format.font={name:'Arial',size:11,color:'#000000'};
+    used.format.fill='#FFFFFF';
+    used.format.verticalAlignment='center';used.format.wrapText=false;used.format.rowHeight=15;
     used.format.horizontalAlignment='left';
     for(let i=0;i<cols;i++){
       const header=String(matrix[0][i]);
-      let width=header.includes('school')||header==='CBO'||header.includes('CBO (')?310:header.includes('district')||header.includes('District')?230:160;
-      if(d.numeric.includes(i))width=145;
-      if(header==='District comparison note')width=280;
+      const longest=Math.max(...matrix.slice(1).map(row=>String(row[i]??'').length));
+      let width=Math.max(140,Math.min(750,longest*7.5+30));
+      if(d.numeric.includes(i))width=160;
       sheet.getRangeByIndexes(0,i,matrix.length,1).format.columnWidthPx=width;
       if(d.numeric.includes(i)){const range=sheet.getRangeByIndexes(1,i,d.count,1);range.setNumberFormat('0.0');range.format.horizontalAlignment='right';}
     }
     const header=sheet.getRangeByIndexes(0,0,1,cols);
-    header.format.fill='#253B4B';header.format.font={name:'Helvetica Neue',size:11,bold:true,color:'#FFFFFF'};header.format.horizontalAlignment='center';header.format.rowHeight=62;
-    header.format.borders={insideVertical:{style:'thin',color:'#FFFFFF'}};
+    header.format.fill='#FFFFFF';header.format.font={name:'Arial',size:11,bold:true,color:'#000000'};header.format.horizontalAlignment='left';header.format.wrapText=true;header.format.rowHeight=33;
+    header.format.borders={bottom:{style:'thin',color:'#BFBFBF'}};
     // An Excel Table supplies native sorting and filters without extra worksheets.
     const table=sheet.tables.add(`A1:${columnName(cols)}${matrix.length}`,true,d.table);
+    table.style='TableStyleLight1';
     table.showFilterButton=true;
-    sheet.freezePanes.freezeRows(1);sheet.freezePanes.freezeColumns(2);sheet.showGridLines=false;
+    sheet.freezePanes.freezeRows(1);sheet.freezePanes.freezeColumns(2);sheet.showGridLines=true;
     const notesCol=cols+1;
     const source='https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/';
     const notes=d.file==='distances'?[
-      ['Distances are in kilometres.'],['Every same-province CBO–DBE pair is included.'],['Provincial and district nearest results use each distance method separately.'],['Blank district distances indicate no eligible match or a route needing review.'],['District boundaries: MDB layer labelled 2018.'],['Source: '+source],['Boundary source: https://gis.westerncape.gov.za/hosting/rest/services/Hosted/Demarcation/FeatureServer/0']
+      ['Distances are in kilometres.'],['Every same-province CBO–DBE pair is included.'],['Provincial and district nearest results use each distance method separately.'],['Blank district distances indicate no eligible match or a route needing review.'],['District boundaries: Municipal Demarcation Board dataset.'],['Source: '+source]
     ]:[['Distances are in kilometres.'],['Connections follow the recorded FHR–CBO assignments.'],['Source: '+source]];
-    const noteRange=sheet.getRangeByIndexes(0,notesCol,notes.length,1);noteRange.values=notes;noteRange.format.font={name:'Helvetica Neue',size:11,color:'#687780'};noteRange.format.wrapText=false;noteRange.format.columnWidthPx=1250;noteRange.format.verticalAlignment='center';
+    const noteRange=sheet.getRangeByIndexes(0,notesCol,notes.length,1);noteRange.values=notes;noteRange.format.font={name:'Arial',size:11,color:'#000000'};noteRange.format.wrapText=false;noteRange.format.columnWidthPx=1250;noteRange.format.verticalAlignment='center';
     workbook.recalculate();
     const inspection=await workbook.inspect({kind:'region',sheetId:d.sheet,range:`A1:${columnName(Math.min(cols,6))}3`,maxChars:1600});
     console.log(inspection.ndjson);

@@ -98,7 +98,7 @@ export function distanceCsv(model,filter,roads=new Map()){
   const road=new Map(nearestConnections(model,{province:filter.province,mode:'road'},roads).map(l=>[l.school_id,l.cbo_id]));
   const districtStraight=new Map(nearestConnections(model,{scope:'district'}).map(l=>[l.school_id,l]));
   const districtRoad=new Map(nearestConnections(model,{scope:'district',mode:'road'},roads).map(l=>[l.school_id,l]));
-  const rows=[['Province','CBO','DBE school','Straight-line km','Road network km','Nearest CBO (straight line)','Nearest CBO (road network)','Is nearest CBO (straight line)','Is nearest CBO (road network)',...(model.districtMetadata?['CBO district / metro','DBE district / metro','Same district / metro','Nearest district CBO (straight line)','Nearest district straight-line km','Nearest district CBO (road network)','Nearest district road km','District comparison note']:[])]];
+  const rows=[['Province','CBO','DBE school','Straight-line km','Road network km','Nearest CBO (straight line)','Nearest CBO (road network)','Is nearest CBO (straight line)','Is nearest CBO (road network)',...(model.districtMetadata?['CBO district','DBE district','Same district','Nearest district CBO (straight line)','Nearest district straight-line km','Nearest district CBO (road network)','Nearest district road km','District comparison note']:[])]];
   for(const l of connections(model,filter)){
     const c=model.sites.get(l.cbo_id),s=model.sites.get(l.school_id),r=roads.get(routeKey(c,s)),winner=road.get(s.id);
     const ds=districtStraight.get(s.id),dr=districtRoad.get(s.id),drKm=dr&&roads.get(routeKey(model.sites.get(dr.cbo_id),s))?.distance_km;

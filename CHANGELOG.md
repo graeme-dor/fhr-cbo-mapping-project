@@ -1,5 +1,11 @@
 # Changelog
 
+## Accessibility map 0.4.2 — 2026-10-15
+
+- Shorten the About sections to brief district-boundary and road-data acknowledgements.
+- Use district consistently in the map and export headings.
+- Simplify Excel downloads to plain black text, standard-height data rows and uncoloured headers, retaining filters and frozen panes.
+
 ## Accessibility map 0.4.1 — 2026-10-15
 
 - Place a prominent matching-rule explanation immediately below the comparison selector, updating it for the selected scope and distance method.

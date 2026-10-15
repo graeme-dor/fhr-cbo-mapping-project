@@ -17,9 +17,12 @@ class ExcelDownloadTests(unittest.TestCase):
                 sheet=workbook.active
                 self.assertEqual(sheet.max_row,count+1)
                 self.assertEqual(sheet.freeze_panes,'C2')
-                self.assertFalse(sheet.sheet_view.showGridLines)
+                self.assertTrue(sheet.sheet_view.showGridLines)
                 self.assertEqual(len(sheet.tables),1)
                 self.assertIsNotNone(sheet.tables[table].autoFilter)
+                self.assertEqual(sheet.tables[table].tableStyleInfo.name,'TableStyleLight1')
+                self.assertEqual(sheet.row_dimensions[2].height,15)
+                self.assertEqual(sheet.cell(2,1).font.color.rgb,'FF000000')
                 self.assertEqual(sheet.tables[table].ref,('A1:Q426' if filename=='distances' else 'A1:F75'))
                 self.assertEqual([sheet.cell(1,c+1).value for c in range(columns)],source[0])
                 for r,row in enumerate(source[1:],2):
@@ -43,7 +46,9 @@ class ExcelDownloadTests(unittest.TestCase):
         self.assertEqual(html.count('id="grouping-help"'),1)
         js=(ROOT/'web/accessibility/explorer.js').read_text()
         self.assertNotIn('District comparison available.',js)
-        self.assertIn('District / metro matching',js)
+        self.assertIn('District matching',js)
+        self.assertNotIn('metro',html.lower())
+        self.assertNotIn('metro',js.lower())
         self.assertIn('Province-wide matching',js)
 
 if __name__=='__main__':unittest.main()
