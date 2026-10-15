@@ -1,5 +1,9 @@
 # Changelog
 
+## Accessibility map 0.4.4 — 2026-10-15
+
+- Clarify in the introduction that nearest-CBO colours follow the selected province or district comparison.
+
 ## Accessibility map 0.4.3 — 2026-10-15
 
 - Restore “Other DBE schools in this province” for the focused CBO school list, retaining its dynamic count.
