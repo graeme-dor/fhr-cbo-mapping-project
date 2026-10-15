@@ -11,3 +11,5 @@ data/processed/*
 reports/*
 !reports/.gitkeep
 data/geocoding/cache.json
+
+!web/accessibility/data/*.xlsx

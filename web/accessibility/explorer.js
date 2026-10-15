@@ -108,7 +108,9 @@ function render(){
   $('school-list').replaceChildren();
   $('nearest-key').textContent=`Coloured: DBE school’s nearest CBO ${state.scope==='district'?'in its district / metro':'in its province'}`;
   districtGaps();
-  $('grouping-help').textContent=state.scope==='district'?`Each DBE school is matched to its closest CBO in the same district / metro and recorded province using ${state.mode==='road'?'road-network':'straight-line'} distance. Grey connections show other provincial comparisons, including CBOs outside the school’s district. Select a school to compare its provincial and district results.`:`Each DBE school is matched to its closest CBO in the same province using ${state.mode==='road'?'road-network':'straight-line'} distance. Coloured connections show that match; grey connections show the other CBOs. District boundaries are not used in this view. Select a school to compare both results.`;
+  $('comparison-title').textContent=state.scope==='district'?'District / metro matching':'Province-wide matching';
+  const distanceMethod=state.mode==='road'?'road-network':'straight-line';
+  $('grouping-help').textContent=state.scope==='district'?`Closest CBO in the school’s district / metro and recorded province, using ${distanceMethod} distance. If no eligible CBO exists, the school has no district match.`:`Closest CBO anywhere in the school’s recorded province, using ${distanceMethod} distance. District boundaries do not restrict this match.`;
   listSection(state.cbo?(state.scope==='district'?'This CBO is nearest in the school’s district':'This CBO is the school’s nearest'):(state.scope==='district'?'Nearest within each district / metro':'Nearest CBO–DBE connections'),groups.nearest);
   listSection(state.scope==='district'?'Other provincial connections':state.cbo?'Another CBO is nearer':'Other same-province CBO–DBE connections',groups.other);
   if(state.showFhr)listSection('Workbook-assigned FHR schools',groups.fhr);
@@ -165,9 +167,9 @@ async function start(){
     if(districtFile.error)throw districtFile.error;
     if(!data.sites.every(s=>{const d=districtFile.value.assignments?.[s.id];return d&&d.latitude===s.latitude&&d.longitude===s.longitude&&d.province===s.province;}))throw new Error('District assignments need rebuilding');
     model=prepare(data,districtFile.value);$('scope').options[1].disabled=false;
-    $('district-help').textContent='District comparison available. Metros are treated as district-level areas. Boundary layer: MDB 2018.';
+    $('district-help').hidden=true;
     refresh();
-  }catch(error){$('district-help').textContent=`District comparison unavailable: ${error.message}. Provincial analysis remains available.`;}
+  }catch(error){$('district-help').hidden=false;$('district-help').textContent=`District comparison unavailable: ${error.message}. Provincial analysis remains available.`;}
   try{
     const roadFile=await roadFilePromise;if(roadFile.error)throw roadFile.error;
     const snapshot=await validateSnapshot(data,roadFile.value);

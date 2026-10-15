@@ -5,9 +5,9 @@
   <title>CBO-DBE school accessibility map</title>
   <link rel="preconnect" href="https://tile.openstreetmap.org">
   <link rel="stylesheet" href="vendor/leaflet-1.9.4/leaflet.css">
-  <link rel="stylesheet" href="explorer.css?v=0.4.0">
+  <link rel="stylesheet" href="explorer.css?v=0.4.1">
   <script defer src="vendor/leaflet-1.9.4/leaflet.js"></script>
-  <script type="module" src="explorer.js?v=0.4.0"></script>
+  <script type="module" src="explorer.js?v=0.4.1"></script>
 </head>
 <body>
   <header><div><span class="eyebrow">FOUNDATION FOR HUMAN RIGHTS</span><h1>CBO-DBE school accessibility map</h1></div></header>
@@ -18,12 +18,13 @@
       <label for="province">Province</label><select id="province"></select>
       <label for="cbo">CBO</label><select id="cbo"></select>
       <label for="scope">Nearest CBO comparison</label><select id="scope"><option value="province">Within the province</option><option value="district" disabled>Within the same district / metro</option></select>
-      <p id="district-help" class="context">Loading district comparison…</p>
+      <section class="comparison-help" aria-live="polite"><strong id="comparison-title">Province-wide matching</strong><p id="grouping-help"></p><p class="comparison-change">Changing this option recalculates the nearest matches. Grey lines remain other provincial connections.</p></section>
+      <p id="district-help" class="context" role="status" hidden></p>
       <fieldset class="mode"><legend>Distance</legend><div class="segmented">
         <button id="straight" type="button" aria-pressed="true">Straight line</button><button id="road" type="button" aria-pressed="false" disabled title="Loading saved road layer">Road network</button>
       </div></fieldset>
       <label class="check"><input id="fhr" type="checkbox">Show assigned FHR schools and distances</label>
-      <div class="actions"><a id="export" href="data/distances.csv?v=0.4.0" download="fhr-dbe-cbo-distances.csv">Export all DBE distances</a><a id="fhr-export" href="data/fhr-distances.csv?v=0.3.5" download="fhr-assigned-school-distances.csv">Export assigned FHR distances</a></div>
+      <div class="actions"><a id="export" href="data/distances.xlsx?v=0.4.1" download="fhr-dbe-cbo-distances.xlsx">Export all DBE distances (Excel)</a><a id="fhr-export" href="data/fhr-distances.xlsx?v=0.4.1" download="fhr-assigned-school-distances.xlsx">Export assigned FHR distances (Excel)</a></div>
       <p id="status" role="status" aria-live="polite">Loading schools…</p>
       <details class="colour-legend"><summary>CBO colours · select to focus</summary><section id="legend" aria-label="CBO colours"></section></details><div class="shape-key" aria-label="Map symbols">
         <span><i class="key-symbol key-cbo" aria-hidden="true"></i>CBO</span>
@@ -37,7 +38,6 @@
       </div>
       <h2 class="list-title">School distances</h2>
       <p id="road-help" class="context" hidden>Road paths are preloaded. Select a school to zoom to its route.</p>
-      <p id="grouping-help" class="context"></p>
       <details id="district-gaps" hidden><summary id="district-gaps-title"></summary><div id="district-gap-list"></div></details>
       <div id="school-list"></div>
       <details><summary>About district comparisons</summary><p>Districts and metropolitan municipalities are treated as equivalent areas. Only the CBOs included on this map are considered. Coordinates are assigned to the <a href="https://gis.westerncape.gov.za/hosting/rest/services/Hosted/Demarcation/FeatureServer/0" target="_blank" rel="noopener noreferrer">MDB boundary layer hosted by the Western Cape Government</a>, labelled 2018. Province-wide results retain the recorded province. District comparisons exclude locations whose mapped province differs from the recorded province, pending review. FHR assignments are unchanged.</p></details>

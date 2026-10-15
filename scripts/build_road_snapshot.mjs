@@ -2,6 +2,7 @@
 import fs from 'node:fs/promises';
 import {prepare,connections,fhrConnections,routeKey,distanceCsv,fhrDistanceCsv} from '../web/accessibility/model.js';
 import {Routing} from '../web/accessibility/routing.js';
+import {exportExcelDownloads} from './export_excel.mjs';
 import {batchRoutes,datasetSignature,validateSnapshot,simplifyRoute} from '../web/accessibility/road-snapshot.js';
 Object.defineProperty(globalThis,'localStorage',{value:{getItem:()=>null,setItem:()=>{}}});
 const endpoint=process.argv.slice(2).find(a=>!a.startsWith('--'))||'https://routing.openstreetmap.de/routed-car';
@@ -10,9 +11,11 @@ const input=new URL('../web/data/map.json',import.meta.url),output=new URL('../w
 const data=JSON.parse(await fs.readFile(input,'utf8')),model=prepare(data,JSON.parse(await fs.readFile(new URL('districts.json',output),'utf8'))),signature=await datasetSignature(data);
 let existing;
 try{existing=JSON.parse(await fs.readFile(output,'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
-async function exports(roads){await fs.writeFile(new URL('distances.csv',output),distanceCsv(model,{},roads));await fs.writeFile(new URL('fhr-distances.csv',output),fhrDistanceCsv(model,roads));}
+async function exports(roads){await fs.writeFile(new URL('distances.csv',output),distanceCsv(model,{},roads));await fs.writeFile(new URL('fhr-distances.csv',output),fhrDistanceCsv(model,roads));await exportExcelDownloads();}
 if(existing?.metadata.dataset_signature===signature&&!refresh){
-  try{const checked=await validateSnapshot(data,existing);await exports(checked.roads);console.log('Snapshot is complete and current; exports regenerated without routing requests.');process.exit(0);}catch(e){console.log(`Extending snapshot: ${e.message}`);}
+  let checked;
+  try{checked=await validateSnapshot(data,existing);}catch(e){console.log(`Extending snapshot: ${e.message}`);}
+  if(checked){await exports(checked.roads);console.log('Snapshot is complete and current; exports regenerated without routing requests.');process.exit(0);}
 }
 const router=new Routing(),signal=new AbortController().signal;
 const originalFetch=globalThis.fetch;

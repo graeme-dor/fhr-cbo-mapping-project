@@ -1,6 +1,6 @@
 # CBO-DBE school accessibility map
 
-Alternative map version: `0.4.0`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
+Alternative map version: `0.4.1`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
 
 Preview: `python3 -m http.server 8001 --bind 127.0.0.1 --directory web`, then open http://127.0.0.1:8001/accessibility/.
 
@@ -90,3 +90,9 @@ node scripts/build_road_snapshot.mjs
 The main `scripts/build.py` pipeline also regenerates district assignments without changing the source workbook. Changed coordinates invalidate saved assignments in the map. The road snapshot builder regenerates the full 425-row DBE export with district names, same-district flags, nearest district CBO names and distances for both methods, and gap/review notes. Updating district information alone makes no routing requests. To update the boundary baseline, replace the geometry and source manifest together and rerun the commands above.
 
 Baseline checks (15 October 2026): 66 of 85 DBE schools have an eligible same-district CBO; 18 have no mapped CBO in their district; one (Wolvenkop Special School) needs location/province review. Two assigned FHR schools (Alpha Primary and Veritas Secondary) also have coordinate/province mismatches; their recorded FHR relationships are retained. These flags identify data to review, not a confirmed correction.
+
+## Excel downloads
+
+The two export buttons download `distances.xlsx` (all 425 DBE comparison rows) and `fhr-distances.xlsx` (all 74 assigned FHR rows). Both are single-sheet Excel tables with filters, the first row and two identifier columns frozen, numeric distances displayed to one decimal place, and the full three-decimal values retained. District gaps keep blank numeric cells and explanatory text. Exports always include the complete dataset, independent of map filters. CSV files remain as internal, testable pipeline intermediates.
+
+`scripts/build_road_snapshot.mjs` regenerates both Excel files through `scripts/export_excel.mjs`. Excel generation uses the bundled Codex Node.js runtime and `@oai/artifact-tool`; run the builder with that runtime's Node executable. It locates the bundled package directory at `~/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules`, or use `RUNTIME_NODE_MODULES` to specify the directory returned by the workspace dependency loader. No packages are installed into the repository. To regenerate only Excel files from the current CSV intermediates, run `scripts/export_excel.mjs` with the same runtime. The committed Excel files are checked in CI using read-only value comparisons with the CSV intermediates.

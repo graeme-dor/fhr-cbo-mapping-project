@@ -1,5 +1,12 @@
 # Changelog
 
+## Accessibility map 0.4.1 — 2026-10-15
+
+- Place a prominent matching-rule explanation immediately below the comparison selector, updating it for the selected scope and distance method.
+- Remove the district availability message while retaining failure messages and boundary provenance in About district comparisons.
+- Offer DBE and FHR Excel downloads with typed numeric distances, frozen headers, native filters and source notes.
+- Regenerate Excel downloads with the road snapshot export pipeline and verify every exported value against the underlying CSV data.
+
 ## Accessibility map 0.4.0 — 2026-10-15
 
 - Add an optional nearest-CBO comparison restricted to the same district / metro and recorded province, retaining province-wide results as the default.

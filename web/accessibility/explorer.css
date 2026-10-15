@@ -15,3 +15,5 @@
 .leaflet-control-attribution{padding:2px 5px;line-height:1.25;text-align:center}.design-credit{display:block;font-size:10px;line-height:1.25;padding:0 0 1px;text-align:center}.design-credit strong{font-weight:700}
 
 #grouping-help{margin:8px 0 14px}#district-gaps{font-size:12px;margin:12px 0}#district-gap-list button{display:block;text-align:left;background:none;border:0;color:#334855;font:inherit;padding:8px 0;cursor:pointer}#district-gap-list small{display:block;color:#687780;font-size:11px;margin-top:3px}.line-key span span{display:inline}
+
+.comparison-help{border-left:3px solid #418c72;background:#f3f6f7;padding:10px 12px;margin:-6px 0 17px;font-size:12px;line-height:1.5}.comparison-help strong{color:#233d4a}.comparison-help #grouping-help{margin:5px 0 8px;color:#465b66}.comparison-help .comparison-change{margin:0;color:#52636f}
