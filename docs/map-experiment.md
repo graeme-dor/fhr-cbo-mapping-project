@@ -1,6 +1,6 @@
 # CBO-DBE school accessibility map
 
-Alternative map version: `0.4.4`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
+Alternative map version: `0.4.5`. The original map remains at version `0.1.4`, with its source workbook unchanged. The alternative is published from `main` at [CBO-DBE school accessibility map](https://graeme-dor.github.io/fhr-cbo-mapping-project/accessibility/). The original remains at the repository’s root URL.
 
 Preview: `python3 -m http.server 8001 --bind 127.0.0.1 --directory web`, then open http://127.0.0.1:8001/accessibility/.
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## Accessibility map 0.4.5 — 2026-10-16
+
+- Explain that schools without an eligible district CBO are shown as grey dots.
+
 ## Accessibility map 0.4.4 — 2026-10-15
 
 - Clarify in the introduction that nearest-CBO colours follow the selected province or district comparison.
